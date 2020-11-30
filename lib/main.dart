@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'components/drawer_layout.dart';
-import 'screens/tracks_screen.dart';
-import 'screens/albums_screen.dart';
-import 'screens/artists_screen.dart';
-import 'screens/genres_screen.dart';
+import 'ui/components/drawer_layout.dart';
+import 'ui/screens/library/tracks_screen.dart';
+import 'ui/screens/library/albums_screen.dart';
+import 'ui/screens/library/artists_screen.dart';
+import 'ui/screens/library/genres_screen.dart';
 
 void main() {
   runApp(MyApp());

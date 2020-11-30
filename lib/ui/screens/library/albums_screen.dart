@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../components/album_tile.dart';
+import '../../components/album_tile.dart';
 
 class AlbumsScreen extends StatefulWidget {
   AlbumsScreenState createState() => AlbumsScreenState();
