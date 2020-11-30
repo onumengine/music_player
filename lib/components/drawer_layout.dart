@@ -9,7 +9,15 @@ class DrawerLayout extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: <Widget>[
           DrawerHeader(
-            child: Text('MUSIC'),
+            child: Center(
+              child: Text(
+                'ONUM\'S MUSIC',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.blue,
+                ),
+              ),
+            ),
           ),
           Padding(
             padding:
