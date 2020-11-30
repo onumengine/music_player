@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'now_playing_screen.dart';
 
 class TracksScreen extends StatefulWidget {
   TracksScreenState createState() => TracksScreenState();
@@ -17,9 +18,16 @@ class TracksScreenState extends State<TracksScreen> {
             child: ListView.builder(
               itemCount: 20,
               itemBuilder: (context, index) => ListTile(
-                leading: Icon(Icons.music_note_rounded),
-                title: Text('Arbitrary track'),
-              ),
+                  leading: Icon(Icons.music_note_rounded),
+                  title: Text('Arbitrary track'),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => NowPlayingScreen(),
+                      ),
+                    );
+                  }),
             ),
           ),
         ),

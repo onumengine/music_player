@@ -3,6 +3,7 @@ import 'components/drawer_layout.dart';
 import 'screens/tracks_screen.dart';
 import 'screens/albums_screen.dart';
 import 'screens/artists_screen.dart';
+import 'screens/genres_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -63,7 +64,7 @@ class MyHomePageState extends State<MyHomePage> {
             TracksScreen(),
             ArtistsScreen(),
             AlbumsScreen(),
-            Icon(Icons.biotech_rounded),
+            GenresScreen(),
           ],
         ),
       ),
