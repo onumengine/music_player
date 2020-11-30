@@ -9,14 +9,25 @@ class DrawerLayout extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: <Widget>[
           DrawerHeader(
-            child: Center(
-              child: Text(
-                'ONUM\'S MUSIC',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.blue,
+            padding: EdgeInsets.zero,
+            child: Stack(
+              fit: StackFit.expand,
+              alignment: AlignmentDirectional.bottomCenter,
+              children: <Widget>[
+                Expanded(
+                  child: Image.asset('lib/images/four.jpg'),
                 ),
-              ),
+                Positioned(
+                  bottom: 0,
+                  child: Text(
+                    'ONUM\'S MUSIC',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
           Padding(
