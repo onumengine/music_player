@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../screens/settings/settings_screen.dart';
+import '../screens/playlists/playlists_home_screen.dart';
 
 class DrawerLayout extends StatelessWidget {
   final int _chartPosition = 1;
@@ -49,6 +50,7 @@ class DrawerLayout extends StatelessWidget {
             title: Text('Playlists'),
             onTap: () {
               Navigator.pop(context);
+              Navigator.of(context).pushNamed('/playlists');
             },
           ),
           ListTile(
@@ -57,12 +59,7 @@ class DrawerLayout extends StatelessWidget {
           ListTile(
             title: Text('Settings'),
             onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => SettingsScreen(),
-                ),
-              );
+              Navigator.of(context).pushNamed('/settings');
             },
           ),
           ListTile(

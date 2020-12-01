@@ -20,6 +20,7 @@ class TracksScreenState extends State<TracksScreen> {
               itemBuilder: (context, index) => ListTile(
                   leading: Icon(Icons.music_note_rounded),
                   title: Text('Arbitrary track'),
+                  subtitle: Text('Pyro The Rapper'),
                   onTap: () {
                     Navigator.push(
                       context,
