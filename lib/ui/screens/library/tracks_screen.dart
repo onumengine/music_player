@@ -26,7 +26,7 @@ class TracksScreenState extends State<TracksScreen> {
                 subtitle: Text(
                   'Pyro The Rapper',
                   style: TextStyle(
-                    fontSize: 12.0,
+                    fontSize: 10.0,
                   ),
                 ),
                 onTap: () {

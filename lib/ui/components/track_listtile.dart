@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class TrackListTile extends StatelessWidget {
-  final leading;
+  final Widget leading;
   final Text title, subtitle;
   final GestureTapCallback onTap;
 
