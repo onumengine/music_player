@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:music_player/ui/components/track_listtile.dart';
 import 'now_playing_screen.dart';
 
 class TracksScreen extends StatefulWidget {
@@ -17,18 +18,26 @@ class TracksScreenState extends State<TracksScreen> {
           child: Container(
             child: ListView.builder(
               itemCount: 20,
-              itemBuilder: (context, index) => ListTile(
-                  leading: Icon(Icons.music_note_rounded),
-                  title: Text('Arbitrary track'),
-                  subtitle: Text('Pyro The Rapper'),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => NowPlayingScreen(),
-                      ),
-                    );
-                  }),
+              itemBuilder: (context, index) => TrackListTile(
+                leading: Icon(Icons.music_note_rounded),
+                title: Text(
+                  'Arbitrary track',
+                ),
+                subtitle: Text(
+                  'Pyro The Rapper',
+                  style: TextStyle(
+                    fontSize: 12.0,
+                  ),
+                ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => NowPlayingScreen(),
+                    ),
+                  );
+                },
+              ),
             ),
           ),
         ),

@@ -26,32 +26,40 @@ class SettingsScreen extends StatelessWidget {
                 Icons.brush_rounded,
               ),
               title: Text('Styling'),
+              subtitle: Text('Colors, Font, Animations'),
             ),
             ListTile(
               leading: Icon(
                 Icons.play_circle_filled_rounded,
               ),
               title: Text('Now Playing'),
+              subtitle: Text(''),
             ),
             ListTile(
               leading: Icon(Icons.image_rounded),
               title: Text('Interface'),
+              subtitle: Text('Sliding menu, Library',
+                  style: TextStyle(fontSize: 12.0)),
             ),
             ListTile(
               leading: Icon(Icons.headset_rounded),
               title: Text('Audio'),
+              subtitle: Text('Gapless, Crossfading, Equalizer, Repeat'),
             ),
             ListTile(
               leading: Icon(Icons.contacts_rounded),
               title: Text('Metadata'),
+              subtitle: Text('Album covers, Artist images, Scrobble, Library'),
             ),
             ListTile(
               leading: Icon(Icons.settings_remote_rounded),
               title: Text('Remote'),
+              subtitle: Text('Notification & Lockscreen'),
             ),
             ListTile(
               leading: Icon(Icons.android_rounded),
               title: Text('Advanced'),
+              subtitle: Text('Development, Beta features'),
             ),
             Padding(
               padding:
