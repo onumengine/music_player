@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:music_player/ui/components/track_listtile.dart';
 
 class SettingsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
@@ -21,45 +22,61 @@ class SettingsScreen extends StatelessWidget {
                 ),
               ),
             ),
-            ListTile(
+            TrackListTile(
               leading: Icon(
                 Icons.brush_rounded,
               ),
               title: Text('Styling'),
-              subtitle: Text('Colors, Font, Animations'),
+              subtitle: Text(
+                'Colors, Font, Animations',
+                style: TextStyle(fontSize: 12.0),
+              ),
             ),
             ListTile(
               leading: Icon(
                 Icons.play_circle_filled_rounded,
               ),
               title: Text('Now Playing'),
-              subtitle: Text(''),
             ),
-            ListTile(
+            TrackListTile(
               leading: Icon(Icons.image_rounded),
               title: Text('Interface'),
-              subtitle: Text('Sliding menu, Library',
-                  style: TextStyle(fontSize: 12.0)),
+              subtitle: Text(
+                'Sliding menu, Library',
+                style: TextStyle(fontSize: 12.0),
+              ),
             ),
-            ListTile(
+            TrackListTile(
               leading: Icon(Icons.headset_rounded),
               title: Text('Audio'),
-              subtitle: Text('Gapless, Crossfading, Equalizer, Repeat'),
+              subtitle: Text(
+                'Gapless, Crossfading, Equalizer, Repeat',
+                style: TextStyle(fontSize: 12.0),
+              ),
             ),
-            ListTile(
+            TrackListTile(
               leading: Icon(Icons.contacts_rounded),
               title: Text('Metadata'),
-              subtitle: Text('Album covers, Artist images, Scrobble, Library'),
+              subtitle: Text(
+                'Album covers, Artist images, Scrobble, Library',
+                style: TextStyle(fontSize: 12.0),
+              ),
             ),
-            ListTile(
+            TrackListTile(
               leading: Icon(Icons.settings_remote_rounded),
               title: Text('Remote'),
-              subtitle: Text('Notification & Lockscreen'),
+              subtitle: Text(
+                'Notification & Lockscreen',
+                style: TextStyle(fontSize: 12.0),
+              ),
             ),
-            ListTile(
+            TrackListTile(
               leading: Icon(Icons.android_rounded),
               title: Text('Advanced'),
-              subtitle: Text('Development, Beta features'),
+              subtitle: Text(
+                'Development, Beta features',
+                style: TextStyle(fontSize: 12.0),
+              ),
             ),
             Padding(
               padding:
@@ -72,17 +89,29 @@ class SettingsScreen extends StatelessWidget {
                 ),
               ),
             ),
-            ListTile(
+            TrackListTile(
               leading: Icon(Icons.help_rounded),
               title: Text('FAQ'),
+              subtitle: Text(
+                'Need help? Check here first',
+                style: TextStyle(fontSize: 12.0),
+              ),
             ),
-            ListTile(
+            TrackListTile(
               leading: Icon(Icons.notes_rounded),
               title: Text('Changelog'),
+              subtitle: Text(
+                'Click to open changelog',
+                style: TextStyle(fontSize: 12.0),
+              ),
             ),
-            ListTile(
+            TrackListTile(
               leading: Icon(Icons.info_rounded),
               title: Text('About'),
+              subtitle: Text(
+                'MusicPlayer Version 2.43',
+                style: TextStyle(fontSize: 12.0),
+              ),
             ),
           ],
         ),

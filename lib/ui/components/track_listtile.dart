@@ -5,7 +5,8 @@ class TrackListTile extends StatelessWidget {
   final Text title, subtitle;
   final GestureTapCallback onTap;
 
-  const TrackListTile({this.leading, this.title, this.subtitle, this.onTap});
+  const TrackListTile({this.leading, this.title, this.subtitle, this.onTap})
+      : assert(subtitle != null);
 
   Widget build(BuildContext context) {
     return ListTile(
