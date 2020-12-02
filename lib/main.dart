@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:music_player/ui/screens/library/artist_page.dart';
 import 'package:music_player/ui/screens/playlists/playlists_home_screen.dart';
 import 'ui/components/drawer_layout.dart';
 import 'ui/screens/library/tracks_screen.dart';
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => MyHomePage(title: 'Music'),
         '/playlists': (context) => PlaylistsHome(),
         '/settings': (context) => SettingsScreen(),
+        '/artistpage': (context) => ArtistPage(),
       },
     );
   }

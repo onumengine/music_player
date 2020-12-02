@@ -21,7 +21,7 @@ class ArtistTile extends StatelessWidget {
         ),
       ),
       onTap: () {
-        Navigator.of(context).pushNamed('');
+        Navigator.of(context).pushNamed('/artistpage');
       },
     );
   }
