@@ -32,7 +32,7 @@ class ArtistPageState extends State<ArtistPage> {
             SliverFillRemaining(
               child: TabBarView(
                 children: <Widget>[
-                  AlbumsScreen(columnCount: 3),
+                  AlbumsScreen(),
                   Column(),
                   TracksScreen(),
                 ],

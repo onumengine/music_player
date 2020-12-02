@@ -23,20 +23,16 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       routes: {
-        '/': (context) => MyHomePage(title: 'Music'),
+        '/': (context) => MyHomePage(),
         '/playlists': (context) => PlaylistsHome(),
         '/settings': (context) => SettingsScreen(),
-        '/artistpage': (context) => ArtistPage(),
+        '/artist_page': (context) => ArtistPage(),
       },
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
   @override
   MyHomePageState createState() => MyHomePageState();
 }
