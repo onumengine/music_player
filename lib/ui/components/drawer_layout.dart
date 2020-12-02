@@ -14,7 +14,7 @@ class DrawerLayout extends StatelessWidget {
               fit: StackFit.expand,
               alignment: AlignmentDirectional.bottomCenter,
               children: <Widget>[
-                Expanded(
+                Center(
                   child: Image.asset('lib/images/four.jpg'),
                 ),
                 Positioned(
@@ -43,6 +43,9 @@ class DrawerLayout extends StatelessWidget {
           ),
           ListTile(
             title: Text('Library'),
+            onTap: () {
+              Navigator.pop(context);
+            },
           ),
           ListTile(
             title: Text('Playlists'),
