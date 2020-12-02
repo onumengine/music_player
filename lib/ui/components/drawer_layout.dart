@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import '../screens/settings/settings_screen.dart';
-import '../screens/playlists/playlists_home_screen.dart';
 
 class DrawerLayout extends StatelessWidget {
   final int _chartPosition = 1;

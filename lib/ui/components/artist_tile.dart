@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class ArtistTile extends StatelessWidget {
   ArtistTile({this.imagePath = 'lib/images/clip.png'});
 
-  String imagePath;
+  final String imagePath;
 
   Widget build(BuildContext context) {
     return GestureDetector(
