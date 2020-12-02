@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:music_player/ui/screens/library/tracks_screen.dart';
+import 'package:music_player/ui/screens/playlists/favorites_screen.dart';
+import 'package:music_player/ui/screens/playlists/most_played_screen.dart';
 import 'package:music_player/ui/screens/playlists/playlists_screen.dart';
 import 'package:music_player/ui/screens/playlists/recently_added_screen.dart';
 
@@ -44,9 +46,9 @@ class PlaylistsHome extends StatelessWidget {
           body: TabBarView(
             children: <Widget>[
               PlaylistsScreen(),
-              TracksScreen(),
+              FavoritesScreen(),
               RecentlyAddedScreen(),
-              TracksScreen(),
+              MostPlayedScreen(),
               TracksScreen(),
             ],
           ),
