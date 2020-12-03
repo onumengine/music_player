@@ -1,5 +1,18 @@
 import 'package:flutter/material.dart';
 
+enum AlbumActions {
+  sortAlbumTrackNumber,
+  sortAZ,
+  sortZA,
+  sortDA,
+  sortArtistAZ,
+  sortArtistZA,
+  sortDuration,
+  sortFilePath,
+  sortYearAscending,
+  sortYearDescending
+}
+
 class AlbumPage extends StatefulWidget {
   AlbumPageState createState() => AlbumPageState();
 }
@@ -7,16 +20,82 @@ class AlbumPage extends StatefulWidget {
 class AlbumPageState extends State<AlbumPage> {
   Widget build(BuildContext context) {
     return Scaffold(
-      body: CustomScrollView(
-        slivers: <Widget>[
-          SliverAppBar(
-            expandedHeight: 300.0,
-            flexibleSpace: FlexibleSpaceBar(
-              background: Image.asset('lib/images/four.jpg'),
+      body: SafeArea(
+        child: CustomScrollView(
+          slivers: <Widget>[
+            SliverAppBar(
+              expandedHeight: 300.0,
+              flexibleSpace: FlexibleSpaceBar(
+                background: Stack(
+                  fit: StackFit.expand,
+                  overflow: Overflow.visible,
+                  children: <Widget>[
+                    Image.asset(
+                      'lib/images/four.jpg',
+                      fit: BoxFit.cover,
+                    ),
+                    Positioned(
+                      bottom: 30,
+                      right: 30,
+                      child: FloatingActionButton(
+                        child: Icon(Icons.shuffle_rounded),
+                        onPressed: null,
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              actions: <Widget>[
+                PopupMenuButton(
+                  itemBuilder: (BuildContext context) =>
+                      <PopupMenuItem<AlbumActions>>[
+                    PopupMenuItem<AlbumActions>(
+                      value: AlbumActions.sortAlbumTrackNumber,
+                      child: Text('Sort Album Track number'),
+                    ),
+                    PopupMenuItem<AlbumActions>(
+                      value: AlbumActions.sortAZ,
+                      child: Text('Sort A-Z'),
+                    ),
+                    PopupMenuItem<AlbumActions>(
+                      value: AlbumActions.sortZA,
+                      child: Text('Sort Z-A'),
+                    ),
+                    PopupMenuItem<AlbumActions>(
+                      value: AlbumActions.sortDA,
+                      child: Text('Sort Date Added'),
+                    ),
+                    PopupMenuItem<AlbumActions>(
+                      value: AlbumActions.sortArtistAZ,
+                      child: Text('Sort Artist A-Z'),
+                    ),
+                    PopupMenuItem<AlbumActions>(
+                      value: AlbumActions.sortArtistZA,
+                      child: Text('SOrt Artist Z-A'),
+                    ),
+                    PopupMenuItem<AlbumActions>(
+                      value: AlbumActions.sortDuration,
+                      child: Text('Sort Duration'),
+                    ),
+                    PopupMenuItem<AlbumActions>(
+                      value: AlbumActions.sortFilePath,
+                      child: Text('Sort File Path'),
+                    ),
+                    PopupMenuItem<AlbumActions>(
+                      value: AlbumActions.sortYearAscending,
+                      child: Text('Sort Year Ascending'),
+                    ),
+                    PopupMenuItem<AlbumActions>(
+                      value: AlbumActions.sortYearDescending,
+                      child: Text('Sort Year Descending'),
+                    ),
+                  ],
+                )
+              ],
             ),
-          ),
-          SliverFillRemaining(),
-        ],
+            SliverFillRemaining(),
+          ],
+        ),
       ),
     );
   }

@@ -15,7 +15,11 @@ class AlbumsScreenState extends State<AlbumsScreen> {
         mainAxisSpacing: 2,
         children: List.generate(
           20,
-          (index) => AlbumTile(),
+          (index) => AlbumTile(
+            onTap: () {
+              Navigator.of(context).pushNamed('/album_page');
+            },
+          ),
         ),
       ),
     );
