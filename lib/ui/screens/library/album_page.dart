@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:music_player/ui/components/album_meta_tile.dart';
+import 'package:music_player/ui/components/track_listtile.dart';
 
 enum AlbumActions {
   sortAlbumTrackNumber,
@@ -18,6 +20,40 @@ class AlbumPage extends StatefulWidget {
 }
 
 class AlbumPageState extends State<AlbumPage> {
+  var songs = <String>[
+    'Panic Attack',
+    'Naija Boy',
+    'The Other Day',
+    'Dun Trip',
+    'Opposites Attract',
+    'Bittersweet dream',
+    'I Left You This Note',
+    'Chidinma Song',
+    'Ebiere',
+    'Way Too Strong',
+  ];
+
+  List<String> loadTracks() {
+    return this.songs;
+  }
+
+  List<TrackListTile> trackTiles() => List<TrackListTile>.generate(
+        10,
+        (index) => TrackListTile(
+          thumbnail: Text('${index + 1}'),
+          title: Text(songs[index]),
+          subtitle: Text(
+            'Pyro The Rapper',
+            style: TextStyle(
+              fontSize: 10.0,
+            ),
+          ),
+          onTap: () {
+            Navigator.of(context).pushNamed('/now_playing_screen');
+          },
+        ),
+      );
+
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
@@ -93,7 +129,14 @@ class AlbumPageState extends State<AlbumPage> {
                 )
               ],
             ),
-            SliverFillRemaining(),
+            SliverFillRemaining(
+              child: Column(
+                children: <Widget>[
+                  AlbumMetaTile(),
+                  ...trackTiles(),
+                ],
+              ),
+            ),
           ],
         ),
       ),

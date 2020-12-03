@@ -23,7 +23,7 @@ class SettingsScreen extends StatelessWidget {
               ),
             ),
             TrackListTile(
-              leading: Icon(
+              thumbnail: Icon(
                 Icons.brush_rounded,
               ),
               title: Text('Styling'),
@@ -39,7 +39,7 @@ class SettingsScreen extends StatelessWidget {
               title: Text('Now Playing'),
             ),
             TrackListTile(
-              leading: Icon(Icons.image_rounded),
+              thumbnail: Icon(Icons.image_rounded),
               title: Text('Interface'),
               subtitle: Text(
                 'Sliding menu, Library',
@@ -47,7 +47,7 @@ class SettingsScreen extends StatelessWidget {
               ),
             ),
             TrackListTile(
-              leading: Icon(Icons.headset_rounded),
+              thumbnail: Icon(Icons.headset_rounded),
               title: Text('Audio'),
               subtitle: Text(
                 'Gapless, Crossfading, Equalizer, Repeat',
@@ -55,7 +55,7 @@ class SettingsScreen extends StatelessWidget {
               ),
             ),
             TrackListTile(
-              leading: Icon(Icons.contacts_rounded),
+              thumbnail: Icon(Icons.contacts_rounded),
               title: Text('Metadata'),
               subtitle: Text(
                 'Album covers, Artist images, Scrobble, Library',
@@ -63,7 +63,7 @@ class SettingsScreen extends StatelessWidget {
               ),
             ),
             TrackListTile(
-              leading: Icon(Icons.settings_remote_rounded),
+              thumbnail: Icon(Icons.settings_remote_rounded),
               title: Text('Remote'),
               subtitle: Text(
                 'Notification & Lockscreen',
@@ -71,7 +71,7 @@ class SettingsScreen extends StatelessWidget {
               ),
             ),
             TrackListTile(
-              leading: Icon(Icons.android_rounded),
+              thumbnail: Icon(Icons.android_rounded),
               title: Text('Advanced'),
               subtitle: Text(
                 'Development, Beta features',
@@ -90,7 +90,7 @@ class SettingsScreen extends StatelessWidget {
               ),
             ),
             TrackListTile(
-              leading: Icon(Icons.help_rounded),
+              thumbnail: Icon(Icons.help_rounded),
               title: Text('FAQ'),
               subtitle: Text(
                 'Need help? Check here first',
@@ -98,7 +98,7 @@ class SettingsScreen extends StatelessWidget {
               ),
             ),
             TrackListTile(
-              leading: Icon(Icons.notes_rounded),
+              thumbnail: Icon(Icons.notes_rounded),
               title: Text('Changelog'),
               subtitle: Text(
                 'Click to open changelog',
@@ -106,7 +106,7 @@ class SettingsScreen extends StatelessWidget {
               ),
             ),
             TrackListTile(
-              leading: Icon(Icons.info_rounded),
+              thumbnail: Icon(Icons.info_rounded),
               title: Text('About'),
               subtitle: Text(
                 'MusicPlayer Version 2.43',

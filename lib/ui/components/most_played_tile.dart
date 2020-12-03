@@ -11,7 +11,7 @@ class MostPlayedTile extends StatelessWidget {
       children: <Widget>[
         Text(this.ranking),
         TrackListTile(
-          leading: Icon(Icons.music_note_rounded),
+          thumbnail: Icon(Icons.music_note_rounded),
           title: Text('I Left You This Note'),
           subtitle: Text('Pyro The Rapper'),
         ),

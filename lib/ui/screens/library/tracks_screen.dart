@@ -26,7 +26,7 @@ class TracksScreenState extends State<TracksScreen> {
     return Column(
       children: <Widget>[
         TrackListTile(
-          leading: Icon(Icons.shuffle_rounded),
+          thumbnail: Icon(Icons.shuffle_rounded),
           title: Text('Shuffle Play'),
           subtitle: Text(
             'All Tracks',
@@ -92,7 +92,7 @@ class TracksScreenState extends State<TracksScreen> {
             child: ListView.builder(
               itemCount: 20,
               itemBuilder: (context, index) => TrackListTile(
-                leading: Icon(Icons.music_note_rounded),
+                thumbnail: Icon(Icons.music_note_rounded),
                 title: Text(
                   'I Left You This Note',
                 ),
