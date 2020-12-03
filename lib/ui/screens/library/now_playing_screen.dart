@@ -17,22 +17,30 @@ class NowPlayingScreenState extends State<NowPlayingScreen> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(8.0, 8.0, 0.0, 2.0),
-                        child: Text(
-                          'Opposites Attract',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20.0,
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Padding(
+                          padding:
+                              const EdgeInsets.fromLTRB(8.0, 8.0, 0.0, 2.0),
+                          child: Text(
+                            'Opposites Attract',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20.0,
+                            ),
                           ),
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(8.0, 2.0, 0.0, 16.0),
-                        child: Text('Pyro The Rapper',
-                            style: TextStyle(
-                              fontSize: 14.0,
-                            )),
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Padding(
+                          padding:
+                              const EdgeInsets.fromLTRB(8.0, 2.0, 0.0, 16.0),
+                          child: Text('Pyro The Rapper',
+                              style: TextStyle(
+                                fontSize: 14.0,
+                              )),
+                        ),
                       ),
                     ],
                   ),
