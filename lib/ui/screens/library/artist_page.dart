@@ -33,7 +33,9 @@ class ArtistPageState extends State<ArtistPage> {
               child: TabBarView(
                 children: <Widget>[
                   AlbumsScreen(),
-                  Column(),
+                  Center(
+                    child: Text('No internet connection'),
+                  ),
                   TracksScreen(),
                 ],
               ),
