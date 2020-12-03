@@ -47,7 +47,10 @@ class NowPlayingScreenState extends State<NowPlayingScreen> {
                 ),
                 Expanded(
                   flex: 1,
-                  child: Icon(Icons.equalizer_rounded),
+                  child: Padding(
+                    padding: const EdgeInsets.only(right: 32.0),
+                    child: Icon(Icons.equalizer_rounded),
+                  ),
                 ),
               ],
             ),

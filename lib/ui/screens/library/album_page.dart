@@ -33,20 +33,14 @@ class AlbumPageState extends State<AlbumPage> {
     'Way Too Strong',
   ];
 
-  List<String> loadTracks() {
-    return this.songs;
-  }
-
-  List<TrackListTile> trackTiles() => List<TrackListTile>.generate(
-        10,
+  List<TrackListTile> getTrackTiles() => List.generate(
+        songs.length,
         (index) => TrackListTile(
           thumbnail: Text('${index + 1}'),
           title: Text(songs[index]),
           subtitle: Text(
             'Pyro The Rapper',
-            style: TextStyle(
-              fontSize: 10.0,
-            ),
+            style: TextStyle(fontSize: 11.0),
           ),
           onTap: () {
             Navigator.of(context).pushNamed('/now_playing_screen');
@@ -55,11 +49,14 @@ class AlbumPageState extends State<AlbumPage> {
       );
 
   Widget build(BuildContext context) {
+    const Key metaKey = ValueKey('meta-sliver-list');
+    const Key tracksKey = ValueKey('tracks-sliver-list');
     return Scaffold(
       body: SafeArea(
         child: CustomScrollView(
           slivers: <Widget>[
             SliverAppBar(
+              excludeHeaderSemantics: true,
               expandedHeight: 300.0,
               flexibleSpace: FlexibleSpaceBar(
                 background: Stack(
@@ -129,12 +126,18 @@ class AlbumPageState extends State<AlbumPage> {
                 )
               ],
             ),
-            SliverFillRemaining(
-              child: Column(
-                children: <Widget>[
-                  AlbumMetaTile(),
-                  ...trackTiles(),
-                ],
+            SliverList(
+              key: metaKey,
+              delegate: SliverChildBuilderDelegate(
+                (BuildContext context, int index) {
+                  return Column(
+                    children: [
+                      AlbumMetaTile(),
+                      ...getTrackTiles(),
+                    ],
+                  );
+                },
+                childCount: 1,
               ),
             ),
           ],
