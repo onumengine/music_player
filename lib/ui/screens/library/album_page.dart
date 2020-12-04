@@ -50,7 +50,6 @@ class AlbumPageState extends State<AlbumPage> {
 
   Widget build(BuildContext context) {
     const Key metaKey = ValueKey('meta-sliver-list');
-    const Key tracksKey = ValueKey('tracks-sliver-list');
     return Scaffold(
       body: SafeArea(
         child: CustomScrollView(

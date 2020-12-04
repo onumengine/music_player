@@ -19,7 +19,7 @@ class TrackListTile extends StatelessWidget {
         ],
       ),
       trailing: this.trailing ?? null,
-      onTap: this.onTap,
+      onTap: this.onTap ?? null,
     );
   }
 }
