@@ -28,22 +28,21 @@ class RecentlyAddedScreenState extends State<RecentlyAddedScreen> {
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
-          child: Row(
-            children: <Widget>[
-              ArtistTile(imagePath: 'lib/images/zero.jpg'),
-              ArtistTile(imagePath: 'lib/images/one.jpg'),
-              ArtistTile(imagePath: 'lib/images/two.jpg'),
-            ],
+          child: Container(
+            height: 100,
+            width: double.infinity,
+            child: Row(
+              children: <Widget>[
+                ArtistTile(imagePath: 'lib/images/zero.jpg'),
+                ArtistTile(imagePath: 'lib/images/one.jpg'),
+                ArtistTile(imagePath: 'lib/images/two.jpg'),
+              ],
+            ),
           ),
         ),
         Padding(
           padding: const EdgeInsets.fromLTRB(24.0, 16.0, 16.0, 16.0),
           child: Text('TRACKS'),
-        ),
-        Container(
-          width: double.infinity,
-          height: double.infinity,
-          child: TracksScreen(),
         ),
       ],
     );
