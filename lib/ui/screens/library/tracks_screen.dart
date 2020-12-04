@@ -22,8 +22,115 @@ class TracksScreen extends StatefulWidget {
 }
 
 class TracksScreenState extends State<TracksScreen> {
+  var songs = <String>[
+    'Panic Attack',
+    'Naija Boy',
+    'The Other Day',
+    'Dun Trip',
+    'Opposites Attract',
+    'Bittersweet dream',
+    'I Left You This Note',
+    'Chidinma Song',
+    'Ebiere',
+    'Way Too Strong',
+  ];
+
+  List<TrackListTile> getTrackTiles() => List.generate(
+        songs.length,
+        (index) => TrackListTile(
+          thumbnail: Text('${index + 1}'),
+          title: Text(songs[index]),
+          subtitle: Text(
+            'Pyro The Rapper',
+            style: TextStyle(fontSize: 11.0),
+          ),
+          onTap: () {
+            Navigator.of(context).pushNamed('/now_playing_screen');
+          },
+        ),
+      );
+
   Widget build(BuildContext context) {
-    return Column(
+    return CustomScrollView(
+      slivers: <Widget>[
+        SliverList(
+          delegate: SliverChildBuilderDelegate(
+            (BuildContext context, int index) {
+              return Column(
+                children: <Widget>[
+                  TrackListTile(
+                    thumbnail: Icon(Icons.shuffle_rounded),
+                    title: Text('Shuffle Play'),
+                    subtitle: Text(
+                      'All Tracks',
+                      style: TextStyle(
+                        fontSize: 10.0,
+                      ),
+                    ),
+                    trailing: PopupMenuButton<MenuItems>(
+                      itemBuilder: (BuildContext context) =>
+                          <PopupMenuItem<MenuItems>>[
+                        PopupMenuItem<MenuItems>(
+                          value: MenuItems.refresh,
+                          child: Text('Refresh Library'),
+                        ),
+                        PopupMenuItem<MenuItems>(
+                          value: MenuItems.sortAZ,
+                          child: Text('Sort A-Z'),
+                        ),
+                        PopupMenuItem(
+                          value: MenuItems.sortZA,
+                          child: Text('Sort Z-A'),
+                        ),
+                        PopupMenuItem(
+                          value: MenuItems.sortDA,
+                          child: Text('Sort Date Added'),
+                        ),
+                        PopupMenuItem(
+                          value: MenuItems.sortAlbumAZ,
+                          child: Text('Sort Album A-Z'),
+                        ),
+                        PopupMenuItem(
+                          value: MenuItems.sortAlbumZA,
+                          child: Text('Sort Album Z-A'),
+                        ),
+                        PopupMenuItem(
+                          value: MenuItems.sortArtistAZ,
+                          child: Text('Sort Artist A-Z'),
+                        ),
+                        PopupMenuItem(
+                          value: MenuItems.sortArtistZA,
+                          child: Text('Sort Artist Z-A'),
+                        ),
+                        PopupMenuItem(
+                          value: MenuItems.sortDuration,
+                          child: Text('Sort Duration'),
+                        ),
+                        PopupMenuItem(
+                          value: MenuItems.sortFilePath,
+                          child: Text('Sort File Path'),
+                        ),
+                        PopupMenuItem(
+                          value: MenuItems.sortYearAscending,
+                          child: Text('Sort Year Asc'),
+                        ),
+                        PopupMenuItem(
+                          value: MenuItems.sortYearDescending,
+                          child: Text('Sort Year Desc'),
+                        ),
+                      ],
+                    ),
+                  ),
+                  ...getTrackTiles(),
+                ],
+              );
+            },
+            childCount: 1,
+          ),
+        ),
+      ],
+    );
+/*    return Column(
       children: <Widget>[
         TrackListTile(
           thumbnail: Icon(Icons.shuffle_rounded),
@@ -115,6 +222,6 @@ class TracksScreenState extends State<TracksScreen> {
           ),
         ),
       ],
-    );
+    ); */
   }
 }
