@@ -3,13 +3,14 @@ import 'package:music_player/ui/screens/library/artist_page.dart';
 import 'package:music_player/ui/screens/library/album_page.dart';
 import 'package:music_player/ui/screens/library/genre_page.dart';
 import 'package:music_player/ui/screens/library/now_playing_screen.dart';
+import 'package:music_player/ui/screens/playlists/playlist_page.dart';
 import 'package:music_player/ui/screens/playlists/playlists_home_screen.dart';
-import 'ui/components/drawer_layout.dart';
-import 'ui/screens/library/tracks_screen.dart';
-import 'ui/screens/library/albums_screen.dart';
-import 'ui/screens/library/artists_screen.dart';
-import 'ui/screens/library/genres_screen.dart';
-import 'ui/screens/settings/settings_screen.dart';
+import 'package:music_player/ui/components/drawer_layout.dart';
+import 'package:music_player/ui/screens/library/tracks_screen.dart';
+import 'package:music_player/ui/screens/library/albums_screen.dart';
+import 'package:music_player/ui/screens/library/artists_screen.dart';
+import 'package:music_player/ui/screens/library/genres_screen.dart';
+import 'package:music_player/ui/screens/settings/settings_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -33,6 +34,7 @@ class MyApp extends StatelessWidget {
         '/album_page': (context) => AlbumPage(),
         '/now_playing_screen': (context) => NowPlayingScreen(),
         '/genre_page': (context) => GenrePage(),
+        '/playlist_page': (context) => PlaylistPage(),
       },
     );
   }

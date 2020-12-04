@@ -26,6 +26,9 @@ class PlaylistTileState extends State<PlaylistTile> {
           fontSize: 12.0,
         ),
       ),
+      onTap: () {
+        Navigator.of(context).pushNamed('/playlist_page');
+      },
     );
   }
 }
