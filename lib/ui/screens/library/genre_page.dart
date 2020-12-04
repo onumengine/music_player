@@ -159,7 +159,7 @@ class GenrePageState extends State<GenrePage> {
             ),
           ),
           body: TabBarView(
-            children: [
+            children: <Widget>[
               TracksScreen(),
               AlbumsScreen(),
               ArtistsScreen(),
