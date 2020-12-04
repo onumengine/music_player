@@ -131,7 +131,7 @@ class AlbumPageState extends State<AlbumPage> {
               delegate: SliverChildBuilderDelegate(
                 (BuildContext context, int index) {
                   return Column(
-                    children: [
+                    children: <Widget>[
                       AlbumMetaTile(),
                       ...getTrackTiles(),
                     ],

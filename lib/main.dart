@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:music_player/ui/screens/library/artist_page.dart';
 import 'package:music_player/ui/screens/library/album_page.dart';
+import 'package:music_player/ui/screens/library/genre_page.dart';
 import 'package:music_player/ui/screens/library/now_playing_screen.dart';
 import 'package:music_player/ui/screens/playlists/playlists_home_screen.dart';
 import 'ui/components/drawer_layout.dart';
@@ -31,6 +32,7 @@ class MyApp extends StatelessWidget {
         '/artist_page': (context) => ArtistPage(),
         '/album_page': (context) => AlbumPage(),
         '/now_playing_screen': (context) => NowPlayingScreen(),
+        '/genre_page': (context) => GenrePage(),
       },
     );
   }
