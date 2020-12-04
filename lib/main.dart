@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:music_player/ui/screens/library/artist_page.dart';
 import 'package:music_player/ui/screens/library/album_page.dart';
 import 'package:music_player/ui/screens/library/genre_page.dart';
-import 'package:music_player/ui/screens/library/now_playing_screen.dart';
+import 'package:music_player/ui/screens/now_playing_screen.dart';
 import 'package:music_player/ui/screens/playlists/playlist_page.dart';
 import 'package:music_player/ui/screens/playlists/playlists_home_screen.dart';
 import 'package:music_player/ui/components/drawer_layout.dart';

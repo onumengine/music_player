@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:music_player/ui/components/most_played_tile.dart';
 import 'package:music_player/ui/components/track_listtile.dart';
 
 class MostPlayedScreen extends StatefulWidget {
