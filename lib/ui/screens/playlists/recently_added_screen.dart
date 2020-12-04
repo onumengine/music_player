@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:music_player/ui/components/artist_tile.dart';
+import 'package:music_player/ui/components/recently_added_banner.dart';
 import 'package:music_player/ui/screens/library/tracks_screen.dart';
 
 class RecentlyAddedScreen extends StatefulWidget {
@@ -28,17 +29,7 @@ class RecentlyAddedScreenState extends State<RecentlyAddedScreen> {
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
-          child: Container(
-            height: 100,
-            width: double.infinity,
-            child: Row(
-              children: <Widget>[
-                ArtistTile(imagePath: 'lib/images/zero.jpg'),
-                ArtistTile(imagePath: 'lib/images/one.jpg'),
-                ArtistTile(imagePath: 'lib/images/two.jpg'),
-              ],
-            ),
-          ),
+          child: RecentlyAddedBanner(),
         ),
         Padding(
           padding: const EdgeInsets.fromLTRB(24.0, 16.0, 16.0, 16.0),

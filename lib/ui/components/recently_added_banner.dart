@@ -8,7 +8,7 @@ class RecentlyAddedBanner extends StatefulWidget {
 class RecentlyAddedBannerState extends State<RecentlyAddedBanner> {
   Widget build(BuildContext context) {
     return Container(
-      height: 100,
+      height: 150,
       width: double.infinity,
       child: GridView.count(
         crossAxisCount: 3,
