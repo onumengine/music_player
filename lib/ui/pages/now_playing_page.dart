@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class NowPlayingScreen extends StatefulWidget {
-  NowPlayingScreenState createState() => NowPlayingScreenState();
+class NowPlayingPage extends StatefulWidget {
+  NowPlayingPageState createState() => NowPlayingPageState();
 }
 
-class NowPlayingScreenState extends State<NowPlayingScreen> {
+class NowPlayingPageState extends State<NowPlayingPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(

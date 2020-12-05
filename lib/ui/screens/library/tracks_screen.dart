@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:music_player/ui/components/shuffle_tile.dart';
-import 'package:music_player/ui/components/track_listtile.dart';
+import 'package:music_player/ui/atoms/shuffle_tile.dart';
+import 'package:music_player/ui/atoms/track_listtile.dart';
 
 class TracksScreen extends StatefulWidget {
   final Widget thumbnail;

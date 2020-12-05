@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:music_player/ui/components/artist_tile.dart';
+import 'package:music_player/ui/atoms/artist_tile.dart';
 
 class RecentlyAddedBanner extends StatefulWidget {
   RecentlyAddedBannerState createState() => RecentlyAddedBannerState();

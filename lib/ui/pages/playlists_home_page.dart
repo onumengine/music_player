@@ -5,7 +5,7 @@ import 'package:music_player/ui/screens/playlists/most_played_screen.dart';
 import 'package:music_player/ui/screens/playlists/playlists_screen.dart';
 import 'package:music_player/ui/screens/playlists/recently_added_screen.dart';
 
-class PlaylistsHome extends StatelessWidget {
+class PlaylistsHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: DefaultTabController(

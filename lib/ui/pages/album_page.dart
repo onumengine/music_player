@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:music_player/ui/components/album_meta_tile.dart';
-import 'package:music_player/ui/components/track_listtile.dart';
+import 'package:music_player/ui/atoms/album_meta_tile.dart';
+import 'package:music_player/ui/atoms/track_listtile.dart';
 
 enum AlbumActions {
   sortAlbumTrackNumber,

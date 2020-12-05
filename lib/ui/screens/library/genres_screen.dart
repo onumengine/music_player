@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../components/genres_tile.dart';
+import '../../atoms/genres_tile.dart';
 
 class GenresScreen extends StatefulWidget {
   GenresScreenState createState() => GenresScreenState();

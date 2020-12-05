@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:music_player/ui/components/track_listtile.dart';
+import 'package:music_player/ui/atoms/track_listtile.dart';
 
-class SettingsScreen extends StatelessWidget {
+class SettingsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(

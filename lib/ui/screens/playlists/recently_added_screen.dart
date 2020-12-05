@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:music_player/ui/components/recently_added_banner.dart';
+import 'package:music_player/ui/molecules/recently_added_banner.dart';
 import 'package:music_player/ui/screens/library/tracks_screen.dart';
 
 class RecentlyAddedScreen extends StatefulWidget {

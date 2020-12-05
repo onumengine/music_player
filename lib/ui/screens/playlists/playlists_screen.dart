@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:music_player/ui/components/playlist_tile.dart';
+import 'package:music_player/ui/atoms/playlist_tile.dart';
 
 class PlaylistsScreen extends StatefulWidget {
   PlaylistsScreenState createState() => PlaylistsScreenState();
