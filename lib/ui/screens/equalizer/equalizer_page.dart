@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:music_player/ui/screens/equalizer/equalizer_screen.dart';
+import 'package:music_player/ui/screens/equalizer/sound_effects_screen.dart';
 
 class EqualizerPage extends StatelessWidget {
   Widget build(BuildContext context) {
@@ -22,7 +24,10 @@ class EqualizerPage extends StatelessWidget {
           ],
         ),
         body: TabBarView(
-          children: <Widget>[],
+          children: <Widget>[
+            EqualizerScreen(),
+            SoundEffectsScreen(),
+          ],
         ),
       ),
     );
