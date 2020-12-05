@@ -54,8 +54,12 @@ class NowPlayingScreenState extends State<NowPlayingScreen> {
                 ),
               ],
             ),
-            Image(
-              image: AssetImage('lib/images/zero.jpg'),
+            Container(
+              height: 50,
+              child: Image.asset(
+                'lib/images/zero.jpg',
+                fit: BoxFit.cover,
+              ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),

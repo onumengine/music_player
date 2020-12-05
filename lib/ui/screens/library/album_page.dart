@@ -103,7 +103,7 @@ class AlbumPageState extends State<AlbumPage> {
                     ),
                     PopupMenuItem<AlbumActions>(
                       value: AlbumActions.sortArtistZA,
-                      child: Text('SOrt Artist Z-A'),
+                      child: Text('Sort Artist Z-A'),
                     ),
                     PopupMenuItem<AlbumActions>(
                       value: AlbumActions.sortDuration,

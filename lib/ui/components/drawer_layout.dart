@@ -56,6 +56,10 @@ class DrawerLayout extends StatelessWidget {
           ),
           ListTile(
             title: Text('Equalizer'),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.of(context).pushNamed('/equalizer_page');
+            },
           ),
           ListTile(
             title: Text('Settings'),

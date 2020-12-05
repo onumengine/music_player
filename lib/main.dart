@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:music_player/ui/screens/equalizer/equalizer_page.dart';
 import 'package:music_player/ui/screens/library/artist_page.dart';
 import 'package:music_player/ui/screens/library/album_page.dart';
 import 'package:music_player/ui/screens/library/genre_page.dart';
@@ -35,6 +36,7 @@ class MyApp extends StatelessWidget {
         '/now_playing_screen': (context) => NowPlayingScreen(),
         '/genre_page': (context) => GenrePage(),
         '/playlist_page': (context) => PlaylistPage(),
+        '/equalizer_page': (context) => EqualizerPage(),
       },
     );
   }
