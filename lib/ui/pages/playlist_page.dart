@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:music_player/ui/atoms/track_listtile.dart';
 import 'package:music_player/ui/atoms/shuffle_tile.dart';
-import 'package:music_player/ui/components/playlist_banner.dart';
+import 'package:music_player/ui/molecules/playlist_banner.dart';
 
 enum PlaylistMenu {
   multiSelect,
