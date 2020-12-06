@@ -8,6 +8,7 @@ class SettingsPage extends StatelessWidget {
         child: ListView(
           children: <Widget>[
             AppBar(
+              elevation: 1.0,
               iconTheme: IconThemeData(color: Colors.black87),
               backgroundColor: Colors.white,
               automaticallyImplyLeading: true,

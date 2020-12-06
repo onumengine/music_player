@@ -8,7 +8,14 @@ class EqualizerPage extends StatelessWidget {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
+          elevation: 1.0,
+          backgroundColor: Colors.white,
+          iconTheme: IconThemeData(color: Colors.black45),
+          actionsIconTheme: IconThemeData(color: Colors.black87),
           title: TabBar(
+            indicatorColor: Colors.white,
+            labelColor: Colors.black87,
+            unselectedLabelColor: Colors.black45,
             tabs: <Tab>[
               Tab(
                 text: 'EQUALIZER',

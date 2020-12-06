@@ -57,7 +57,7 @@ class MyHomePageState extends State<MyHomePage> {
           iconTheme: IconThemeData(color: Colors.black45),
           actionsIconTheme: IconThemeData(color: Colors.black87),
           backgroundColor: Colors.white,
-          elevation: 0,
+          elevation: 1.0,
           title: TabBar(
             indicatorColor: Colors.white,
             labelColor: Colors.black87,

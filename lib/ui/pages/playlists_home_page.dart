@@ -13,7 +13,7 @@ class PlaylistsHomePage extends StatelessWidget {
         length: 5,
         child: Scaffold(
           appBar: AppBar(
-            elevation: 0.0,
+            elevation: 1.0,
             backgroundColor: Colors.white,
             iconTheme: IconThemeData(color: Colors.black26),
             actionsIconTheme: IconThemeData(color: Colors.black87),

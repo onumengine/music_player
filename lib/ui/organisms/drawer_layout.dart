@@ -16,7 +16,9 @@ class DrawerLayout extends StatelessWidget {
                 alignment: AlignmentDirectional.bottomCenter,
                 children: <Widget>[
                   Center(
-                    child: Image.asset('lib/images/four.jpg'),
+                    child: Image.asset(
+                      'lib/images/four.jpg',
+                    ),
                   ),
                   Positioned(
                     bottom: 0,
