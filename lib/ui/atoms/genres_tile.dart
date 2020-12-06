@@ -13,10 +13,12 @@ class GenresTile extends StatelessWidget {
             children: <Widget>[
               Container(
                 decoration: BoxDecoration(
-                  color: Colors.teal.shade100,
-                  border: Border.all(
-                    color: Colors.white,
-                  ),
+                  color: Colors.black87,
+                ),
+                child: ListView.builder(
+                  itemCount: 1,
+                  itemBuilder: (context, index) =>
+                      Image.asset('lib/images/four.jpg'),
                 ),
               ),
               Padding(
@@ -24,7 +26,7 @@ class GenresTile extends StatelessWidget {
                 child: Text(
                   'Hip-hop',
                   style: TextStyle(
-                    color: Colors.black54,
+                    color: Colors.white,
                     fontSize: 20.0,
                   ),
                 ),
