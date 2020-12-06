@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:music_player/ui/molecules/double_regulator.dart';
 import 'package:music_player/ui/molecules/single_regulator.dart';
+import 'package:music_player/ui/molecules/volume_regulator.dart';
 
 class SoundEffectsScreen extends StatefulWidget {
   SoundEffectsScreenState createState() => SoundEffectsScreenState();
@@ -41,6 +42,7 @@ class SoundEffectsScreenState extends State<SoundEffectsScreen> {
           unit: '%',
           maxLevel: 100.0,
         ),
+        VolumeRegulator(),
         SingleRegulator(
           label: Text(
             'AMPLIFIER',

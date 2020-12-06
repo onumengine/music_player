@@ -46,7 +46,7 @@ class SingleRegulatorState extends State<SingleRegulator> {
                 child: Container(
                   child: Slider(
                     min: 0.0,
-                    max: 100.0,
+                    max: maxLevel,
                     value: currentLevel,
                     onChanged: (value) {
                       setState(() {
