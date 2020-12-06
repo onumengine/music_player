@@ -1,19 +1,24 @@
 import 'package:flutter/material.dart';
 
-class SoundRegulator extends StatefulWidget {
+class SingleRegulator extends StatefulWidget {
   final Widget label;
+  final String unit;
+  final double maxLevel;
 
-  SoundRegulator({this.label});
+  SingleRegulator({this.label, this.unit, this.maxLevel});
 
-  SoundRegulatorState createState() => SoundRegulatorState(label: this.label);
+  SingleRegulatorState createState() => SingleRegulatorState(
+      label: this.label, unit: this.unit, maxLevel: this.maxLevel);
 }
 
-class SoundRegulatorState extends State<SoundRegulator> {
+class SingleRegulatorState extends State<SingleRegulator> {
   final Widget label;
+  final String unit;
+  final double maxLevel;
   double currentLevel = 0.0;
   bool switchValue = false;
 
-  SoundRegulatorState({this.label});
+  SingleRegulatorState({this.label, this.unit, this.maxLevel});
 
   Widget build(BuildContext context) {
     return Padding(
@@ -53,7 +58,7 @@ class SoundRegulatorState extends State<SoundRegulator> {
               ),
               Padding(
                 padding: const EdgeInsets.only(right: 24.0),
-                child: Text('${currentLevel.round().toString()}%'),
+                child: Text('${currentLevel.round().toString()}$unit'),
               )
             ],
           ),
