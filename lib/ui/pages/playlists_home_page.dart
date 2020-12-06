@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:music_player/ui/organisms/drawer_layout.dart';
 import 'package:music_player/ui/screens/library/tracks_screen.dart';
 import 'package:music_player/ui/screens/playlists/favorites_screen.dart';
 import 'package:music_player/ui/screens/playlists/most_played_screen.dart';
@@ -12,10 +13,15 @@ class PlaylistsHomePage extends StatelessWidget {
         length: 5,
         child: Scaffold(
           appBar: AppBar(
+            elevation: 0.0,
+            backgroundColor: Colors.white,
+            iconTheme: IconThemeData(color: Colors.black26),
+            actionsIconTheme: IconThemeData(color: Colors.black87),
             title: TabBar(
+              indicatorColor: Colors.white,
               isScrollable: true,
-              labelColor: Colors.black54,
-              unselectedLabelColor: Colors.black12,
+              labelColor: Colors.black87,
+              unselectedLabelColor: Colors.black26,
               tabs: <Tab>[
                 Tab(
                   text: 'PLAYLISTS',
@@ -43,6 +49,7 @@ class PlaylistsHomePage extends StatelessWidget {
               ),
             ],
           ),
+          drawer: DrawerLayout(),
           body: TabBarView(
             children: <Widget>[
               PlaylistsScreen(),

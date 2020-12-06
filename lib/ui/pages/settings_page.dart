@@ -8,8 +8,15 @@ class SettingsPage extends StatelessWidget {
         child: ListView(
           children: <Widget>[
             AppBar(
+              iconTheme: IconThemeData(color: Colors.black87),
+              backgroundColor: Colors.white,
               automaticallyImplyLeading: true,
-              title: Text('Settings'),
+              title: Text(
+                'Settings',
+                style: TextStyle(
+                  color: Colors.black87,
+                ),
+              ),
             ),
             Padding(
               padding:

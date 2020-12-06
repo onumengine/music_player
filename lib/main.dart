@@ -54,9 +54,18 @@ class MyHomePageState extends State<MyHomePage> {
       length: 4,
       child: Scaffold(
         appBar: AppBar(
+          iconTheme: IconThemeData(color: Colors.black45),
+          actionsIconTheme: IconThemeData(color: Colors.black87),
+          backgroundColor: Colors.white,
+          elevation: 0,
           title: TabBar(
+            indicatorColor: Colors.white,
+            labelColor: Colors.black87,
+            unselectedLabelColor: Colors.black45,
             isScrollable: true,
-            labelStyle: TextStyle(fontWeight: FontWeight.bold),
+            labelStyle: TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
             tabs: <Tab>[
               Tab(
                 text: 'TRACKS',
@@ -86,13 +95,15 @@ class MyHomePageState extends State<MyHomePage> {
           ],
         ),
         drawer: DrawerLayout(),
-        body: TabBarView(
-          children: <Widget>[
-            TracksScreen(),
-            ArtistsScreen(),
-            AlbumsScreen(),
-            GenresScreen(),
-          ],
+        body: SafeArea(
+          child: TabBarView(
+            children: <Widget>[
+              TracksScreen(),
+              ArtistsScreen(),
+              AlbumsScreen(),
+              GenresScreen(),
+            ],
+          ),
         ),
       ),
     );
