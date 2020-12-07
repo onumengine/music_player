@@ -20,13 +20,8 @@ class ShuffleTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return TrackListTile(
       thumbnail: Icon(Icons.shuffle_rounded),
-      title: Text('Shuffle Play'),
-      subtitle: Text(
-        'All Tracks',
-        style: TextStyle(
-          fontSize: 10.0,
-        ),
-      ),
+      title: 'Shuffle Play',
+      subtitle: 'All Tracks',
       trailing: PopupMenuButton<MenuItems>(
         itemBuilder: (BuildContext context) => <PopupMenuItem<MenuItems>>[
           PopupMenuItem<MenuItems>(

@@ -38,7 +38,10 @@ class MyApp extends StatelessWidget {
           headline4: TextStyle(), //style for plain unselected tab label
           headline5: TextStyle(), //style for appbar titles
           subtitle1: TextStyle(), //style for song titlesin song listtile
-          subtitle2: TextStyle(), //style for artist name in song listtile
+          subtitle2: TextStyle(
+            color: Colors.black54,
+            fontSize: 11.0,
+          ), //style for artist name in song listtile
         ),
       ),
       debugShowCheckedModeBanner: false,

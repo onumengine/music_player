@@ -37,11 +37,8 @@ class AlbumPageState extends State<AlbumPage> {
         songs.length,
         (index) => TrackListTile(
           thumbnail: Text('${index + 1}'),
-          title: Text(songs[index]),
-          subtitle: Text(
-            'Pyro The Rapper',
-            style: TextStyle(fontSize: 11.0),
-          ),
+          title: songs[index],
+          subtitle: 'Pyro The Rapper',
           onTap: () {
             Navigator.of(context).pushNamed('/now_playing_screen');
           },

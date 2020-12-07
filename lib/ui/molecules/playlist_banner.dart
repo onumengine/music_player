@@ -10,30 +10,31 @@ class PlaylistBannerState extends State<PlaylistBanner> {
       height: 200,
       child: GridView.count(
         crossAxisCount: 3,
+        childAspectRatio: 1.3,
         addAutomaticKeepAlives: false,
         children: <Widget>[
           Image.asset(
-            'lib/images/one.jpg',
+            'lib/assets/images/1.png',
             fit: BoxFit.cover,
           ),
           Image.asset(
-            'lib/images/one.jpg',
+            'lib/assets/images/2.png',
             fit: BoxFit.cover,
           ),
           Image.asset(
-            'lib/images/one.jpg',
+            'lib/assets/images/3.png',
             fit: BoxFit.cover,
           ),
           Image.asset(
-            'lib/images/one.jpg',
+            'lib/assets/images/6.png',
             fit: BoxFit.cover,
           ),
           Image.asset(
-            'lib/images/one.jpg',
+            'lib/assets/images/10.png',
             fit: BoxFit.cover,
           ),
           Image.asset(
-            'lib/images/one.jpg',
+            'lib/assets/images/11.png',
             fit: BoxFit.cover,
           ),
         ],

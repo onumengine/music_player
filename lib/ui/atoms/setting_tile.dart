@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class TrackListTile extends StatelessWidget {
+class SettingTile extends StatelessWidget {
   final Widget thumbnail, trailing;
   final String title, subtitle;
   final GestureTapCallback onTap;
 
-  const TrackListTile(
+  const SettingTile(
       {this.thumbnail, this.title, this.subtitle, this.trailing, this.onTap});
 
   Widget build(BuildContext context) {
@@ -17,7 +17,9 @@ class TrackListTile extends StatelessWidget {
           Text(this.title),
           Text(
             this.subtitle,
-            style: Theme.of(context).textTheme.subtitle2,
+            style: TextStyle(
+              fontSize: 12.0,
+            ),
           ),
         ],
       ),

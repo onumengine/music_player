@@ -14,13 +14,8 @@ class MostPlayedScreenState extends State<MostPlayedScreen> {
             (BuildContext context, int index) {
               return TrackListTile(
                 thumbnail: Icon(Icons.music_note_rounded),
-                title: Text('Misdirection'),
-                subtitle: Text(
-                  'Bleede',
-                  style: TextStyle(
-                    fontSize: 11.0,
-                  ),
-                ),
+                title: 'Misdirection',
+                subtitle: 'Bleede',
               );
             },
             childCount: 20,

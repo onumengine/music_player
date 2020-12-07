@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:music_player/ui/atoms/track_listtile.dart';
+import 'package:music_player/ui/atoms/setting_tile.dart';
 
 class SettingsPage extends StatelessWidget {
   Widget build(BuildContext context) {
@@ -30,15 +30,13 @@ class SettingsPage extends StatelessWidget {
                 ),
               ),
             ),
-            TrackListTile(
+            SettingTile(
               thumbnail: Icon(
                 Icons.brush_rounded,
               ),
-              title: Text('Styling'),
-              subtitle: Text(
-                'Colors, Font, Animations',
-                style: TextStyle(fontSize: 12.0),
-              ),
+              title: 'Styling',
+              subtitle: 'Colors, Font, Animations',
+              //style: TextStyle(fontSize: 12.0),
             ),
             ListTile(
               leading: Icon(
@@ -46,45 +44,35 @@ class SettingsPage extends StatelessWidget {
               ),
               title: Text('Now Playing'),
             ),
-            TrackListTile(
+            SettingTile(
               thumbnail: Icon(Icons.image_rounded),
-              title: Text('Interface'),
-              subtitle: Text(
-                'Sliding menu, Library',
-                style: TextStyle(fontSize: 12.0),
-              ),
+              title: 'Interface',
+              subtitle: 'Sliding menu, Library',
+              //style: TextStyle(fontSize: 12.0),
             ),
-            TrackListTile(
+            SettingTile(
               thumbnail: Icon(Icons.headset_rounded),
-              title: Text('Audio'),
-              subtitle: Text(
-                'Gapless, Crossfading, Equalizer, Repeat',
-                style: TextStyle(fontSize: 12.0),
-              ),
+              title: 'Audio',
+              subtitle: 'Gapless, Crossfading, Equalizer, Repeat',
+              //style: TextStyle(fontSize: 12.0),
             ),
-            TrackListTile(
+            SettingTile(
               thumbnail: Icon(Icons.contacts_rounded),
-              title: Text('Metadata'),
-              subtitle: Text(
-                'Album covers, Artist images, Scrobble, Library',
-                style: TextStyle(fontSize: 12.0),
-              ),
+              title: 'Metadata',
+              subtitle: 'Album covers, Artist images, Scrobble, Library',
+              //style: TextStyle(fontSize: 12.0),
             ),
-            TrackListTile(
+            SettingTile(
               thumbnail: Icon(Icons.settings_remote_rounded),
-              title: Text('Remote'),
-              subtitle: Text(
-                'Notification & Lockscreen',
-                style: TextStyle(fontSize: 12.0),
-              ),
+              title: 'Remote',
+              subtitle: 'Notification & Lockscreen',
+              //style: TextStyle(fontSize: 12.0),
             ),
-            TrackListTile(
+            SettingTile(
               thumbnail: Icon(Icons.android_rounded),
-              title: Text('Advanced'),
-              subtitle: Text(
-                'Development, Beta features',
-                style: TextStyle(fontSize: 12.0),
-              ),
+              title: 'Advanced',
+              subtitle: 'Development, Beta features',
+              //style: TextStyle(fontSize: 12.0),
             ),
             Padding(
               padding:
@@ -97,29 +85,23 @@ class SettingsPage extends StatelessWidget {
                 ),
               ),
             ),
-            TrackListTile(
+            SettingTile(
               thumbnail: Icon(Icons.help_rounded),
-              title: Text('FAQ'),
-              subtitle: Text(
-                'Need help? Check here first',
-                style: TextStyle(fontSize: 12.0),
-              ),
+              title: 'FAQ',
+              subtitle: 'Need help? Check here first',
+              //style: TextStyle(fontSize: 12.0),
             ),
-            TrackListTile(
+            SettingTile(
               thumbnail: Icon(Icons.notes_rounded),
-              title: Text('Changelog'),
-              subtitle: Text(
-                'Click to open changelog',
-                style: TextStyle(fontSize: 12.0),
-              ),
+              title: 'Changelog',
+              subtitle: 'Click to open changelog',
+              //style: TextStyle(fontSize: 12.0),
             ),
-            TrackListTile(
+            SettingTile(
               thumbnail: Icon(Icons.info_rounded),
-              title: Text('About'),
-              subtitle: Text(
-                'MusicPlayer Version 2.43',
-                style: TextStyle(fontSize: 12.0),
-              ),
+              title: 'About',
+              subtitle: 'MusicPlayer Version 2.43',
+              //style: TextStyle(fontSize: 12.0),
             ),
           ],
         ),
