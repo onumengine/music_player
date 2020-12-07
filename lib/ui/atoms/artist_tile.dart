@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ArtistTile extends StatelessWidget {
-  ArtistTile({this.imagePath = 'lib/images/clip.png'});
+  ArtistTile({this.imagePath = 'lib/assets/images/3.png'});
 
   final String imagePath;
 
@@ -14,8 +14,11 @@ class ArtistTile extends StatelessWidget {
           children: <Widget>[
             Image.asset(imagePath),
             Padding(
-              padding: EdgeInsets.all(4.0),
-              child: Text('Pyro The Rapper'),
+              padding: EdgeInsets.all(8.0),
+              child: Text(
+                'Pyro The Rapper',
+                style: TextStyle(color: Colors.white),
+              ),
             ),
           ],
         ),

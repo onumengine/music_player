@@ -19,9 +19,11 @@ class ArtistPageState extends State<ArtistPage> {
               title: Text('Pyro The Rapper'),
               pinned: true,
               flexibleSpace: FlexibleSpaceBar(
-                background: Image.asset('lib/images/map.jpg', fit: BoxFit.fill),
+                background:
+                    Image.asset('lib/assets/images/3.png', fit: BoxFit.fill),
               ),
               bottom: TabBar(
+                indicatorColor: Colors.white,
                 tabs: <Tab>[
                   Tab(text: 'ALBUMS'),
                   Tab(text: 'BIO'),

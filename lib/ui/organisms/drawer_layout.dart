@@ -17,7 +17,7 @@ class DrawerLayout extends StatelessWidget {
                 children: <Widget>[
                   Center(
                     child: Image.asset(
-                      'lib/images/four.jpg',
+                      'lib/assets/images/nfx1.png',
                     ),
                   ),
                   Positioned(

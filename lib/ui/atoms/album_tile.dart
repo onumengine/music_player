@@ -5,7 +5,7 @@ class AlbumTile extends StatelessWidget {
   final String imageUrl, albumTitle, artist;
 
   AlbumTile(
-      {this.imageUrl = 'lib/images/clip.png',
+      {this.imageUrl = 'lib/assets/images/6.png',
       this.albumTitle = 'My Ted Talk',
       this.artist = 'Pyro The Rapper',
       this.onTap});
@@ -22,16 +22,13 @@ class AlbumTile extends StatelessWidget {
               decoration: BoxDecoration(
                 color: Colors.blue,
               ),
-              child: Image.asset(this.imageUrl),
+              child: Image.asset(this.imageUrl, fit: BoxFit.cover),
             ),
           ),
           Expanded(
             flex: 1,
             child: Container(
               decoration: BoxDecoration(
-                border: Border.all(
-                  color: Colors.purpleAccent,
-                ),
                 color: Colors.purpleAccent,
               ),
               child: Column(

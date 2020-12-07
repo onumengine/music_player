@@ -5,6 +5,7 @@ class NowPlayingPage extends StatefulWidget {
 }
 
 class NowPlayingPageState extends State<NowPlayingPage> {
+  double sliderValue = 0.0;
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
@@ -54,12 +55,9 @@ class NowPlayingPageState extends State<NowPlayingPage> {
                 ),
               ],
             ),
-            Container(
-              height: 50,
-              child: Image.asset(
-                'lib/images/zero.jpg',
-                fit: BoxFit.cover,
-              ),
+            Image.asset(
+              'lib/assets/images/3.png',
+              fit: BoxFit.cover,
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
@@ -84,10 +82,12 @@ class NowPlayingPageState extends State<NowPlayingPage> {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    Expanded(
                       child: Slider(
-                        value: 0.5,
-                        onChanged: null,
+                        value: sliderValue,
+                        onChanged: (newValue) {
+                          setState(() => sliderValue = newValue);
+                        },
                       ),
                     ),
                     Padding(

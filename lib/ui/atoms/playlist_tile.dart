@@ -8,6 +8,7 @@ class PlaylistTileState extends State<PlaylistTile> {
   Widget build(BuildContext context) {
     return ListTile(
       leading: Stack(
+        alignment: Alignment.centerLeft,
         children: [
           Image.asset('lib/images/four.jpg'),
           Image.asset('lib/images/three.jpg'),

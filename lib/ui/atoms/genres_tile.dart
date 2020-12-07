@@ -18,7 +18,7 @@ class GenresTile extends StatelessWidget {
                 child: ListView.builder(
                   itemCount: 1,
                   itemBuilder: (context, index) =>
-                      Image.asset('lib/images/four.jpg'),
+                      Image.asset('lib/assets/images/10.png'),
                 ),
               ),
               Padding(

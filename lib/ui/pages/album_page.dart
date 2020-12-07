@@ -63,8 +63,8 @@ class AlbumPageState extends State<AlbumPage> {
                   overflow: Overflow.visible,
                   children: <Widget>[
                     Image.asset(
-                      'lib/images/four.jpg',
-                      fit: BoxFit.cover,
+                      'lib/assets/images/3.png',
+                      fit: BoxFit.fitWidth,
                     ),
                     Positioned(
                       bottom: 30,

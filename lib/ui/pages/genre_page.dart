@@ -134,37 +134,50 @@ class GenrePageState extends State<GenrePage> {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
-          appBar: AppBar(
-            title: Text('Hip-hop'),
-            actions: [
-              IconButton(
-                icon: Icon(Icons.menu_rounded),
-                onPressed: () {
-                  displayDialog();
-                },
-              ),
-            ],
-            bottom: TabBar(
-              tabs: <Tab>[
-                Tab(
-                  text: 'TRACKS',
-                ),
-                Tab(
-                  text: 'ALBUMS',
-                ),
-                Tab(
-                  text: 'ARTISTS',
-                ),
-              ],
+        appBar: AppBar(
+          elevation: 1.0,
+          backgroundColor: Colors.white,
+          iconTheme: IconThemeData(color: Colors.black45),
+          actionsIconTheme: IconThemeData(color: Colors.black87),
+          title: Text(
+            'Hip-hop',
+            style: TextStyle(
+              color: Colors.black87,
             ),
           ),
-          body: TabBarView(
-            children: <Widget>[
-              TracksScreen(),
-              AlbumsScreen(),
-              ArtistsScreen(),
+          actions: [
+            IconButton(
+              icon: Icon(Icons.menu_rounded),
+              onPressed: () {
+                displayDialog();
+              },
+            ),
+          ],
+          bottom: TabBar(
+            labelColor: Colors.black87,
+            unselectedLabelColor: Colors.black45,
+            labelStyle: TextStyle(fontWeight: FontWeight.bold),
+            tabs: <Tab>[
+              Tab(
+                text: 'TRACKS',
+              ),
+              Tab(
+                text: 'ALBUMS',
+              ),
+              Tab(
+                text: 'ARTISTS',
+              ),
             ],
-          )),
+          ),
+        ),
+        body: TabBarView(
+          children: <Widget>[
+            TracksScreen(),
+            AlbumsScreen(),
+            ArtistsScreen(),
+          ],
+        ),
+      ),
     );
   }
 }
