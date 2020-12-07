@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:music_player/ui/atoms/track_listtile.dart';
 
 class DrawerLayout extends StatelessWidget {
   final int _chartPosition = 1;
@@ -86,35 +87,40 @@ class DrawerLayout extends StatelessWidget {
                 ),
               ),
             ),
-            ListTile(
-              leading: Icon(
+            TrackListTile(
+              thumbnail: Icon(
                 Icons.music_note_rounded,
               ),
-              title: Text('Most played music number $_chartPosition'),
+              title: 'Panic Attack',
+              subtitle: 'Pyro The Rapper',
             ),
-            ListTile(
-              leading: Icon(
+            TrackListTile(
+              thumbnail: Icon(
                 Icons.music_note_rounded,
               ),
-              title: Text('Most played music number ${_chartPosition + 1}'),
+              title: 'Naija Boy',
+              subtitle: 'Pyro The Rapper',
             ),
-            ListTile(
-              leading: Icon(
+            TrackListTile(
+              thumbnail: Icon(
                 Icons.music_note_rounded,
               ),
-              title: Text('Most played music number ${_chartPosition + 2}'),
+              title: 'The Other Day',
+              subtitle: 'Pyro The Rapper',
             ),
-            ListTile(
-              leading: Icon(
+            TrackListTile(
+              thumbnail: Icon(
                 Icons.music_note_rounded,
               ),
-              title: Text('Most played music number ${_chartPosition + 3}'),
+              title: 'Dun Trip',
+              subtitle: 'Pyro The Rapper',
             ),
-            ListTile(
-              leading: Icon(
+            TrackListTile(
+              thumbnail: Icon(
                 Icons.music_note_rounded,
               ),
-              title: Text('Most played music number ${_chartPosition + 4}'),
+              title: 'Bittersweet Dream',
+              subtitle: 'Pyro The Rapper',
             ),
           ],
         ),
