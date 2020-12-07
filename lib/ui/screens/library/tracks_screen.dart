@@ -1,3 +1,4 @@
+import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:flutter/material.dart';
 import 'package:music_player/ui/atoms/shuffle_tile.dart';
 import 'package:music_player/ui/atoms/track_listtile.dart';
@@ -27,6 +28,11 @@ class TracksScreenState extends State<TracksScreen> {
     'Ebiere',
     'Way Too Strong',
   ];
+
+  void playLilDurk() {
+    final musicPlayer = AssetsAudioPlayer();
+    musicPlayer.open(Audio('lib/assets/audio/248.mp3'));
+  }
 
   List<TrackListTile> getTrackTiles() => List.generate(
         songs.length,
