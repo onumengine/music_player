@@ -137,8 +137,7 @@ class GenrePageState extends State<GenrePage> {
         appBar: AppBar(
           elevation: 1.0,
           backgroundColor: Colors.white,
-          iconTheme: IconThemeData(color: Colors.black45),
-          actionsIconTheme: IconThemeData(color: Colors.black87),
+          iconTheme: IconThemeData(color: Colors.black87),
           title: Text(
             'Hip-hop',
             style: TextStyle(

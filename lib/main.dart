@@ -25,6 +25,21 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
+        textTheme: TextTheme(
+          headline1: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 14.0,
+          ), //style for bold selected tab label
+          headline2: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 14.0,
+          ), //style for bold unselected tab label
+          headline3: TextStyle(), //style for plain selected tab label
+          headline4: TextStyle(), //style for plain unselected tab label
+          headline5: TextStyle(), //style for appbar titles
+          subtitle1: TextStyle(), //style for song titlesin song listtile
+          subtitle2: TextStyle(), //style for artist name in song listtile
+        ),
       ),
       debugShowCheckedModeBanner: false,
       routes: {
@@ -63,9 +78,8 @@ class MyHomePageState extends State<MyHomePage> {
             labelColor: Colors.black87,
             unselectedLabelColor: Colors.black45,
             isScrollable: true,
-            labelStyle: TextStyle(
-              fontWeight: FontWeight.bold,
-            ),
+            labelStyle: Theme.of(context).textTheme.headline1,
+            unselectedLabelStyle: Theme.of(context).textTheme.headline2,
             tabs: <Tab>[
               Tab(
                 text: 'TRACKS',
