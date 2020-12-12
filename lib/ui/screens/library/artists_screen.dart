@@ -7,11 +7,14 @@ class ArtistsScreen extends StatefulWidget {
 
 class ArtistsScreenState extends State<ArtistsScreen> {
   Widget build(BuildContext context) {
-    return GridView.count(
-      crossAxisCount: 2,
-      children: List.generate(
-        20,
-        (index) => ArtistTile(),
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 50.0),
+      child: GridView.count(
+        crossAxisCount: 2,
+        children: List.generate(
+          20,
+          (index) => ArtistTile(),
+        ),
       ),
     );
   }

@@ -7,9 +7,12 @@ class GenresScreen extends StatefulWidget {
 
 class GenresScreenState extends State<GenresScreen> {
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: 20,
-      itemBuilder: (context, index) => GenresTile(),
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 50.0),
+      child: ListView.builder(
+        itemCount: 20,
+        itemBuilder: (context, index) => GenresTile(),
+      ),
     );
   }
 }
