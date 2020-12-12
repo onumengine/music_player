@@ -1,7 +1,8 @@
-import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:music_player/ui/atoms/shuffle_tile.dart';
 import 'package:music_player/ui/atoms/track_listtile.dart';
+import 'package:assets_audio_player/assets_audio_player.dart';
 
 class TracksScreen extends StatefulWidget {
   final Widget thumbnail;
@@ -13,6 +14,7 @@ class TracksScreen extends StatefulWidget {
 
 class TracksScreenState extends State<TracksScreen> {
   final Widget stateThumbnail;
+  final audioPlayer = AssetsAudioPlayer();
 
   TracksScreenState({this.stateThumbnail});
 
@@ -29,9 +31,15 @@ class TracksScreenState extends State<TracksScreen> {
     'Way Too Strong',
   ];
 
-  void playLilDurk() {
-    final musicPlayer = AssetsAudioPlayer();
-    musicPlayer.open(Audio('lib/assets/audio/248.mp3'));
+  Future<void> playLilDurk() async {
+    try {
+      await audioPlayer.open(
+        Audio("lib/assets/audio/248.mp3"),
+      );
+      await audioPlayer.play();
+    } on PlatformException catch (e) {
+      print(e.message);
+    }
   }
 
   List<TrackListTile> getTrackTiles() => List.generate(
@@ -41,7 +49,7 @@ class TracksScreenState extends State<TracksScreen> {
           title: songs[index],
           subtitle: 'Pyro The Rapper',
           onTap: () {
-            Navigator.of(context).pushNamed('/now_playing_screen');
+            playLilDurk();
           },
         ),
       );

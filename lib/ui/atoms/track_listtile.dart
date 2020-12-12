@@ -13,6 +13,7 @@ class TrackListTile extends StatelessWidget {
       leading: this.thumbnail,
       title: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Text(this.title),
           Text(

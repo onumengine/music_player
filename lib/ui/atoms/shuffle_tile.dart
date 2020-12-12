@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:music_player/audio_module/audio_player.dart';
 import 'package:music_player/ui/atoms/track_listtile.dart';
 
 enum MenuItems {
@@ -74,6 +75,9 @@ class ShuffleTile extends StatelessWidget {
           ),
         ],
       ),
+      onTap: () {
+        AudioPlayer.player.stop();
+      },
     );
   }
 }

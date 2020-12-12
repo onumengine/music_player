@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:music_player/ui/atoms/now_playing_tile.dart';
 import 'package:music_player/ui/pages/equalizer_page.dart';
 import 'package:music_player/ui/pages/artist_page.dart';
 import 'package:music_player/ui/pages/album_page.dart';
@@ -121,6 +122,10 @@ class MyHomePageState extends State<MyHomePage> {
               GenresScreen(),
             ],
           ),
+        ),
+        bottomSheet: Container(
+          height: 50,
+          child: NowPlayingTile(),
         ),
       ),
     );

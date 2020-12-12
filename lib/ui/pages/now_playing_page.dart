@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:assets_audio_player/assets_audio_player.dart';
+import 'package:music_player/ui/screens/library/tracks_screen.dart';
 
 class NowPlayingPage extends StatefulWidget {
   NowPlayingPageState createState() => NowPlayingPageState();
@@ -6,6 +8,11 @@ class NowPlayingPage extends StatefulWidget {
 
 class NowPlayingPageState extends State<NowPlayingPage> {
   double sliderValue = 0.0;
+
+  Future<void> stopLilDurk(AssetsAudioPlayer player) async {
+    await player.stop();
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
@@ -114,7 +121,9 @@ class NowPlayingPageState extends State<NowPlayingPage> {
                   ),
                   IconButton(
                     icon: Icon(Icons.play_arrow_rounded),
-                    onPressed: null,
+                    onPressed: () {
+                      stopLilDurk(TracksScreenState().audioPlayer);
+                    },
                   ),
                   IconButton(
                     icon: Icon(Icons.skip_next_rounded),
