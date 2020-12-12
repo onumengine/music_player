@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:music_player/ui/atoms/filler_tile.dart';
 import 'package:music_player/ui/atoms/shuffle_tile.dart';
 import 'package:music_player/ui/atoms/track_listtile.dart';
 import 'package:assets_audio_player/assets_audio_player.dart';
@@ -64,6 +65,7 @@ class TracksScreenState extends State<TracksScreen> {
                 children: <Widget>[
                   ShuffleTile(),
                   ...getTrackTiles(),
+                  FillerTile(),
                 ],
               );
             },

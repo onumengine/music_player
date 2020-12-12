@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:music_player/ui/atoms/filler_tile.dart';
 import 'package:music_player/ui/atoms/playlist_tile.dart';
 
 class PlaylistsScreen extends StatefulWidget {
@@ -37,6 +38,7 @@ class PlaylistsScreenState extends State<PlaylistsScreen> {
             print('Yeha babe');
           },
         ),
+        FillerTile(),
       ],
     );
   }

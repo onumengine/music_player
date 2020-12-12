@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:music_player/ui/atoms/filler_tile.dart';
 import 'package:music_player/ui/atoms/track_listtile.dart';
 
 class MostPlayedScreen extends StatefulWidget {
@@ -20,6 +21,10 @@ class MostPlayedScreenState extends State<MostPlayedScreen> {
             },
             childCount: 20,
           ),
+        ),
+        SliverFillRemaining(
+          hasScrollBody: false,
+          child: FillerTile(),
         ),
       ],
     );
