@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:music_player/ui/atoms/now_playing_tile.dart';
 import 'package:music_player/ui/screens/equalizer/equalizer_screen.dart';
 import 'package:music_player/ui/screens/equalizer/sound_effects_screen.dart';
 
@@ -35,6 +36,10 @@ class EqualizerPage extends StatelessWidget {
             EqualizerScreen(),
             SoundEffectsScreen(),
           ],
+        ),
+        bottomSheet: Container(
+          height: 50.0,
+          child: NowPlayingTile(),
         ),
       ),
     );

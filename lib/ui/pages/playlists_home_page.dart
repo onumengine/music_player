@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:music_player/ui/atoms/now_playing_tile.dart';
 import 'package:music_player/ui/organisms/drawer_layout.dart';
 import 'package:music_player/ui/screens/library/tracks_screen.dart';
 import 'package:music_player/ui/screens/playlists/favorites_screen.dart';
@@ -58,6 +59,10 @@ class PlaylistsHomePage extends StatelessWidget {
               MostPlayedScreen(),
               TracksScreen(),
             ],
+          ),
+          bottomSheet: Container(
+            height: 50.0,
+            child: NowPlayingTile(),
           ),
         ),
       ),
