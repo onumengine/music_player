@@ -12,13 +12,13 @@ class GenresTile extends StatelessWidget {
             alignment: AlignmentDirectional.bottomStart,
             children: <Widget>[
               Container(
+                width: double.infinity,
                 decoration: BoxDecoration(
                   color: Colors.black87,
                 ),
-                child: ListView.builder(
-                  itemCount: 1,
-                  itemBuilder: (context, index) =>
-                      Image.asset('lib/assets/images/10.png'),
+                child: Image.asset(
+                  'lib/assets/images/10.png',
+                  fit: BoxFit.none,
                 ),
               ),
               Padding(
