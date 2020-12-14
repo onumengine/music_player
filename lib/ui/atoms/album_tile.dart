@@ -23,7 +23,10 @@ class AlbumTile extends StatelessWidget {
             child: Container(
               color: Colors.purpleAccent,
               child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 4.0),
+                padding: const EdgeInsets.only(
+                  top: 4.0,
+                  bottom: 8.0,
+                ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
@@ -31,13 +34,11 @@ class AlbumTile extends StatelessWidget {
                       padding: const EdgeInsets.all(4.0),
                       child: Text(
                         this.albumTitle,
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, color: Colors.white),
+                        style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                     ),
                     Text(
                       this.artist,
-                      style: TextStyle(color: Colors.white),
                     ),
                   ],
                 ),
