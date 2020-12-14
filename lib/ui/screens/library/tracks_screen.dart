@@ -4,6 +4,7 @@ import 'package:music_player/ui/atoms/filler_tile.dart';
 import 'package:music_player/ui/atoms/shuffle_tile.dart';
 import 'package:music_player/ui/atoms/track_listtile.dart';
 import 'package:assets_audio_player/assets_audio_player.dart';
+import 'package:music_player/audio_module/audio_player.dart';
 
 class TracksScreen extends StatefulWidget {
   final Widget thumbnail;
@@ -34,10 +35,10 @@ class TracksScreenState extends State<TracksScreen> {
 
   Future<void> playLilDurk() async {
     try {
-      await audioPlayer.open(
+      await AudioPlayer.player.open(
         Audio("lib/assets/audio/248.mp3"),
       );
-      await audioPlayer.play();
+      await AudioPlayer.player.play();
     } on PlatformException catch (e) {
       print(e.message);
     }

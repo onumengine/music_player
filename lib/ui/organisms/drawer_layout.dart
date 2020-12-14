@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:music_player/ui/atoms/track_listtile.dart';
 
 class DrawerLayout extends StatelessWidget {
-  final int _chartPosition = 1;
-
   Widget build(BuildContext context) {
     return SafeArea(
       child: Drawer(

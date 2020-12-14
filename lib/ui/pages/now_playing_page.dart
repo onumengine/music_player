@@ -12,7 +12,7 @@ class NowPlayingPageState extends State<NowPlayingPage> {
   List<String> musicLibrary;
   static final androidPlatform = MethodChannel('channel.flutter/music_library');
 
-  Future<void> stopLilDurk(AssetsAudioPlayer player) async {
+  void stopLilDurk(AssetsAudioPlayer player) async {
     await player.stop();
   }
 
