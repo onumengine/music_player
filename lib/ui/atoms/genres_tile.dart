@@ -10,7 +10,7 @@ class GenresTile extends StatelessWidget {
             height: 100.0,
             width: double.infinity,
             decoration: BoxDecoration(
-              color: Colors.black87,
+              color: Colors.white,
             ),
             child: Image.asset(
               'lib/assets/images/10.png',

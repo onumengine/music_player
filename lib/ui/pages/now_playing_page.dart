@@ -57,7 +57,10 @@ class NowPlayingPageState extends State<NowPlayingPage> {
                   flex: 1,
                   child: Padding(
                     padding: const EdgeInsets.only(right: 32.0),
-                    child: Icon(Icons.equalizer_rounded),
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Icon(Icons.equalizer_rounded),
+                    ),
                   ),
                 ),
               ],
@@ -137,7 +140,7 @@ class NowPlayingPageState extends State<NowPlayingPage> {
                 vertical: 2.0,
               ),
               child: Text('248/384'),
-            )
+            ),
           ],
         ),
       ),
