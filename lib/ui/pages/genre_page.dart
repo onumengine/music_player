@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:music_player/ui/screens/library/albums_screen.dart';
 import 'package:music_player/ui/screens/library/artists_screen.dart';
 import 'package:music_player/ui/screens/library/tracks_screen.dart';
+import 'package:music_player/ui/atoms/now_playing_tile.dart';
 
 class GenrePage extends StatefulWidget {
   GenrePageState createState() => GenrePageState();
@@ -175,6 +176,10 @@ class GenrePageState extends State<GenrePage> {
             AlbumsScreen(),
             ArtistsScreen(),
           ],
+        ),
+        bottomSheet: Container(
+          height: 50,
+          child: NowPlayingTile(),
         ),
       ),
     );
