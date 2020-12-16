@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:music_player/ui/atoms/album_meta_tile.dart';
 import 'package:music_player/ui/atoms/track_listtile.dart';
+import 'package:music_player/ui/atoms/now_playing_tile.dart';
+import 'package:music_player/ui/atoms/filler_tile.dart';
 
 enum AlbumActions {
   sortAlbumTrackNumber,
@@ -130,6 +132,7 @@ class AlbumPageState extends State<AlbumPage> {
                     children: <Widget>[
                       AlbumMetaTile(),
                       ...getTrackTiles(),
+                      FillerTile(),
                     ],
                   );
                 },
@@ -138,6 +141,10 @@ class AlbumPageState extends State<AlbumPage> {
             ),
           ],
         ),
+      ),
+      bottomSheet: Container(
+        height: 50,
+        child: NowPlayingTile(),
       ),
     );
   }
