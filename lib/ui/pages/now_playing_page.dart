@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:music_player/ui/screens/library/tracks_screen.dart';
 
@@ -8,9 +9,21 @@ class NowPlayingPage extends StatefulWidget {
 
 class NowPlayingPageState extends State<NowPlayingPage> {
   double sliderValue = 0.0;
+  List<String> musicLibrary;
+  static final androidPlatform = MethodChannel('channel.flutter/music_library');
 
   Future<void> stopLilDurk(AssetsAudioPlayer player) async {
     await player.stop();
+  }
+
+  Future<List<String>> _getMusicLibrary() async {
+    List<String> songs;
+    try {
+      songs = await androidPlatform.invokeMethod('getMusicLibrary');
+      print(songs);
+    } on PlatformException catch (e) {
+      print(e.message);
+    }
   }
 
   Widget build(BuildContext context) {
@@ -44,10 +57,12 @@ class NowPlayingPageState extends State<NowPlayingPage> {
                         child: Padding(
                           padding:
                               const EdgeInsets.fromLTRB(8.0, 2.0, 0.0, 16.0),
-                          child: Text('Pyro The Rapper',
-                              style: TextStyle(
-                                fontSize: 14.0,
-                              )),
+                          child: Text(
+                            'Pyro The Rapper',
+                            style: TextStyle(
+                              fontSize: 14.0,
+                            ),
+                          ),
                         ),
                       ),
                     ],
@@ -59,7 +74,12 @@ class NowPlayingPageState extends State<NowPlayingPage> {
                     padding: const EdgeInsets.only(right: 32.0),
                     child: Align(
                       alignment: Alignment.center,
-                      child: Icon(Icons.equalizer_rounded),
+                      child: IconButton(
+                        icon: Icon(Icons.equalizer_rounded),
+                        onPressed: () {
+                          _getMusicLibrary();
+                        },
+                      ),
                     ),
                   ),
                 ),

@@ -13,7 +13,7 @@ class NowPlayingTileState extends State<NowPlayingTile> {
       subtitle: 'Justin Bieber',
       trailing: Icon(Icons.play_arrow_rounded),
       onTap: () {
-        Navigator.of(context).pushNamed('/now_playing_screen');
+        Navigator.of(context).pushNamed('/now_playing_page');
       },
     );
   }

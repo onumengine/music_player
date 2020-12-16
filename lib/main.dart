@@ -1,18 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:music_player/ui/atoms/now_playing_tile.dart';
-import 'package:music_player/ui/pages/equalizer_page.dart';
-import 'package:music_player/ui/pages/artist_page.dart';
-import 'package:music_player/ui/pages/album_page.dart';
-import 'package:music_player/ui/pages/genre_page.dart';
-import 'package:music_player/ui/pages/now_playing_page.dart';
-import 'package:music_player/ui/pages/playlist_page.dart';
-import 'package:music_player/ui/pages/playlists_home_page.dart';
 import 'package:music_player/ui/organisms/drawer_layout.dart';
+import 'package:music_player/ui/route_generator.dart';
 import 'package:music_player/ui/screens/library/tracks_screen.dart';
 import 'package:music_player/ui/screens/library/albums_screen.dart';
 import 'package:music_player/ui/screens/library/artists_screen.dart';
 import 'package:music_player/ui/screens/library/genres_screen.dart';
-import 'package:music_player/ui/pages/settings_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -46,17 +39,8 @@ class MyApp extends StatelessWidget {
         ),
       ),
       debugShowCheckedModeBanner: false,
-      routes: {
-        '/': (context) => MyHomePage(),
-        '/playlists': (context) => PlaylistsHomePage(),
-        '/settings': (context) => SettingsPage(),
-        '/artist_page': (context) => ArtistPage(),
-        '/album_page': (context) => AlbumPage(),
-        '/now_playing_screen': (context) => NowPlayingPage(),
-        '/genre_page': (context) => GenrePage(),
-        '/playlist_page': (context) => PlaylistPage(),
-        '/equalizer_page': (context) => EqualizerPage(),
-      },
+      initialRoute: '/',
+      onGenerateRoute: RouteGenerator.generateRoute,
     );
   }
 }

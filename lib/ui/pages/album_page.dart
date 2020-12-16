@@ -40,7 +40,7 @@ class AlbumPageState extends State<AlbumPage> {
           title: songs[index],
           subtitle: 'Pyro The Rapper',
           onTap: () {
-            Navigator.of(context).pushNamed('/now_playing_screen');
+            Navigator.of(context).pushNamed('/now_playing_page');
           },
         ),
       );
