@@ -21,7 +21,11 @@ class EqualizerScreen extends StatefulWidget {
 
 class EqualizerScreenState extends State<EqualizerScreen> {
   bool selected = false;
-  double sliderValue = 4.0;
+  double slider1Value = 1.0;
+  double slider2Value = 2.0;
+  double slider3Value = 3.0;
+  double slider4Value = 4.0;
+  double slider5Value = 5.0;
   DropdownItem dropdownValue = DropdownItem.normal;
 
   Widget build(BuildContext context) {
@@ -29,6 +33,7 @@ class EqualizerScreenState extends State<EqualizerScreen> {
       width: double.infinity,
       height: double.infinity,
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 32.0),
@@ -45,23 +50,69 @@ class EqualizerScreenState extends State<EqualizerScreen> {
             ),
           ),
           Container(
-            width: double.infinity,
-            child: Row(
-              children: <Widget>[
-                Slider(
-                  min: 0.0,
-                  max: 10.0,
-                  value: sliderValue,
-                  onChanged: (newValue) {
-                    setState(() => sliderValue = newValue);
-                  },
-                )
-              ],
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 16.0),
+              child: Column(
+                children: <Widget>[
+                  Slider(
+                    min: 0.0,
+                    max: 10.0,
+                    value: slider1Value,
+                    onChanged: (newValue) {
+                      setState(() => slider1Value = newValue);
+                    },
+                  ),
+                  SizedBox(
+                    height: 20.0,
+                  ),
+                  Slider(
+                    min: 0.0,
+                    max: 10.0,
+                    value: slider2Value,
+                    onChanged: (newValue) {
+                      setState(() => slider2Value = newValue);
+                    },
+                  ),
+                  SizedBox(
+                    height: 20.0,
+                  ),
+                  Slider(
+                    min: 0.0,
+                    max: 10.0,
+                    value: slider3Value,
+                    onChanged: (newValue) {
+                      setState(() => slider3Value = newValue);
+                    },
+                  ),
+                  SizedBox(
+                    height: 20.0,
+                  ),
+                  Slider(
+                    min: 0.0,
+                    max: 10.0,
+                    value: slider4Value,
+                    onChanged: (newValue) {
+                      setState(() => slider4Value = newValue);
+                    },
+                  ),
+                  SizedBox(
+                    height: 20.0,
+                  ),
+                  Slider(
+                    min: 0.0,
+                    max: 10.0,
+                    value: slider5Value,
+                    onChanged: (newValue) {
+                      setState(() => slider5Value = newValue);
+                    },
+                  ),
+                ],
+              ),
             ),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(
-              vertical: 8.0,
+              vertical: 32.0,
               horizontal: 24.0,
             ),
             child: DropdownButton<DropdownItem>(
