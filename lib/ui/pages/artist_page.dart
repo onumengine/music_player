@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:music_player/ui/screens/library/albums_screen.dart';
 import 'package:music_player/ui/screens/library/tracks_screen.dart';
+import 'package:music_player/ui/atoms/now_playing_tile.dart';
 
 class ArtistPage extends StatefulWidget {
   ArtistPageState createState() => ArtistPageState();
@@ -43,6 +44,10 @@ class ArtistPageState extends State<ArtistPage> {
               ),
             ),
           ],
+        ),
+        bottomSheet: Container(
+          height: 50.0,
+          child: NowPlayingTile(),
         ),
       ),
     );
