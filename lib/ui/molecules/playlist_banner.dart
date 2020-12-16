@@ -10,7 +10,7 @@ class PlaylistBannerState extends State<PlaylistBanner> {
       height: 200,
       child: GridView.count(
         crossAxisCount: 3,
-        childAspectRatio: 1.4,
+        childAspectRatio: 1.3,
         addAutomaticKeepAlives: false,
         children: <Widget>[
           Image.asset(

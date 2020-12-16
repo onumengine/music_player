@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:music_player/ui/atoms/filler_tile.dart';
+import 'package:music_player/ui/atoms/now_playing_tile.dart';
 import 'package:music_player/ui/atoms/track_listtile.dart';
 import 'package:music_player/ui/atoms/shuffle_tile.dart';
 import 'package:music_player/ui/molecules/playlist_banner.dart';
@@ -136,9 +138,21 @@ class PlaylistPageState extends State<PlaylistPage> {
                 },
                 childCount: 30,
               ),
-            )
+            ),
+            SliverList(
+              delegate: SliverChildBuilderDelegate(
+                (BuildContext context, int index) {
+                  return FillerTile();
+                },
+                childCount: 1,
+              ),
+            ),
           ],
         ),
+      ),
+      bottomSheet: Container(
+        height: 50.0,
+        child: NowPlayingTile(),
       ),
     );
   }
