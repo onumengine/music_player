@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../atoms/artist_tile.dart';
+import 'package:music_player/ui/atoms/artist_tile.dart';
 
 class ArtistsScreen extends StatefulWidget {
   ArtistsScreenState createState() => ArtistsScreenState();
