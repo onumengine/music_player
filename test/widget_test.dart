@@ -5,12 +5,12 @@
 // gestures. You can also use WidgetTester to find child widgets in the widget
 // tree, read text, and verify that the values of widget properties are correct.
 
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:music_player/main.dart';
 
 void main() {
+  /*
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(MyApp());
@@ -26,5 +26,38 @@ void main() {
     // Verify that our counter has incremented.
     expect(find.text('0'), findsNothing);
     expect(find.text('1'), findsOneWidget);
+  });
+
+  */
+
+  testWidgets('The tab titled TRACKS exists', (WidgetTester tester) async {
+    await tester.pumpWidget(MyApp());
+
+    expect(find.text('TRACKS'), findsOneWidget);
+    expect(find.text('ARTISTS'), findsOneWidget);
+    expect(find.text('ALBUMS'), findsOneWidget);
+    expect(find.text('GENRES'), findsOneWidget);
+  });
+
+  testWidgets('ArtistTile contains the text \'Pyro The \'Rapper',
+      (WidgetTester tester) async {
+    await tester.pumpWidget(MyApp());
+
+    await tester.tap(find.text('ARTISTS'));
+    await tester.pump();
+
+    expect(find.text('Pyro The Rapper'), findsWidgets);
+  });
+
+  testWidgets('AlbumPage loads properly', (WidgetTester tester) async {
+    await tester.pumpWidget(MyApp());
+
+    await tester.tap(find.text('ALBUMS'));
+    await tester.pump();
+
+    await tester.tap(find.text('My Ted Talk'));
+    await tester.pump();
+
+    expect(find.text('Naija Boy'), findsWidgets);
   });
 }

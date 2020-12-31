@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:assets_audio_player/assets_audio_player.dart';
-import 'package:music_player/ui/screens/library/tracks_screen.dart';
 
 class NowPlayingPage extends StatefulWidget {
   NowPlayingPageState createState() => NowPlayingPageState();
@@ -16,7 +15,7 @@ class NowPlayingPageState extends State<NowPlayingPage> {
     await player.stop();
   }
 
-  Future<List<String>> _getMusicLibrary() async {
+  Future<void> _getMusicLibrary() async {
     List<String> songs;
     try {
       songs = await androidPlatform.invokeMethod('getMusicLibrary');
@@ -145,7 +144,7 @@ class NowPlayingPageState extends State<NowPlayingPage> {
                   IconButton(
                     icon: Icon(Icons.play_arrow_rounded),
                     onPressed: () {
-                      stopLilDurk(TracksScreenState().audioPlayer);
+                      _getMusicLibrary();
                     },
                   ),
                   IconButton(

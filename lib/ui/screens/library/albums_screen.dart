@@ -21,6 +21,7 @@ class AlbumsScreenState extends State<AlbumsScreen> {
             },
           ),
         ),
+        addAutomaticKeepAlives: false,
       ),
     );
   }

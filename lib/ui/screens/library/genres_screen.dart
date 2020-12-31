@@ -10,6 +10,7 @@ class GenresScreenState extends State<GenresScreen> {
     return Padding(
       padding: const EdgeInsets.only(bottom: 50.0),
       child: ListView.builder(
+        addAutomaticKeepAlives: false,
         itemCount: 20,
         itemBuilder: (context, index) => GenresTile(),
       ),

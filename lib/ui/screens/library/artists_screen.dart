@@ -10,6 +10,7 @@ class ArtistsScreenState extends State<ArtistsScreen> {
     return Padding(
       padding: const EdgeInsets.only(bottom: 50.0),
       child: GridView.count(
+        addAutomaticKeepAlives: false,
         crossAxisCount: 2,
         children: List.generate(
           20,
