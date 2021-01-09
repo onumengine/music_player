@@ -8,18 +8,21 @@ import android.util.Log
 object Channel {
 
     const val CHANNEL_NAME = "channel.flutter/music_library"
-    val uri = android.provider.MediaStore.Audio.Media.EXTERNAL_CONTENT_URI
+    const val ERROR_TAG = "ERROR"
+    const val QUERY_FAILED = "QUERY FAILED"
+    const val NO_MUSIC_STRING = "YOU DON'T HAVE ANY MUSIC"
+    val musicUri = android.provider.MediaStore.Audio.Media.EXTERNAL_CONTENT_URI
 
     fun getMusicLibrary(context: Context): MutableList<String>? {
         val resolver: ContentResolver = context.contentResolver
-        val cursor: Cursor? = resolver.query(uri, null, null, null, null)
+        val cursor: Cursor? = resolver.query(musicUri, null, null, null, null)
         val songs = mutableListOf<String>()
         when {
             cursor == null -> {
-                Log.d("ERROR", "QUERY FAILED")
+                Log.d(ERROR_TAG, QUERY_FAILED)
             }
             !cursor.moveToFirst() -> {
-                Log.d("ERROR", "YOU DON'T HAVE ANY MUSIC")
+                Log.d(ERROR_TAG, NO_MUSIC_STRING)
             }
             else -> {
                 val titleColumn: Int = cursor.getColumnIndex(android.provider.MediaStore.Audio.Media.TITLE)
