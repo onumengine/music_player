@@ -1,34 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-enum DropdownItem {
-  custom,
-  normal,
-  classical,
-  dance,
-  flat,
-  folk,
-  heavyMetal,
-  hipHop,
-  jazz,
-  pop,
-  rock,
-}
+import 'package:music_player/blocs/screens/equalizer/equalizer_screen_bloc.dart';
+import 'package:provider/provider.dart';
 
 class EqualizerScreen extends StatefulWidget {
   EqualizerScreenState createState() => EqualizerScreenState();
 }
 
 class EqualizerScreenState extends State<EqualizerScreen> {
-  bool selected = false;
-  double slider1Value = 1.0;
-  double slider2Value = 2.0;
-  double slider3Value = 3.0;
-  double slider4Value = 4.0;
-  double slider5Value = 5.0;
-  DropdownItem dropdownValue = DropdownItem.normal;
 
   Widget build(BuildContext context) {
+    EqualizerScreenBloc viewModel = context.watch<EqualizerScreenBloc>();
     return Container(
       width: double.infinity,
       height: double.infinity,
@@ -40,11 +22,9 @@ class EqualizerScreenState extends State<EqualizerScreen> {
             child: Align(
               alignment: Alignment.centerLeft,
               child: Switch(
-                value: selected,
+                value: viewModel.isSelected,
                 onChanged: (newValue) {
-                  setState(() {
-                    selected = newValue;
-                  });
+                    viewModel.isSelected = newValue;
                 },
               ),
             ),
@@ -57,9 +37,9 @@ class EqualizerScreenState extends State<EqualizerScreen> {
                   Slider(
                     min: 0.0,
                     max: 10.0,
-                    value: slider1Value,
+                    value: viewModel.slider1Value,
                     onChanged: (newValue) {
-                      setState(() => slider1Value = newValue);
+                      viewModel.slider1Value = newValue;
                     },
                   ),
                   SizedBox(
@@ -68,9 +48,9 @@ class EqualizerScreenState extends State<EqualizerScreen> {
                   Slider(
                     min: 0.0,
                     max: 10.0,
-                    value: slider2Value,
+                    value: viewModel.slider2Value,
                     onChanged: (newValue) {
-                      setState(() => slider2Value = newValue);
+                      viewModel.slider2Value = newValue;
                     },
                   ),
                   SizedBox(
@@ -79,9 +59,9 @@ class EqualizerScreenState extends State<EqualizerScreen> {
                   Slider(
                     min: 0.0,
                     max: 10.0,
-                    value: slider3Value,
+                    value: viewModel.slider3Value,
                     onChanged: (newValue) {
-                      setState(() => slider3Value = newValue);
+                      viewModel.slider3Value = newValue;
                     },
                   ),
                   SizedBox(
@@ -90,9 +70,9 @@ class EqualizerScreenState extends State<EqualizerScreen> {
                   Slider(
                     min: 0.0,
                     max: 10.0,
-                    value: slider4Value,
+                    value: viewModel.slider4Value,
                     onChanged: (newValue) {
-                      setState(() => slider4Value = newValue);
+                      viewModel.slider4Value = newValue;
                     },
                   ),
                   SizedBox(
@@ -101,9 +81,9 @@ class EqualizerScreenState extends State<EqualizerScreen> {
                   Slider(
                     min: 0.0,
                     max: 10.0,
-                    value: slider5Value,
+                    value: viewModel.slider5Value,
                     onChanged: (newValue) {
-                      setState(() => slider5Value = newValue);
+                      viewModel.slider5Value = newValue;
                     },
                   ),
                 ],
@@ -118,9 +98,9 @@ class EqualizerScreenState extends State<EqualizerScreen> {
             child: DropdownButton<DropdownItem>(
               isDense: true,
               isExpanded: true,
-              value: dropdownValue,
+              value: viewModel.dropdownValue,
               onChanged: (DropdownItem selectedItem) {
-                setState(() => dropdownValue = selectedItem);
+                viewModel.dropdownValue = selectedItem;
               },
               items: <DropdownMenuItem<DropdownItem>>[
                 DropdownMenuItem(
