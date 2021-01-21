@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:music_player/blocs/screens/library/tracks_screen_bloc.dart';
 import 'package:music_player/ui/atoms/now_playing_tile.dart';
 import 'package:music_player/ui/organisms/drawer_layout.dart';
 import 'package:music_player/ui/route_generator.dart';
@@ -6,6 +7,7 @@ import 'package:music_player/ui/screens/library/tracks_screen.dart';
 import 'package:music_player/ui/screens/library/albums_screen.dart';
 import 'package:music_player/ui/screens/library/artists_screen.dart';
 import 'package:music_player/ui/screens/library/genres_screen.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,33 +16,40 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-        textTheme: TextTheme(
-          headline1: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 14.0,
-          ), //style for bold selected tab label
-          headline2: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 14.0,
-          ), //style for bold unselected tab label
-          headline3: TextStyle(), //style for plain selected tab label
-          headline4: TextStyle(), //style for plain unselected tab label
-          headline5: TextStyle(), //style for appbar titles
-          subtitle1: TextStyle(), //style for song titlesin song listtile
-          subtitle2: TextStyle(
-            color: Colors.black54,
-            fontSize: 11.0,
-          ), //style for artist name in song listtile
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<TracksScreenBloc>.value(
+          value: TracksScreenBloc(),
         ),
+      ],
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+          textTheme: TextTheme(
+            headline1: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 14.0,
+            ), //style for bold selected tab label
+            headline2: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 14.0,
+            ), //style for bold unselected tab label
+            headline3: TextStyle(), //style for plain selected tab label
+            headline4: TextStyle(), //style for plain unselected tab label
+            headline5: TextStyle(), //style for appbar titles
+            subtitle1: TextStyle(), //style for song titlesin song listtile
+            subtitle2: TextStyle(
+              color: Colors.black54,
+              fontSize: 11.0,
+            ), //style for artist name in song listtile
+          ),
+        ),
+        debugShowCheckedModeBanner: false,
+        initialRoute: '/',
+        onGenerateRoute: RouteGenerator.generateRoute,
       ),
-      debugShowCheckedModeBanner: false,
-      initialRoute: '/',
-      onGenerateRoute: RouteGenerator.generateRoute,
     );
   }
 }

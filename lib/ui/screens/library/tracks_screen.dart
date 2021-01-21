@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:music_player/blocs/screens/library/tracks_screen_bloc.dart';
 import 'package:music_player/ui/atoms/filler_tile.dart';
 import 'package:music_player/ui/atoms/shuffle_tile.dart';
 import 'package:music_player/ui/atoms/track_listtile.dart';
 import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:music_player/audio_module/audio_player.dart';
+import 'package:provider/provider.dart';
 
 class TracksScreen extends StatefulWidget {
   final Widget thumbnail;
@@ -20,43 +22,8 @@ class TracksScreenState extends State<TracksScreen> {
 
   TracksScreenState({this.stateThumbnail});
 
-  var songs = <String>[
-    'Panic Attack',
-    'Naija Boy',
-    'The Other Day',
-    'Dun Trip',
-    'Opposites Attract',
-    'Bittersweet dream',
-    'I Left You This Note',
-    'Chidinma Song',
-    'Ebiere',
-    'Way Too Strong',
-  ];
-
-  Future<void> playLilDurk() async {
-    try {
-      await AudioPlayer.player.open(
-        Audio("lib/assets/audio/248.mp3"),
-      );
-      await AudioPlayer.player.play();
-    } on PlatformException catch (e) {
-      print(e.message);
-    }
-  }
-
-  List<TrackListTile> getTrackTiles() => List.generate(
-        songs.length,
-        (index) => TrackListTile(
-          thumbnail: this.stateThumbnail,
-          title: songs[index],
-          subtitle: 'Pyro The Rapper',
-          onTap: () {
-            playLilDurk();
-          },
-        ),
-      );
-
   Widget build(BuildContext context) {
+    TracksScreenBloc bloc = context.watch<TracksScreenBloc>();
     return CustomScrollView(
       slivers: <Widget>[
         SliverList(
@@ -65,7 +32,7 @@ class TracksScreenState extends State<TracksScreen> {
               return Column(
                 children: <Widget>[
                   ShuffleTile(),
-                  ...getTrackTiles(),
+                  ...bloc.getTrackTiles(),
                   FillerTile(),
                 ],
               );
