@@ -13,7 +13,7 @@ object Channel {
     const val QUERY_FAILED = "QUERY FAILED"
     const val NO_MUSIC_STRING = "YOU DON'T HAVE ANY MUSIC"
     val musicUri = android.provider.MediaStore.Audio.Media.EXTERNAL_CONTENT_URI
-    val songs = mutableListOf<String>()
+    val songs = mutableListOf<String?>()
 
     fun getMusicLibrary(context: Context): MutableList<String>? {
         try {
@@ -41,9 +41,9 @@ object Channel {
         } catch (e: Exception) {
             print(e.stackTrace)
         } finally {
-            Log.e("MUSIC_LIST", songs)
-            val musicList = songs.toList()
-            return musicList
+            Log.e("MUSIC_LIST", songs.toString())
+            val musicList = songs.toMutableList()
+            return musicList as MutableList<String>?
         }
 
     }
