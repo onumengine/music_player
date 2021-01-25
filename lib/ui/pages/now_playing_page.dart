@@ -75,9 +75,7 @@ class NowPlayingPageState extends State<NowPlayingPage> {
                       alignment: Alignment.center,
                       child: IconButton(
                         icon: Icon(Icons.equalizer_rounded),
-                        onPressed: () {
-                          _getMusicLibrary();
-                        },
+                        onPressed: _getMusicLibrary,
                       ),
                     ),
                   ),
@@ -143,9 +141,7 @@ class NowPlayingPageState extends State<NowPlayingPage> {
                   ),
                   IconButton(
                     icon: Icon(Icons.play_arrow_rounded),
-                    onPressed: () {
-                      _getMusicLibrary();
-                    },
+                    onPressed: _getMusicLibrary,
                   ),
                   IconButton(
                     icon: Icon(Icons.skip_next_rounded),
