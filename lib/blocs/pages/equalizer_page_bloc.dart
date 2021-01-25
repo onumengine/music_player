@@ -14,7 +14,7 @@ enum DropdownItem {
   rock,
 }
 
-class EqualizerScreenBloc extends ChangeNotifier {
+class EqualizerPageBloc extends ChangeNotifier {
   bool _isSelected = false;
   bool get isSelected => _isSelected;
   set isSelected(bool value) {
@@ -61,6 +61,27 @@ class EqualizerScreenBloc extends ChangeNotifier {
   DropdownItem get dropdownValue => _dropdownValue;
   set dropdownValue(DropdownItem item) {
     _dropdownValue = item;
+    notifyListeners();
+  }
+
+  double _leftSoundBalanceValue = 0.0;
+  double get leftSoundBalanceValue => _leftSoundBalanceValue;
+  set leftSoundBalanceValue(double value) {
+    _leftSoundBalanceValue = value;
+    notifyListeners();
+  }
+
+  double _rightSoundBalanceValue = 0.0;
+  double get rightSoundBalanceValue => _rightSoundBalanceValue;
+  set rightSoundBalanceValue(double value) {
+    _rightSoundBalanceValue = value;
+    notifyListeners();
+  }
+
+  double _volumeLevel = 0.0;
+  double get volumeLevel => _volumeLevel;
+  set volumeLevel(double level) {
+    _volumeLevel = level;
     notifyListeners();
   }
 }

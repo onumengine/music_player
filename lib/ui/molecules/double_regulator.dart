@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:music_player/blocs/pages/equalizer_page_bloc.dart';
+import 'package:provider/provider.dart';
 
 class DoubleRegulator extends StatefulWidget {
   final Widget label;
@@ -10,12 +12,12 @@ class DoubleRegulator extends StatefulWidget {
 
 class DoubleRegulatorState extends State<DoubleRegulator> {
   final Widget label;
-  double leftSliderLevel = 0.0;
-  double rightSliderLevel = 0.0;
 
   DoubleRegulatorState({this.label});
 
   Widget build(BuildContext context) {
+    EqualizerPageBloc equalizerPageBloc =
+        context.watch<EqualizerPageBloc>();
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 16.0),
       child: Column(
@@ -42,18 +44,16 @@ class DoubleRegulatorState extends State<DoubleRegulator> {
                   child: Slider(
                     min: 0.0,
                     max: 100.0,
-                    value: leftSliderLevel,
+                    value: equalizerPageBloc.leftSoundBalanceValue,
                     onChanged: (value) {
-                      setState(() {
-                        leftSliderLevel = value;
-                      });
+                      equalizerPageBloc.leftSoundBalanceValue = value;
                     },
                   ),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.only(right: 24.0),
-                child: Text('${leftSliderLevel.round().toString()}%'),
+                child: Text('${equalizerPageBloc.leftSoundBalanceValue.round().toString()}%'),
               )
             ],
           ),
@@ -75,18 +75,16 @@ class DoubleRegulatorState extends State<DoubleRegulator> {
                   child: Slider(
                     min: 0.0,
                     max: 100.0,
-                    value: rightSliderLevel,
+                    value: equalizerPageBloc.rightSoundBalanceValue,
                     onChanged: (value) {
-                      setState(() {
-                        rightSliderLevel = value;
-                      });
+                        equalizerPageBloc.rightSoundBalanceValue = value;
                     },
                   ),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.only(right: 24.0),
-                child: Text('${rightSliderLevel.round().toString()}%'),
+                child: Text('${equalizerPageBloc.rightSoundBalanceValue.round().toString()}%'),
               )
             ],
           ),

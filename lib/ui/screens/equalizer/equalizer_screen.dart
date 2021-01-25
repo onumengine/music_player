@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:music_player/blocs/screens/equalizer/equalizer_screen_bloc.dart';
+import 'package:music_player/blocs/pages/equalizer_page_bloc.dart';
 import 'package:provider/provider.dart';
 
 class EqualizerScreen extends StatefulWidget {
@@ -8,14 +8,12 @@ class EqualizerScreen extends StatefulWidget {
 }
 
 class EqualizerScreenState extends State<EqualizerScreen> {
-
   Widget build(BuildContext context) {
-    EqualizerScreenBloc viewModel = context.watch<EqualizerScreenBloc>();
+    EqualizerPageBloc viewModel = context.watch<EqualizerPageBloc>();
     return Container(
       width: double.infinity,
       height: double.infinity,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
+      child: ListView(
         children: <Widget>[
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 32.0),
@@ -24,7 +22,7 @@ class EqualizerScreenState extends State<EqualizerScreen> {
               child: Switch(
                 value: viewModel.isSelected,
                 onChanged: (newValue) {
-                    viewModel.isSelected = newValue;
+                  viewModel.isSelected = newValue;
                 },
               ),
             ),
@@ -149,7 +147,8 @@ class EqualizerScreenState extends State<EqualizerScreen> {
                 ),
               ],
             ),
-          )
+          ),
+          SizedBox(height: 50.0),
         ],
       ),
     );
