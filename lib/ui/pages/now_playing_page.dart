@@ -1,31 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:assets_audio_player/assets_audio_player.dart';
+import 'package:music_player/blocs/pages/now_playing_page_bloc.dart';
+import 'package:provider/provider.dart';
 
 class NowPlayingPage extends StatefulWidget {
   NowPlayingPageState createState() => NowPlayingPageState();
 }
 
 class NowPlayingPageState extends State<NowPlayingPage> {
-  double sliderValue = 0.0;
-  List<String> musicLibrary;
-  static final androidPlatform = MethodChannel('channel.flutter/music_library');
-
-  void stopLilDurk(AssetsAudioPlayer player) async {
-    await player.stop();
-  }
-
-  Future<void> _getMusicLibrary() async {
-    List<String> songs;
-    try {
-      songs = await androidPlatform.invokeMethod('getMusicLibrary');
-      print(songs);
-    } on PlatformException catch (e) {
-      print(e.message);
-    }
-  }
-
   Widget build(BuildContext context) {
+    var nowPlayingBloc = context.watch<NowPlayingBloc>();
     return Scaffold(
       body: SafeArea(
         child: Column(
@@ -75,7 +58,7 @@ class NowPlayingPageState extends State<NowPlayingPage> {
                       alignment: Alignment.center,
                       child: IconButton(
                         icon: Icon(Icons.equalizer_rounded),
-                        onPressed: _getMusicLibrary,
+                        onPressed: nowPlayingBloc.getMusicLibrary,
                       ),
                     ),
                   ),
@@ -111,9 +94,9 @@ class NowPlayingPageState extends State<NowPlayingPage> {
                     ),
                     Expanded(
                       child: Slider(
-                        value: sliderValue,
+                        value: nowPlayingBloc.trackProgress,
                         onChanged: (newValue) {
-                          setState(() => sliderValue = newValue);
+                          nowPlayingBloc.trackProgress = newValue;
                         },
                       ),
                     ),
@@ -141,7 +124,7 @@ class NowPlayingPageState extends State<NowPlayingPage> {
                   ),
                   IconButton(
                     icon: Icon(Icons.play_arrow_rounded),
-                    onPressed: _getMusicLibrary,
+                    onPressed: nowPlayingBloc.getMusicLibrary,
                   ),
                   IconButton(
                     icon: Icon(Icons.skip_next_rounded),
