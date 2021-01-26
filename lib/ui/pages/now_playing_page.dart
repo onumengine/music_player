@@ -58,7 +58,9 @@ class NowPlayingPageState extends State<NowPlayingPage> {
                       alignment: Alignment.center,
                       child: IconButton(
                         icon: Icon(Icons.equalizer_rounded),
-                        onPressed: nowPlayingBloc.getMusicLibrary,
+                        onPressed: () {
+                          nowPlayingBloc.openEqualizerPage(context);
+                        },
                       ),
                     ),
                   ),

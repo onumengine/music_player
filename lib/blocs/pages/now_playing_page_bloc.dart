@@ -77,6 +77,29 @@ class NowPlayingBloc extends ChangeNotifier {
     notifyListeners();
   }
 
+  showSongActionsDialog() {}
+
+  openArtistPage(BuildContext context) {
+    Navigator.of(context).pushNamed('/artist_page');
+  }
+
+  openEqualizerPage(BuildContext context) {
+    Navigator.pop(context);
+    Navigator.pushNamed(context, '/equalizer_page');
+  }
+
+  openAlbumPage(BuildContext context) {
+    Navigator.of(context).pushNamed('/album_page');
+  }
+
+  goToPreviousSong() {}
+
+  pausePlayback() {}
+
+  resumePlayback() {}
+
+  goToNextSong() {}
+
   Future<void> getMusicLibrary() async {
     List songs;
     try {
