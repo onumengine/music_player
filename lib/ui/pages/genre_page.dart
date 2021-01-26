@@ -170,12 +170,14 @@ class GenrePageState extends State<GenrePage> {
             ],
           ),
         ),
-        body: TabBarView(
-          children: <Widget>[
-            TracksScreen(),
-            AlbumsScreen(),
-            ArtistsScreen(),
-          ],
+        body: SafeArea(
+          child: TabBarView(
+            children: <Widget>[
+              TracksScreen(),
+              AlbumsScreen(),
+              ArtistsScreen(),
+            ],
+          ),
         ),
         bottomSheet: Container(
           height: 50,
