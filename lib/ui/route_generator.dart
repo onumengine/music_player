@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:music_player/main.dart';
 import 'package:music_player/ui/pages/album_page.dart';
 import 'package:music_player/ui/pages/equalizer_page.dart';
 import 'package:music_player/ui/pages/genre_page.dart';
+import 'package:music_player/ui/pages/library_page.dart';
 import 'package:music_player/ui/pages/now_playing_page.dart';
 import 'package:music_player/ui/pages/playlist_page.dart';
 import 'package:music_player/ui/pages/playlists_home_page.dart';
@@ -13,7 +13,7 @@ class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case '/':
-        return MaterialPageRoute(builder: (context) => MyHomePage());
+        return MaterialPageRoute(builder: (context) => LibraryPage());
       case '/playlists':
         return MaterialPageRoute(builder: (context) => PlaylistsHomePage());
       case '/settings':
