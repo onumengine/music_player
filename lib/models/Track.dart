@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Song {
+class Track {
   String title;
   String artist;
   String album;
@@ -9,7 +9,7 @@ class Song {
   String genre;
   String filePath;
 
-  Song(
+  Track(
       {this.title,
       this.artist,
       this.album,

@@ -1,14 +1,14 @@
 import 'package:music_player/models/song.dart';
 
 class Playlist {
-  List<Song> tracks;
+  List<Track> tracks;
   String title;
 
-  addTrack(Song track) {
+  addTrack(Track track) {
     tracks.add(track);
   }
 
-  removeTrack(Song track) {
+  removeTrack(Track track) {
     tracks.remove(track);
   }
 
