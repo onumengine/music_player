@@ -1,7 +1,7 @@
 import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:music_player/models/song.dart';
+import 'package:music_player/models/track.dart';
 import 'package:music_player/util/strings.dart';
 
 class NowPlayingBloc extends ChangeNotifier {
@@ -70,9 +70,9 @@ class NowPlayingBloc extends ChangeNotifier {
     notifyListeners();
   }
 
-  List<Song> _musicLibrary;
-  List<Song> get musicLibrary => _musicLibrary;
-  set musicLibrary(List<Song> updatedLibrary) {
+  List<Track> _musicLibrary;
+  List<Track> get musicLibrary => _musicLibrary;
+  set musicLibrary(List<Track> updatedLibrary) {
     _musicLibrary = updatedLibrary;
     notifyListeners();
   }

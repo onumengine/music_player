@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:music_player/models/song.dart';
+import 'package:music_player/models/track.dart';
 
 class LibraryPageBloc extends ChangeNotifier {
 
@@ -24,16 +24,16 @@ class LibraryPageBloc extends ChangeNotifier {
     notifyListeners();
   }
 
-  List<Song> _allTracksInLibrary;
-  List<Song> get allTracksInLibrary => _allTracksInLibrary;
-  set allTracksInLibrary(List<Song> trackList) {
-    _allTracksInLibrary = trackList;
+  List<Track> _allTracks;
+  List<Track> get allTracks => _allTracks;
+  set allTracks(List<Track> trackList) {
+    _allTracks = trackList;
     notifyListeners();
   }
 
-  List<Song> _searchResults;
-  List<Song> get searchResults => _searchResults;
-  set searcResults(List<Song> results) {
+  List<Track> _searchResults;
+  List<Track> get searchResults => _searchResults;
+  set searcResults(List<Track> results) {
     _searchResults = results;
     notifyListeners();
   }

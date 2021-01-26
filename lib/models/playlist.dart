@@ -1,4 +1,4 @@
-import 'package:music_player/models/song.dart';
+import 'package:music_player/models/track.dart';
 
 class Playlist {
   List<Track> tracks;
