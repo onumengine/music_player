@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:music_player/blocs/pages/equalizer_page_bloc.dart';
+import 'package:music_player/blocs/pages/now_playing_page_bloc.dart';
 import 'package:music_player/blocs/screens/library/tracks_screen_bloc.dart';
 import 'package:music_player/ui/route_generator.dart';
 import 'package:provider/provider.dart';
@@ -18,6 +19,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider<EqualizerPageBloc>.value(
           value: EqualizerPageBloc(),
+        ),
+        ChangeNotifierProvider<NowPlayingBloc>.value(
+          value: NowPlayingBloc(),
         ),
       ],
       child: MaterialApp(
