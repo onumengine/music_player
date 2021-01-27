@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:music_player/util/strings.dart';
 
 class ArtistTile extends StatelessWidget {
   ArtistTile({this.imagePath = 'lib/assets/images/3.png'});
@@ -24,7 +25,7 @@ class ArtistTile extends StatelessWidget {
         ),
       ),
       onTap: () {
-        Navigator.of(context).pushNamed('/artist_page');
+        Navigator.of(context).pushNamed(ROUTE_ARTIST_PAGE);
       },
     );
   }

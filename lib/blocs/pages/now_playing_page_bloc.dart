@@ -80,16 +80,16 @@ class NowPlayingBloc extends ChangeNotifier {
   showSongActionsDialog() {}
 
   openArtistPage(BuildContext context) {
-    Navigator.of(context).pushNamed('/artist_page');
+    Navigator.of(context).pushNamed(ROUTE_ARTIST_PAGE);
   }
 
   openEqualizerPage(BuildContext context) {
     Navigator.pop(context);
-    Navigator.pushNamed(context, '/equalizer_page');
+    Navigator.pushNamed(context, ROUTE_EQUALIZER_PAGE);
   }
 
   openAlbumPage(BuildContext context) {
-    Navigator.of(context).pushNamed('/album_page');
+    Navigator.of(context).pushNamed(ROUTE_ALBUM_PAGE);
   }
 
   goToPreviousSong() {}

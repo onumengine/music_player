@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:music_player/blocs/screens/library/tracks_screen_bloc.dart';
 import 'package:music_player/ui/atoms/filler_tile.dart';
 import 'package:music_player/ui/atoms/shuffle_tile.dart';
-import 'package:music_player/ui/atoms/track_listtile.dart';
 import 'package:assets_audio_player/assets_audio_player.dart';
-import 'package:music_player/audio_module/audio_player.dart';
 import 'package:provider/provider.dart';
 
 class TracksScreen extends StatefulWidget {

@@ -3,6 +3,7 @@ import 'package:music_player/blocs/pages/equalizer_page_bloc.dart';
 import 'package:music_player/blocs/pages/now_playing_page_bloc.dart';
 import 'package:music_player/blocs/screens/library/tracks_screen_bloc.dart';
 import 'package:music_player/ui/route_generator.dart';
+import 'package:music_player/util/strings.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -49,7 +50,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
         debugShowCheckedModeBanner: false,
-        initialRoute: '/',
+        initialRoute: ROUTE_LIBRARY_PAGE,
         onGenerateRoute: RouteGenerator.generateRoute,
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:music_player/util/strings.dart';
 import '../../atoms/album_tile.dart';
 
 class AlbumsScreen extends StatefulWidget {
@@ -17,7 +18,7 @@ class AlbumsScreenState extends State<AlbumsScreen> {
           20,
           (index) => AlbumTile(
             onTap: () {
-              Navigator.of(context).pushNamed('/album_page');
+              Navigator.of(context).pushNamed(ROUTE_ALBUM_PAGE);
             },
           ),
         ),

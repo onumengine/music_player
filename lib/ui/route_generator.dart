@@ -8,27 +8,28 @@ import 'package:music_player/ui/pages/playlist_page.dart';
 import 'package:music_player/ui/pages/playlists_home_page.dart';
 import 'package:music_player/ui/pages/settings_page.dart';
 import 'package:music_player/ui/pages/artist_page.dart';
+import 'package:music_player/util/strings.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
-      case '/':
+      case ROUTE_LIBRARY_PAGE:
         return MaterialPageRoute(builder: (context) => LibraryPage());
-      case '/playlists':
+      case ROUTE_PLAYLISTS_HOME_PAGE:
         return MaterialPageRoute(builder: (context) => PlaylistsHomePage());
-      case '/settings':
+      case ROUTE_SETTINGS_PAGE:
         return MaterialPageRoute(builder: (context) => SettingsPage());
-      case '/artist_page':
+      case ROUTE_ARTIST_PAGE:
         return MaterialPageRoute(builder: (context) => ArtistPage());
-      case '/album_page':
+      case ROUTE_ALBUM_PAGE:
         return MaterialPageRoute(builder: (context) => AlbumPage());
-      case '/now_playing_page':
+      case ROUTE_NOW_PLAYING_PAGE:
         return MaterialPageRoute(builder: (context) => NowPlayingPage());
-      case '/genre_page':
+      case ROUTE_GENRE_PAGE:
         return MaterialPageRoute(builder: (context) => GenrePage());
-      case '/playlist_page':
+      case ROUTE_PLAYLIST_PAGE:
         return MaterialPageRoute(builder: (context) => PlaylistPage());
-      case '/equalizer_page':
+      case ROUTE_EQUALIZER_PAGE:
         return MaterialPageRoute(builder: (context) => EqualizerPage());
     }
   }

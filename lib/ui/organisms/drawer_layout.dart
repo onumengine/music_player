@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:music_player/ui/atoms/track_listtile.dart';
+import 'package:music_player/util/strings.dart';
 
 class DrawerLayout extends StatelessWidget {
   Widget build(BuildContext context) {
@@ -48,27 +49,27 @@ class DrawerLayout extends StatelessWidget {
               onTap: () {
                 Navigator.pop(context);
                 Navigator.of(context).pushNamedAndRemoveUntil(
-                    '/', (Route<dynamic> route) => false);
+                    ROUTE_LIBRARY_PAGE, (Route<dynamic> route) => false);
               },
             ),
             ListTile(
               title: Text('Playlists'),
               onTap: () {
                 Navigator.pop(context);
-                Navigator.of(context).pushNamed('/playlists');
+                Navigator.of(context).pushNamed(ROUTE_PLAYLISTS_HOME_PAGE);
               },
             ),
             ListTile(
               title: Text('Equalizer'),
               onTap: () {
                 Navigator.pop(context);
-                Navigator.of(context).pushNamed('/equalizer_page');
+                Navigator.of(context).pushNamed(ROUTE_EQUALIZER_PAGE);
               },
             ),
             ListTile(
               title: Text('Settings'),
               onTap: () {
-                Navigator.of(context).pushNamed('/settings');
+                Navigator.of(context).pushNamed(ROUTE_SETTINGS_PAGE);
               },
             ),
             ListTile(

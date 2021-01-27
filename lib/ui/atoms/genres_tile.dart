@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:music_player/util/strings.dart';
 
 class GenresTile extends StatelessWidget {
   Widget build(BuildContext context) {
@@ -30,7 +31,7 @@ class GenresTile extends StatelessWidget {
         ],
       ),
       onTap: () {
-        Navigator.of(context).pushNamed('/genre_page');
+        Navigator.of(context).pushNamed(ROUTE_GENRE_PAGE);
       },
     );
   }

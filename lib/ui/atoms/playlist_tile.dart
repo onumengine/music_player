@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:music_player/util/strings.dart';
 
 class PlaylistTile extends StatefulWidget {
   PlaylistTileState createState() => PlaylistTileState();
@@ -28,7 +29,7 @@ class PlaylistTileState extends State<PlaylistTile> {
         ),
       ),
       onTap: () {
-        Navigator.of(context).pushNamed('/playlist_page');
+        Navigator.of(context).pushNamed(ROUTE_PLAYLIST_PAGE);
       },
     );
   }
