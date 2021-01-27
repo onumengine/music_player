@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:music_player/ui/organisms/genre_page_dialog.dart';
 import 'package:music_player/ui/screens/library/albums_screen.dart';
 import 'package:music_player/ui/screens/library/artists_screen.dart';
 import 'package:music_player/ui/screens/library/tracks_screen.dart';
@@ -9,125 +10,11 @@ class GenrePage extends StatefulWidget {
 }
 
 class GenrePageState extends State<GenrePage> {
-  void displayDialog() {
+  void displayDialog(Widget dialog) {
     showDialog(
         context: context,
         builder: (BuildContext context) {
-          return AlertDialog(
-            title: Text('Hip-Hop'),
-            scrollable: true,
-            content: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: GestureDetector(
-                    onTap: () {
-                      print('YOU TAPPED PLAY');
-                    },
-                    child: Text(
-                      'Play',
-                      style: TextStyle(
-                        fontSize: 14.0,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: GestureDetector(
-                    onTap: () {
-                      print('YOU TAPPED PLAY');
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 16.0),
-                      child: Text(
-                        'Play Next',
-                        style: TextStyle(
-                          fontSize: 14.0,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: GestureDetector(
-                    onTap: () {
-                      print('YOU TAPPED PLAY');
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 16.0),
-                      child: Text(
-                        'Queue',
-                        style: TextStyle(
-                          fontSize: 14.0,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: GestureDetector(
-                    onTap: () {
-                      print('YOU TAPPED PLAY');
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 16.0),
-                      child: Text(
-                        'Add to Playlist',
-                        style: TextStyle(
-                          fontSize: 14.0,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: GestureDetector(
-                    onTap: () {
-                      print('YOU TAPPED PLAY');
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 16.0),
-                      child: Text(
-                        'Edit',
-                        style: TextStyle(
-                          fontSize: 14.0,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: GestureDetector(
-                    onTap: () {
-                      print('YOU TAPPED PLAY');
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 16.0),
-                      child: Text(
-                        'Add Tracks to Favorites',
-                        style: TextStyle(
-                          fontSize: 14.0,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            actions: [],
-          );
+          return dialog;
         });
   }
 
@@ -149,7 +36,7 @@ class GenrePageState extends State<GenrePage> {
             IconButton(
               icon: Icon(Icons.menu_rounded),
               onPressed: () {
-                displayDialog();
+                displayDialog(GenrePageDialog());
               },
             ),
           ],

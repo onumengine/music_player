@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:music_player/ui/organisms/track_actions_dialog.dart';
 
 class TrackListTile extends StatelessWidget {
   final Widget thumbnail, trailing;
@@ -24,6 +25,18 @@ class TrackListTile extends StatelessWidget {
       ),
       trailing: this.trailing ?? null,
       onTap: this.onTap ?? null,
+      onLongPress: () {
+        displayTrackActionsDialog(context);
+      },
+    );
+  }
+
+  displayTrackActionsDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return TrackActionsDialog();
+      },
     );
   }
 }
