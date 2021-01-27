@@ -52,6 +52,10 @@ android {
             signingConfig signingConfigs.debug
         }
     }
+
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 flutter {
