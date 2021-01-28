@@ -21,7 +21,6 @@ class AlbumTile extends StatelessWidget {
             left: 0.0,
             right: 0.0,
             child: Container(
-              color: Colors.purpleAccent,
               child: Padding(
                 padding: const EdgeInsets.only(
                   top: 4.0,
@@ -34,11 +33,12 @@ class AlbumTile extends StatelessWidget {
                       padding: const EdgeInsets.all(4.0),
                       child: Text(
                         this.albumTitle,
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                        style: TextStyle(fontWeight: FontWeight.w900, color: Colors.white),
                       ),
                     ),
                     Text(
                       this.artist,
+                      style: TextStyle(color: Colors.white),
                     ),
                   ],
                 ),
