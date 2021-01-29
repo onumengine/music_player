@@ -8,6 +8,7 @@ const ROUTE_ALBUM_PAGE = '/album_page';
 const ROUTE_NOW_PLAYING_PAGE = '/now_playing_page';
 const ROUTE_GENRE_PAGE = '/genre_page';
 const ROUTE_PLAYLIST_PAGE = '/playlist_page';
+const ROUTE_EDIT_TRACK_DIALOG = '/edit_track_dialog';
 const ROUTE_EQUALIZER_PAGE = '/equalizer_page';
 
 const TEXT_CLEAR_QUEUE = 'Clear Queue';

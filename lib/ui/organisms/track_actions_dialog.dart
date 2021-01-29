@@ -139,6 +139,7 @@ class TrackActionsDialog extends StatelessWidget {
             alignment: Alignment.centerLeft,
             child: GestureDetector(
               onTap: () {
+                Navigator.pop(context);
                 showEditTrackDialog(context);
               },
               child: Padding(
