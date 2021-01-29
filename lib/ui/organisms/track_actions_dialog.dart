@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:music_player/ui/organisms/edit_track_dialog.dart';
 
 class TrackActionsDialog extends StatelessWidget {
   Widget build(BuildContext context) {
@@ -14,11 +15,14 @@ class TrackActionsDialog extends StatelessWidget {
               onTap: () {
                 print('YOU TAPPED PLAY');
               },
-              child: Text(
-                'Play',
-                style: TextStyle(
-                  fontSize: 14.0,
-                  fontWeight: FontWeight.bold,
+              child: Padding(
+                padding: const EdgeInsets.only(top: 8.0),
+                child: Text(
+                  'Play',
+                  style: TextStyle(
+                    fontSize: 14.0,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ),
@@ -30,7 +34,7 @@ class TrackActionsDialog extends StatelessWidget {
                 print('YOU TAPPED PLAY');
               },
               child: Padding(
-                padding: const EdgeInsets.only(top: 16.0),
+                padding: const EdgeInsets.only(top: 20.0),
                 child: Text(
                   'Play Next',
                   style: TextStyle(
@@ -48,7 +52,7 @@ class TrackActionsDialog extends StatelessWidget {
                 print('YOU TAPPED PLAY');
               },
               child: Padding(
-                padding: const EdgeInsets.only(top: 16.0),
+                padding: const EdgeInsets.only(top: 20.0),
                 child: Text(
                   'Queue',
                   style: TextStyle(
@@ -66,9 +70,9 @@ class TrackActionsDialog extends StatelessWidget {
                 print('YOU TAPPED PLAY');
               },
               child: Padding(
-                padding: const EdgeInsets.only(top: 16.0),
+                padding: const EdgeInsets.only(top: 20.0),
                 child: Text(
-                  'Add to Playlist',
+                  'Add to Favorites',
                   style: TextStyle(
                     fontSize: 14.0,
                     fontWeight: FontWeight.bold,
@@ -84,7 +88,61 @@ class TrackActionsDialog extends StatelessWidget {
                 print('YOU TAPPED PLAY');
               },
               child: Padding(
-                padding: const EdgeInsets.only(top: 16.0),
+                padding: const EdgeInsets.only(top: 20.0),
+                child: Text(
+                  'Album',
+                  style: TextStyle(
+                    fontSize: 14.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: GestureDetector(
+              onTap: () {
+                print('YOU TAPPED PLAY');
+              },
+              child: Padding(
+                padding: const EdgeInsets.only(top: 20.0),
+                child: Text(
+                  'Artist',
+                  style: TextStyle(
+                    fontSize: 14.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: GestureDetector(
+              onTap: () {
+                print('YOU TAPPED PLAY');
+              },
+              child: Padding(
+                padding: const EdgeInsets.only(top: 20.0),
+                child: Text(
+                  'Add to Playlist',
+                  style: TextStyle(
+                    fontSize: 14.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: GestureDetector(
+              onTap: () {
+                showEditTrackDialog(context);
+              },
+              child: Padding(
+                padding: const EdgeInsets.only(top: 20.0),
                 child: Text(
                   'Edit',
                   style: TextStyle(
@@ -102,7 +160,61 @@ class TrackActionsDialog extends StatelessWidget {
                 print('YOU TAPPED PLAY');
               },
               child: Padding(
-                padding: const EdgeInsets.only(top: 16.0),
+                padding: const EdgeInsets.only(top: 20.0),
+                child: Text(
+                  'Delete',
+                  style: TextStyle(
+                    fontSize: 14.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: GestureDetector(
+              onTap: () {
+                print('YOU TAPPED PLAY');
+              },
+              child: Padding(
+                padding: const EdgeInsets.only(top: 20.0),
+                child: Text(
+                  'Share',
+                  style: TextStyle(
+                    fontSize: 14.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: GestureDetector(
+              onTap: () {
+                print('YOU TAPPED PLAY');
+              },
+              child: Padding(
+                padding: const EdgeInsets.only(top: 20.0),
+                child: Text(
+                  'Use as Ringtone',
+                  style: TextStyle(
+                    fontSize: 14.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: GestureDetector(
+              onTap: () {
+                print('YOU TAPPED PLAY');
+              },
+              child: Padding(
+                padding: const EdgeInsets.only(top: 20.0),
                 child: Text(
                   'Add Tracks to Favorites',
                   style: TextStyle(
@@ -116,6 +228,15 @@ class TrackActionsDialog extends StatelessWidget {
         ],
       ),
       actions: [],
+    );
+  }
+
+  showEditTrackDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return EditTrackDialog();
+      },
     );
   }
 }
