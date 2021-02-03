@@ -12,5 +12,5 @@ A few resources to get you started if this is your first Flutter project:
 - [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
 <img src="https://github.com/onumengine/onumengine.github.io/tree/main/appScreenshots/nowplayingpage.png" alt="NowPlaying page" width="200">
-![Now Playing page](https://github.com/onumengine/onumengine.github.io/tree/main/appScreenshots/nowplayingpage.png?raw=true)
+![Now Playing page](https://github.com/onumengine/onumengine.github.io/blob/main/appScreenshots/nowplayingpage.png?raw=true)
 
