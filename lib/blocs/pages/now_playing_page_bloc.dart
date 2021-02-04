@@ -101,9 +101,9 @@ class NowPlayingBloc extends ChangeNotifier {
   goToNextSong() {}
 
   Future<void> getMusicLibrary() async {
-    List songs;
+    bool isPlaying;
     try {
-      songs = await _platformChannel.invokeMethod('getMusicLibrary');
+      isPlaying = await _platformChannel.invokeMethod('getMusicLibrary');
 
       /// var musicLibrary = songs.map((element) {Song(element.title, element.artist, etc)});
       /// return musicLibrary;

@@ -16,7 +16,7 @@ class PlaylistsBloc extends ChangeNotifier {
     _favorites = updatedFavorites;
     notifyListeners();
   }
-
+  
   List<Track> _recentlyAdded;
   List<Track> get recentlyAdded => _recentlyAdded;
   set recentlyAdded(List<Track> recentAdditions) {
