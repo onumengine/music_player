@@ -104,9 +104,6 @@ class NowPlayingBloc extends ChangeNotifier {
     bool isPlaying;
     try {
       isPlaying = await _platformChannel.invokeMethod('getMusicLibrary');
-
-      /// var musicLibrary = songs.map((element) {Song(element.title, element.artist, etc)});
-      /// return musicLibrary;
     } on PlatformException catch (e) {
       print(e.message);
     }
