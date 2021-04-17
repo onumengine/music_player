@@ -101,12 +101,13 @@ class NowPlayingBloc extends ChangeNotifier {
   goToNextSong() {}
 
   Future<void> getMusicLibrary() async {
-    bool isPlaying;
+    dynamic allSongsInDevice;
     try {
-      isPlaying = await _platformChannel.invokeMethod('getMusicLibrary');
+      allSongsInDevice = await _platformChannel.invokeMethod('getMusicLibrary');
     } on PlatformException catch (e) {
       print(e.message);
     }
+    print(allSongsInDevice ?? "I couldn't get the songs in the device");
   }
 
   stopPlaying(AssetsAudioPlayer player) async {
