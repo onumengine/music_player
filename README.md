@@ -1,17 +1,10 @@
 # music_player
 
-A new Flutter application.
+A MusicPlayer
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-- [App UI](https://onumengine.github.io/appScreenshots/nowplayingpage)
-
-<img src="https://github.com/onumengine/onumengine.github.io/tree/main/appScreenshots/nowplayingpage.png" alt="NowPlaying page" width="200">
-![Now Playing page](https://github.com/onumengine/onumengine.github.io/blob/main/appScreenshots/nowplayingpage.png?raw=true)
-
+<img src="lib/appScreenshots/nowplayingpage.png" alt="NowPlaying page" width="200">
+<img src="lib/appScreenshots/artistsscreen.png" alt="NowPlaying page" width="200">
+<img src="lib/appScreenshots/genrepage.png" alt="NowPlaying page" width="200">
+<img src="lib/appScreenshots/playlistspage.png" alt="NowPlaying page" width="200">
+<img src="lib/appScreenshots/settingspage.png" alt="NowPlaying page" width="200">
+<img src="lib/appScreenshots/soundeffectsscreen.png" alt="NowPlaying page" width="200">
