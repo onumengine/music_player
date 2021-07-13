@@ -1,4 +1,4 @@
-import 'package:assets_audio_player/assets_audio_player.dart';
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:music_player/models/track.dart';
@@ -110,7 +110,7 @@ class NowPlayingBloc extends ChangeNotifier {
     print(allSongsInDevice ?? "I couldn't get the songs in the device");
   }
 
-  stopPlaying(AssetsAudioPlayer player) async {
+  stopPlaying(AudioPlayer player) async {
     await player.stop();
   }
 }

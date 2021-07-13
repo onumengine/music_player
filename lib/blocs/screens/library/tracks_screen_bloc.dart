@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:assets_audio_player/assets_audio_player.dart';
-import 'package:music_player/audio_module/audio_player.dart';
+import 'package:music_player/repository/player_repo.dart';
 import 'package:music_player/ui/atoms/track_listtile.dart';
 
 class TracksScreenBloc extends ChangeNotifier {
@@ -33,10 +32,7 @@ class TracksScreenBloc extends ChangeNotifier {
 
   Future<void> playLilDurk() async {
     try {
-      await AudioPlayer.player.open(
-        Audio("lib/assets/audio/248.mp3"),
-      );
-      await AudioPlayer.player.play();
+      await PlayerRepository().player.play("lib/assets/audio/248.mp3");
     } on PlatformException catch (e) {
       print(e.message);
     }
@@ -44,7 +40,7 @@ class TracksScreenBloc extends ChangeNotifier {
 
   Future<void> stopPlayback() async {
     try {
-      await AudioPlayer.player.stop();
+      await PlayerRepository().player.stop();
     } on Exception catch (e) {
       print(e.toString());
     }
