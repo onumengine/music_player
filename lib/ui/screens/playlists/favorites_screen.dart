@@ -5,58 +5,38 @@ import 'package:music_player/ui/molecules/queue_track_tile.dart';
 
 class FavoritesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      slivers: [
-        SliverList(
-          delegate: SliverChildBuilderDelegate(
-            (BuildContext context, int index) {
-              return ShuffleTile();
-            },
-            childCount: 1,
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          ShuffleTile(),
+          ...List.generate(
+            30,
+            (int index) => QueueTrackTile(key: ValueKey(index)),
           ),
-        ),
-        SliverList(
-          delegate: SliverChildBuilderDelegate(
-            (BuildContext context, int index) {
-              return QueueTrackTile();
-            },
-            childCount: 30,
+          TextButton(
+            onPressed: () {},
+            child: Text(
+              'SORT',
+              style: TextStyle(color: Colors.blue),
+            ),
           ),
-        ),
-        SliverList(
-          delegate: SliverChildBuilderDelegate(
-            (BuildContext context, int index) {
-              return Column(
-                children: <Widget>[
-                  FlatButton(
-                    onPressed: () {},
-                    child: Text(
-                      'SORT',
-                      style: TextStyle(color: Colors.blue),
-                    ),
-                  ),
-                  FlatButton(
-                    onPressed: () {},
-                    child: Text(
-                      'ADD TRACKS',
-                      style: TextStyle(color: Colors.blue),
-                    ),
-                  ),
-                  FlatButton(
-                    onPressed: () {},
-                    child: Text(
-                      'REMOVE DUPLICATES',
-                      style: TextStyle(color: Colors.blue),
-                    ),
-                  ),
-                  FillerTile(),
-                ],
-              );
-            },
-            childCount: 1,
+          TextButton(
+            onPressed: () {},
+            child: Text(
+              'ADD TRACKS',
+              style: TextStyle(color: Colors.blue),
+            ),
           ),
-        ),
-      ],
+          TextButton(
+            onPressed: () {},
+            child: Text(
+              'REMOVE DUPLICATES',
+              style: TextStyle(color: Colors.blue),
+            ),
+          ),
+          FillerTile(),
+        ],
+      ),
     );
   }
 }

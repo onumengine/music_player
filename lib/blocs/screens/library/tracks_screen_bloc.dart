@@ -26,7 +26,7 @@ class TracksScreenBloc extends ChangeNotifier {
           title: songs[index],
           subtitle: 'Pyro The Rapper',
           onTap: () {
-            playLilDurk();
+            //playLilDurk();
           },
         ),
       );
@@ -39,6 +39,14 @@ class TracksScreenBloc extends ChangeNotifier {
       await AudioPlayer.player.play();
     } on PlatformException catch (e) {
       print(e.message);
+    }
+  }
+
+  Future<void> stopPlayback() async {
+    try {
+      await AudioPlayer.player.stop();
+    } on Exception catch (e) {
+      print(e.toString());
     }
   }
 }

@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:music_player/ui/atoms/track_listtile.dart';
 
 class QueueTrackTile extends StatelessWidget {
+  ValueKey key;
+
+  QueueTrackTile({this.key});
+
   Widget build(BuildContext context) {
     return Row(
       children: <Widget>[
