@@ -1,9 +1,12 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:music_player/repository/player_repo.dart';
 import 'package:music_player/ui/atoms/track_listtile.dart';
 
 class TracksScreenBloc extends ChangeNotifier {
+  var _player;
+
   var _songs = <String>[
     'Panic Attack',
     'Naija Boy',
@@ -32,15 +35,15 @@ class TracksScreenBloc extends ChangeNotifier {
 
   Future<void> playLilDurk() async {
     try {
-      await PlayerRepository().player.play("lib/assets/audio/248.mp3");
-    } on PlatformException catch (e) {
-      print(e.message);
+      _player = await AudioCache().play("audio/248.mp3");
+    } on Exception catch (e) {
+      print(e.toString());
     }
   }
 
   Future<void> stopPlayback() async {
     try {
-      await PlayerRepository().player.stop();
+      await _player.stop();
     } on Exception catch (e) {
       print(e.toString());
     }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:music_player/blocs/screens/library/tracks_screen_bloc.dart';
-import 'package:music_player/repository/player_repo.dart';
 import 'package:music_player/ui/atoms/filler_tile.dart';
 import 'package:music_player/ui/atoms/shuffle_tile.dart';
 import 'package:provider/provider.dart';
