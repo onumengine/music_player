@@ -14,11 +14,17 @@ class TracksScreen extends StatefulWidget {
 
 class TracksScreenState extends State<TracksScreen> {
   final Widget stateThumbnail;
+  TracksScreenBloc bloc;
 
   TracksScreenState({this.stateThumbnail});
 
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    bloc = context.watch<TracksScreenBloc>();
+  }
+
   Widget build(BuildContext context) {
-    TracksScreenBloc bloc = context.watch<TracksScreenBloc>();
     return CustomScrollView(
       slivers: <Widget>[
         SliverList(
