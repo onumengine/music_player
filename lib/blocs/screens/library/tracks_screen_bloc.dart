@@ -14,32 +14,26 @@ class TracksScreenBloc extends ChangeNotifier {
     notifyListeners();
   }
 
-  var _songs = <String>[
-    'Panic Attack',
-    'Naija Boy',
-    'The Other Day',
-    'Dun Trip',
-    'Opposites Attract',
-    'Bittersweet dream',
-    'I Left You This Note',
-    'Chidinma Song',
-    'Ebiere',
-    'Way Too Strong',
-  ];
-  List<String> get songs => _songs;
+  List<ArtistInfo> _artistsInDevice;
+  List<ArtistInfo> get artistsInDevice => _artistsInDevice;
+  void fetchArtistsInDevice() async {
+    _artistsInDevice = await MusicRepository.fetchArtistsInDevice();
+    notifyListeners();
+  }
 
-  List<TrackListTile> getTrackTiles() => List.generate(
-        songs.length,
-        (index) => TrackListTile(
-          thumbnail: Icon(Icons.music_note_rounded),
-          title: songs[index],
-          subtitle: 'Pyro The Rapper',
-          onTap: () async {
-            //playLilDurk();
-            await fetchSongsInDevice();
-          },
-        ),
-      );
+  List<AlbumInfo> _albumsInDevice;
+  List<AlbumInfo> get albumsInDevice => _albumsInDevice;
+  void fetchAlbumsInDevice() async {
+    _albumsInDevice = await MusicRepository.fetchAlbumsInDevice();
+    notifyListeners();
+  }
+
+  List<GenreInfo> _genresInDevice;
+  List<GenreInfo> get genresInDevice => _genresInDevice;
+  void fetchGenresInDevice() async {
+    _genresInDevice = await MusicRepository.fetchGenresInDevice();
+    notifyListeners();
+  }
 
   Future<void> playLilDurk() async {
     try {

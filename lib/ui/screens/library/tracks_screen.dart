@@ -19,8 +19,8 @@ class TracksScreenState extends State<TracksScreen> {
   TracksScreenState({this.stateThumbnail});
 
   @override
-  void initState() {
-    super.initState();
+  void didChangeDependencies() {
+    super.didChangeDependencies();
     Provider.of<TracksScreenBloc>(context, listen: false).fetchSongsInDevice();
   }
 

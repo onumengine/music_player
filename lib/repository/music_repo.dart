@@ -41,4 +41,14 @@ class MusicRepository {
       print("ARTIST FETCH ENDED WITH THIS EXCEPTION: \n$e");
     }
   }
+
+  static Future<dynamic> getAlbumsFromGenre(genreName) async {
+    try {
+      dynamic albumsInGenre =
+          await FlutterAudioQuery().getAlbumsFromGenre(genre: genreName);
+      return albumsInGenre;
+    } on Exception catch (e) {
+      print("FETCHING ALBUMS ENDED IN THIS EXCPETION: \n$e");
+    }
+  }
 }
