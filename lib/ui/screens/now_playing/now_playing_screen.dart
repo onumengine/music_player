@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:music_player/viewmodels/pages/now_playing_page_bloc.dart';
+import 'package:music_player/viewmodels/pages/now_playing_model.dart';
 import 'package:provider/provider.dart';
 
 class NowPlayingScreen extends StatefulWidget {
@@ -8,7 +8,7 @@ class NowPlayingScreen extends StatefulWidget {
 
 class _NowPlayingScreenState extends State<NowPlayingScreen> {
   Widget build(BuildContext context) {
-    var nowPlayingBloc = context.watch<NowPlayingBloc>();
+    var nowPlayingBloc = context.watch<NowPlayingModel>();
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[

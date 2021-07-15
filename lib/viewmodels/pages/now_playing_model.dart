@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:music_player/models/track.dart';
 import 'package:music_player/util/strings.dart';
 
-class NowPlayingBloc extends ChangeNotifier {
+class NowPlayingModel extends ChangeNotifier {
   final _platformChannel = MethodChannel(METHOD_CHANNEL_MUSIC_LIBRARY);
 
   String _currentlyPlayingTrackTitle = '<unknown>';
