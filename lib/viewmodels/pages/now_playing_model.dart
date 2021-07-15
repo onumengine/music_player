@@ -5,13 +5,22 @@ import 'package:music_player/models/track.dart';
 import 'package:music_player/util/strings.dart';
 
 class NowPlayingModel extends ChangeNotifier {
-  final _platformChannel = MethodChannel(METHOD_CHANNEL_MUSIC_LIBRARY);
-
   String _currentlyPlayingTrackTitle = '<unknown>';
   String get currentlyPlayingTrackTitle => _currentlyPlayingTrackTitle;
   set currentlyPlayingTrackTitle(String currentTrack) {
     _currentlyPlayingTrackTitle = currentTrack;
     notifyListeners();
+  }
+
+  play(url) async {
+    AudioPlayer audioPlayer = AudioPlayer();
+    AudioPlayer.logEnabled = true;
+    int result = await audioPlayer.play(url, isLocal: true);
+    if (result == 1) {
+      print("PLAYED THE SONG SUCCESSFULLY");
+    } else {
+      print("PLAYBACK FAILED");
+    }
   }
 
   String _currentlyPlayingTrackArtist = '<unknown>';
@@ -99,18 +108,4 @@ class NowPlayingModel extends ChangeNotifier {
   resumePlayback() {}
 
   goToNextSong() {}
-
-  Future<void> getMusicLibrary() async {
-    dynamic allSongsInDevice;
-    try {
-      allSongsInDevice = await _platformChannel.invokeMethod('getMusicLibrary');
-    } on PlatformException catch (e) {
-      print(e.message);
-    }
-    print(allSongsInDevice ?? "I couldn't get the songs in the device");
-  }
-
-  stopPlaying(AudioPlayer player) async {
-    await player.stop();
-  }
 }

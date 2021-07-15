@@ -25,43 +25,38 @@ class TracksScreenState extends State<TracksScreen> {
   }
 
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      slivers: <Widget>[
-        SliverList(
-          delegate: SliverChildBuilderDelegate(
-            (BuildContext context, int index) {
-              return ShuffleTile();
-            },
-            childCount: 1,
+    return Consumer<LibraryModel>(
+      builder: (context, model, child) => CustomScrollView(
+        slivers: <Widget>[
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (BuildContext context, int index) {
+                return ShuffleTile();
+              },
+              childCount: 1,
+            ),
           ),
-        ),
-        SliverList(
-          delegate: SliverChildBuilderDelegate(
-            (BuildContext context, int index) {
-              return Consumer<LibraryModel>(
-                builder: (context, model, child) {
-                  return Column(
-                    children: (model.songsInDevice.length == 0)
-                        ? [FillerTile()]
-                        : [
-                            ...model.songsInDevice.map(
-                              (song) => TrackListTile(
-                                thumbnail: Icon(Icons.music_note_rounded),
-                                title: song.title,
-                                subtitle: song.artist,
-                                trailing: Text(song.duration),
-                              ),
-                            ),
-                            FillerTile(),
-                          ],
-                  );
-                },
-              );
-            },
-            childCount: 1,
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (BuildContext context, int index) {
+                var currentSong = model.songsInDevice.elementAt(index);
+                return TrackListTile(
+                  thumbnail: Icon(Icons.music_note_rounded),
+                  title: currentSong.title,
+                  subtitle: currentSong.artist,
+                  trailing: Text(currentSong.duration),
+                );
+              },
+              childCount: model.songsInDevice.length,
+            ),
           ),
-        ),
-      ],
+          SliverList(
+            delegate: SliverChildListDelegate([
+              FillerTile(),
+            ]),
+          ),
+        ],
+      ),
     );
   }
 }
