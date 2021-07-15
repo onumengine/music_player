@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:music_player/viewmodels/pages/equalizer_page_model.dart';
+import 'package:music_player/viewmodels/pages/equalizer_model.dart';
 import 'package:provider/provider.dart';
 
 class VolumeRegulator extends StatefulWidget {
@@ -18,7 +18,7 @@ class VolumeRegulatorState extends State<VolumeRegulator> {
   VolumeRegulatorState({this.maxLevel});
 
   Widget build(BuildContext context) {
-    EqualizerPageModel equalizerPageBloc = context.watch<EqualizerPageModel>();
+    EqualizerModel equalizerPageBloc = context.watch<EqualizerModel>();
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
       child: Column(

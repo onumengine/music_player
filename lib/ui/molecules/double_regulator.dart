@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:music_player/viewmodels/pages/equalizer_page_model.dart';
+import 'package:music_player/viewmodels/pages/equalizer_model.dart';
 import 'package:provider/provider.dart';
 
 class DoubleRegulator extends StatefulWidget {
@@ -16,7 +16,7 @@ class DoubleRegulatorState extends State<DoubleRegulator> {
   DoubleRegulatorState({this.label});
 
   Widget build(BuildContext context) {
-    EqualizerPageModel equalizerPageBloc = context.watch<EqualizerPageModel>();
+    EqualizerModel equalizerPageBloc = context.watch<EqualizerModel>();
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 16.0),
       child: Column(

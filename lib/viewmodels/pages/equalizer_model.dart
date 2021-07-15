@@ -14,7 +14,7 @@ enum DropdownItem {
   rock,
 }
 
-class EqualizerPageModel extends ChangeNotifier {
+class EqualizerModel extends ChangeNotifier {
   bool _isSelected = false;
   bool get isSelected => _isSelected;
   set isSelected(bool value) {

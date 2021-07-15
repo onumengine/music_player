@@ -4,7 +4,7 @@ import 'package:flutter_audio_query/flutter_audio_query.dart';
 import 'package:music_player/models/track.dart';
 import 'package:music_player/repository/music_repo.dart';
 
-class LibraryPageModel extends ChangeNotifier {
+class LibraryModel extends ChangeNotifier {
   var _player;
 
   List<SongInfo> _songsInDevice = [];
