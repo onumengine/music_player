@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:music_player/models/playlist.dart';
 import 'package:music_player/models/track.dart';
 
-class PlaylistsBloc extends ChangeNotifier {
+class PlaylistsModel extends ChangeNotifier {
   List<Playlist> _playlistCollection;
   List<Playlist> get playlistCollection => _playlistCollection;
   set playlistCollection(List<Playlist> playlists) {
@@ -16,7 +16,7 @@ class PlaylistsBloc extends ChangeNotifier {
     _favorites = updatedFavorites;
     notifyListeners();
   }
-  
+
   List<Track> _recentlyAdded;
   List<Track> get recentlyAdded => _recentlyAdded;
   set recentlyAdded(List<Track> recentAdditions) {
