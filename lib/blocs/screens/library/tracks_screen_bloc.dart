@@ -8,6 +8,13 @@ import 'package:music_player/ui/atoms/track_listtile.dart';
 class TracksScreenBloc extends ChangeNotifier {
   var _player;
 
+  List<SongInfo> _songsInDevice;
+  List<SongInfo> get songsInDevice => _songsInDevice;
+  void setSongsInDevice(List<SongInfo> songs) {
+    _songsInDevice = songs;
+    notifyListeners();
+  }
+
   dynamic fetchSongsInDevice() async {
     final FlutterAudioQuery flutterAudioQuery = FlutterAudioQuery();
     try {
@@ -15,6 +22,8 @@ class TracksScreenBloc extends ChangeNotifier {
       print("ABOUT TO PRINT ALL SONGS");
       allSongs.forEach(print);
       print("ALL ${allSongs.length} SONGS PRINTED SUCCESSFULLY");
+      print("ASSIGNING SONGS TO THE VARIABLE");
+      setSongsInDevice(allSongs);
     } on Exception catch (e) {
       print("MUSIC FETCH ENDED WITH AN EXCEPTION: \n$e");
     }

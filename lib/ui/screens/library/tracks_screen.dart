@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:music_player/blocs/screens/library/tracks_screen_bloc.dart';
 import 'package:music_player/ui/atoms/filler_tile.dart';
 import 'package:music_player/ui/atoms/shuffle_tile.dart';
+import 'package:music_player/ui/atoms/track_listtile.dart';
 import 'package:provider/provider.dart';
 
 class TracksScreen extends StatefulWidget {
@@ -14,14 +15,13 @@ class TracksScreen extends StatefulWidget {
 
 class TracksScreenState extends State<TracksScreen> {
   final Widget stateThumbnail;
-  TracksScreenBloc bloc;
 
   TracksScreenState({this.stateThumbnail});
 
   @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    bloc = context.watch<TracksScreenBloc>();
+  void initState() {
+    super.initState();
+    Provider.of<TracksScreenBloc>(context, listen: false).fetchSongsInDevice();
   }
 
   Widget build(BuildContext context) {
@@ -30,12 +30,32 @@ class TracksScreenState extends State<TracksScreen> {
         SliverList(
           delegate: SliverChildBuilderDelegate(
             (BuildContext context, int index) {
-              return Column(
-                children: <Widget>[
-                  ShuffleTile(),
-                  ...bloc.getTrackTiles(),
-                  FillerTile(),
-                ],
+              return ShuffleTile();
+            },
+            childCount: 1,
+          ),
+        ),
+        SliverList(
+          delegate: SliverChildBuilderDelegate(
+            (BuildContext context, int index) {
+              return Consumer<TracksScreenBloc>(
+                builder: (context, bloc, child) {
+                  return Column(
+                    children: (bloc.songsInDevice == null)
+                        ? [FillerTile()]
+                        : [
+                            ...bloc.songsInDevice.map(
+                              (song) => TrackListTile(
+                                thumbnail: Icon(Icons.music_note_rounded),
+                                title: song.title,
+                                subtitle: song.artist,
+                                trailing: Text(song.duration),
+                              ),
+                            ),
+                            FillerTile(),
+                          ],
+                  );
+                },
               );
             },
             childCount: 1,
