@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:music_player/viewmodels/pages/library_page_bloc.dart';
+import 'package:music_player/viewmodels/pages/library_page_model.dart';
 import 'package:music_player/ui/atoms/filler_tile.dart';
 import 'package:music_player/ui/atoms/shuffle_tile.dart';
 import 'package:music_player/ui/atoms/track_listtile.dart';
@@ -21,7 +21,7 @@ class TracksScreenState extends State<TracksScreen> {
   @override
   void initState() {
     super.initState();
-    Provider.of<LibraryPageBloc>(context, listen: false).fetchSongsInDevice();
+    Provider.of<LibraryPageModel>(context, listen: false).fetchSongsInDevice();
   }
 
   Widget build(BuildContext context) {
@@ -38,7 +38,7 @@ class TracksScreenState extends State<TracksScreen> {
         SliverList(
           delegate: SliverChildBuilderDelegate(
             (BuildContext context, int index) {
-              return Consumer<LibraryPageBloc>(
+              return Consumer<LibraryPageModel>(
                 builder: (context, model, child) {
                   return Column(
                     children: (model.songsInDevice.length == 0)
