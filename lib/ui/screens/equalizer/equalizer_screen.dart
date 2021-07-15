@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:music_player/viewmodels/pages/equalizer_page_bloc.dart';
+import 'package:music_player/viewmodels/pages/equalizer_page_model.dart';
 import 'package:provider/provider.dart';
 
 class EqualizerScreen extends StatefulWidget {
@@ -9,7 +9,7 @@ class EqualizerScreen extends StatefulWidget {
 
 class EqualizerScreenState extends State<EqualizerScreen> {
   Widget build(BuildContext context) {
-    EqualizerPageBloc viewModel = context.watch<EqualizerPageBloc>();
+    EqualizerPageModel viewModel = context.watch<EqualizerPageModel>();
     return Container(
       width: double.infinity,
       height: double.infinity,
