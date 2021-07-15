@@ -2,7 +2,6 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_audio_query/flutter_audio_query.dart';
 import 'package:music_player/repository/music_repo.dart';
-import 'package:music_player/ui/atoms/track_listtile.dart';
 
 class TracksScreenBloc extends ChangeNotifier {
   var _player;
