@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:music_player/blocs/pages/library_page_bloc.dart';
-import 'package:music_player/blocs/screens/library/tracks_screen_bloc.dart';
+import 'package:music_player/viewmodels/pages/library_page_bloc.dart';
 import 'package:music_player/ui/atoms/filler_tile.dart';
 import 'package:music_player/ui/atoms/shuffle_tile.dart';
 import 'package:music_player/ui/atoms/track_listtile.dart';
@@ -20,8 +19,8 @@ class TracksScreenState extends State<TracksScreen> {
   TracksScreenState({this.stateThumbnail});
 
   @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
+  void initState() {
+    super.initState();
     Provider.of<LibraryPageBloc>(context, listen: false).fetchSongsInDevice();
   }
 

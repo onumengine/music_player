@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:music_player/blocs/pages/equalizer_page_bloc.dart';
-import 'package:music_player/blocs/pages/library_page_bloc.dart';
-import 'package:music_player/blocs/pages/now_playing_page_bloc.dart';
-import 'package:music_player/blocs/screens/library/tracks_screen_bloc.dart';
+import 'package:music_player/viewmodels/pages/equalizer_page_bloc.dart';
+import 'package:music_player/viewmodels/pages/library_page_bloc.dart';
+import 'package:music_player/viewmodels/pages/now_playing_page_bloc.dart';
+import 'package:music_player/viewmodels/screens/library/tracks_screen_bloc.dart';
 import 'package:music_player/ui/route_generator.dart';
 import 'package:music_player/util/strings.dart';
 import 'package:provider/provider.dart';

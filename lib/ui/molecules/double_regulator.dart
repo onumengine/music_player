@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:music_player/blocs/pages/equalizer_page_bloc.dart';
+import 'package:music_player/viewmodels/pages/equalizer_page_bloc.dart';
 import 'package:provider/provider.dart';
 
 class DoubleRegulator extends StatefulWidget {
