@@ -48,7 +48,7 @@ class LibraryPageState extends State<LibraryPage> {
             IconButton(
               icon: Icon(Icons.search_rounded),
               onPressed: () {
-                Scaffold.of(context).showSnackBar(
+                ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
                     content: Text('Whatchu looking for?'),
                   ),

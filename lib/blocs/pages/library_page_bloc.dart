@@ -7,7 +7,7 @@ import 'package:music_player/repository/music_repo.dart';
 class LibraryPageBloc extends ChangeNotifier {
   var _player;
 
-  List<SongInfo> _songsInDevice;
+  List<SongInfo> _songsInDevice = [];
   List<SongInfo> get songsInDevice => _songsInDevice;
   void fetchSongsInDevice() async {
     _songsInDevice = await MusicRepository.fetchSongsInDevice();

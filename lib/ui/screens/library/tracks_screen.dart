@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:music_player/blocs/pages/library_page_bloc.dart';
 import 'package:music_player/blocs/screens/library/tracks_screen_bloc.dart';
 import 'package:music_player/ui/atoms/filler_tile.dart';
 import 'package:music_player/ui/atoms/shuffle_tile.dart';
@@ -21,7 +22,7 @@ class TracksScreenState extends State<TracksScreen> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    Provider.of<TracksScreenBloc>(context, listen: false).fetchSongsInDevice();
+    Provider.of<LibraryPageBloc>(context, listen: false).fetchSongsInDevice();
   }
 
   Widget build(BuildContext context) {
@@ -38,13 +39,13 @@ class TracksScreenState extends State<TracksScreen> {
         SliverList(
           delegate: SliverChildBuilderDelegate(
             (BuildContext context, int index) {
-              return Consumer<TracksScreenBloc>(
-                builder: (context, bloc, child) {
+              return Consumer<LibraryPageBloc>(
+                builder: (context, model, child) {
                   return Column(
-                    children: (bloc.songsInDevice == null)
+                    children: (model.songsInDevice.length == 0)
                         ? [FillerTile()]
                         : [
-                            ...bloc.songsInDevice.map(
+                            ...model.songsInDevice.map(
                               (song) => TrackListTile(
                                 thumbnail: Icon(Icons.music_note_rounded),
                                 title: song.title,
