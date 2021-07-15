@@ -23,4 +23,13 @@ class MusicRepository {
       print("ARTIST FETCH ENDED WITH THIS EXCEPTION: \n$e");
     }
   }
+
+  static Future<List<AlbumInfo>> fetchAlbumsInDevice() async {
+    try {
+      List<AlbumInfo> allAlbumsInDevice = await FlutterAudioQuery().getAlbums();
+      return allAlbumsInDevice;
+    } on Exception catch (e) {
+      print("ARTIST FETCH ENDED WITH THIS EXCEPTION: \n$e");
+    }
+  }
 }
