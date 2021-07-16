@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:music_player/util/strings.dart';
 
 class ArtistTile extends StatelessWidget {
-  ArtistTile({this.imagePath = 'lib/assets/images/3.png'});
+  ArtistTile({this.imagePath = 'lib/assets/images/3.png', this.artistName="Unknown"});
 
-  final String imagePath;
+  final String imagePath, artistName;
 
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -17,7 +17,7 @@ class ArtistTile extends StatelessWidget {
             Padding(
               padding: EdgeInsets.all(8.0),
               child: Text(
-                'Pyro The Rapper',
+                this.artistName,
                 style: TextStyle(color: Colors.white),
               ),
             ),
