@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:music_player/util/strings.dart';
 
 class ArtistTile extends StatelessWidget {
-  ArtistTile({this.imagePath = 'lib/assets/images/3.png', this.artistName="Unknown"});
+  ArtistTile({
+    this.imagePath = 'lib/assets/images/3.png',
+    this.artistName = "Unknown",
+  });
 
   final String imagePath, artistName;
 

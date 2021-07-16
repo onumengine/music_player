@@ -23,7 +23,9 @@ class ArtistsScreenState extends State<ArtistsScreen> {
           crossAxisCount: 2,
           children: List.generate(
             model.artistsInDevice.length,
-            (index) => ArtistTile(),
+            (index) => ArtistTile(
+              artistName: model.artistsInDevice.elementAt(index).name,
+            ),
           ),
         ),
       ),
