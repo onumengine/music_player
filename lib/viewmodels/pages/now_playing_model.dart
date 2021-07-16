@@ -5,6 +5,8 @@ import 'package:music_player/models/track.dart';
 import 'package:music_player/util/strings.dart';
 
 class NowPlayingModel extends ChangeNotifier {
+  bool playbackIsPlaying;
+
   String _currentlyPlayingTrackTitle = '<unknown>';
   String get currentlyPlayingTrackTitle => _currentlyPlayingTrackTitle;
   set currentlyPlayingTrackTitle(String currentTrack) {
@@ -12,14 +14,24 @@ class NowPlayingModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  play(url) async {
-    AudioPlayer audioPlayer = AudioPlayer();
+  play(String url) async {
+    AudioPlayer audioPlayer = AudioPlayer(playerId: PLAYER_ID);
     AudioPlayer.logEnabled = true;
     int result = await audioPlayer.play(url, isLocal: true);
     if (result == 1) {
       print("PLAYED THE SONG SUCCESSFULLY");
     } else {
       print("PLAYBACK FAILED");
+    }
+  }
+
+  stop() async {
+    AudioPlayer audioPlayer = AudioPlayer(playerId: PLAYER_ID);
+    int result = await audioPlayer.pause();
+    if (result == 1) {
+      print("PAUSED THE SONG SUCCESSFULLY");
+    } else {
+      print("FAILED TO PAUSE MUSIC");
     }
   }
 

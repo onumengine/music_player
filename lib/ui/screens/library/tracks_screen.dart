@@ -3,6 +3,7 @@ import 'package:music_player/viewmodels/pages/library_model.dart';
 import 'package:music_player/ui/atoms/filler_tile.dart';
 import 'package:music_player/ui/atoms/shuffle_tile.dart';
 import 'package:music_player/ui/atoms/track_listtile.dart';
+import 'package:music_player/viewmodels/pages/now_playing_model.dart';
 import 'package:provider/provider.dart';
 
 class TracksScreen extends StatefulWidget {
@@ -45,6 +46,10 @@ class TracksScreenState extends State<TracksScreen> {
                   title: currentSong.title,
                   subtitle: currentSong.artist,
                   trailing: Text(currentSong.duration),
+                  onTap: () {
+                    Provider.of<NowPlayingModel>(context, listen: false)
+                        .play(currentSong.filePath);
+                  },
                 );
               },
               childCount: model.songsInDevice.length,

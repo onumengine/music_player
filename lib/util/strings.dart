@@ -1,4 +1,4 @@
-const METHOD_CHANNEL_MUSIC_LIBRARY = 'channel.flutter/music_library';
+const PLAYER_ID = "com.onumdev.musicplayer";
 
 const ROUTE_LIBRARY_PAGE = '/';
 const ROUTE_PLAYLISTS_HOME_PAGE = '/playlists';
