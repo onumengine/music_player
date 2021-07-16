@@ -18,6 +18,8 @@ class MusicRepository {
     try {
       List<ArtistInfo> allArtistsInDevice =
           await FlutterAudioQuery().getArtists();
+      allArtistsInDevice.forEach(print);
+      print("ALL ARTISTS FETCHED SUCCESSFULLY");
       return allArtistsInDevice;
     } on Exception catch (e) {
       print("ARTIST FETCH ENDED WITH THIS EXCEPTION: \n$e");

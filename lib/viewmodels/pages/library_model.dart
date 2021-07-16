@@ -1,12 +1,9 @@
-import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_audio_query/flutter_audio_query.dart';
 import 'package:music_player/models/track.dart';
 import 'package:music_player/repository/music_repo.dart';
 
 class LibraryModel extends ChangeNotifier {
-  var _player;
-
   List<SongInfo> _songsInDevice = [];
   List<SongInfo> get songsInDevice => _songsInDevice;
   void fetchSongsInDevice() async {
