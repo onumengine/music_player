@@ -11,21 +11,21 @@ class LibraryModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  List<ArtistInfo> _artistsInDevice;
+  List<ArtistInfo> _artistsInDevice = [];
   List<ArtistInfo> get artistsInDevice => _artistsInDevice;
   void fetchArtistsInDevice() async {
     _artistsInDevice = await MusicRepository.fetchArtistsInDevice();
     notifyListeners();
   }
 
-  List<AlbumInfo> _albumsInDevice;
+  List<AlbumInfo> _albumsInDevice = [];
   List<AlbumInfo> get albumsInDevice => _albumsInDevice;
   void fetchAlbumsInDevice() async {
     _albumsInDevice = await MusicRepository.fetchAlbumsInDevice();
     notifyListeners();
   }
 
-  List<GenreInfo> _genresInDevice;
+  List<GenreInfo> _genresInDevice = [];
   List<GenreInfo> get genresInDevice => _genresInDevice;
   void fetchGenresInDevice() async {
     _genresInDevice = await MusicRepository.fetchGenresInDevice();
