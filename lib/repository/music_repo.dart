@@ -38,13 +38,33 @@ class MusicRepository {
     }
   }
 
-  static Future<dynamic> getAlbumsFromGenre(genreName) async {
+  static Future<List<AlbumInfo>> getAlbumsFromGenre(String genreName) async {
     try {
-      dynamic albumsInGenre =
+      List<AlbumInfo> albumsInGenre =
           await FlutterAudioQuery().getAlbumsFromGenre(genre: genreName);
       return albumsInGenre;
     } on Exception catch (e) {
       print("FETCHING ALBUMS ENDED IN THIS EXCPETION: \n$e");
+    }
+  }
+
+  static Future<List<AlbumInfo>> getAlbumsByArtist(String artistName) async {
+    try {
+      List<AlbumInfo> albumsByArtist =
+          await FlutterAudioQuery().getAlbumsFromArtist(artist: artistName);
+      return albumsByArtist;
+    } on Exception catch (e) {
+      print("GETTING ALBUMS BY ARTIST ENDED IN THIS EXCEPTION: \n$e");
+    }
+  }
+
+  static Future<List<SongInfo>> getSongsByArtist(String artistID) async {
+    try {
+      List<SongInfo> songsByArtist =
+          await FlutterAudioQuery().getSongsFromArtist(artistId: artistID);
+      return songsByArtist;
+    } on Exception catch (e) {
+      print("GETTING ALBUMS BY ARTIST ENDED IN THIS EXCEPTION: \n$e");
     }
   }
 }
