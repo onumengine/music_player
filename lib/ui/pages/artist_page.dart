@@ -10,7 +10,7 @@ class ArtistPage extends StatefulWidget {
 class ArtistPageState extends State<ArtistPage> {
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 3,
+      length: 2,
       child: Scaffold(
         body: CustomScrollView(
           slivers: <Widget>[
@@ -27,7 +27,7 @@ class ArtistPageState extends State<ArtistPage> {
                 indicatorColor: Colors.white,
                 tabs: <Tab>[
                   Tab(text: 'ALBUMS'),
-                  Tab(text: 'BIO'),
+                  //Tab(text: 'BIO'),
                   Tab(text: 'TRACKS'),
                 ],
               ),
@@ -36,9 +36,7 @@ class ArtistPageState extends State<ArtistPage> {
               child: TabBarView(
                 children: <Widget>[
                   AlbumsScreen(),
-                  Center(
-                    child: Text('No internet connection'),
-                  ),
+                  //Center(child: Text('No internet connection')),
                   TracksScreen(),
                 ],
               ),
