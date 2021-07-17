@@ -2,12 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:music_player/ui/screens/library/albums_screen.dart';
 import 'package:music_player/ui/screens/library/tracks_screen.dart';
 import 'package:music_player/ui/atoms/now_playing_tile.dart';
+import 'package:music_player/viewmodels/pages/artist_model.dart';
+import 'package:provider/provider.dart';
 
 class ArtistPage extends StatefulWidget {
+  final String artistName, artistID;
+
+  ArtistPage({@required this.artistName, @required this.artistID});
+
   ArtistPageState createState() => ArtistPageState();
 }
 
 class ArtistPageState extends State<ArtistPage> {
+  @override
+  void initState() {
+    super.initState();
+    Provider.of<ArtistModel>(context, listen: false)
+        .initializeModel(widget.artistName, widget.artistID);
+  }
+
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: 2,

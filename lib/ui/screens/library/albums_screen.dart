@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:music_player/ui/atoms/album_tile.dart';
 import 'package:music_player/util/strings.dart';
 import 'package:music_player/viewmodels/pages/library_model.dart';
 import 'package:provider/provider.dart';
-import '../../atoms/album_tile.dart';
 
 class AlbumsScreen extends StatefulWidget {
   AlbumsScreenState createState() => AlbumsScreenState();
