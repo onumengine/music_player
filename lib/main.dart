@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:music_player/viewmodels/pages/equalizer_model.dart';
 import 'package:music_player/viewmodels/pages/library_model.dart';
 import 'package:music_player/viewmodels/pages/now_playing_model.dart';
-import 'package:music_player/viewmodels/screens/library/tracks_screen_bloc.dart';
 import 'package:music_player/ui/route_generator.dart';
 import 'package:music_player/util/strings.dart';
 import 'package:provider/provider.dart';
@@ -16,9 +15,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider<TracksScreenBloc>.value(
-          value: TracksScreenBloc(),
-        ),
         ChangeNotifierProvider<EqualizerModel>.value(
           value: EqualizerModel(),
         ),
