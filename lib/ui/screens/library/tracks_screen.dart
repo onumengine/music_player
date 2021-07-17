@@ -22,7 +22,7 @@ class TracksScreenState extends State<TracksScreen> {
   @override
   void initState() {
     super.initState();
-    Provider.of<LibraryModel>(context, listen: false).fetchSongsInDevice();
+    Provider.of<LibraryModel>(context, listen: false).refreshLibrary();
   }
 
   Widget build(BuildContext context) {

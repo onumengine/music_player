@@ -4,42 +4,57 @@ import 'package:music_player/models/track.dart';
 import 'package:music_player/repository/music_repo.dart';
 
 class LibraryModel extends ChangeNotifier {
+  bool libraryHasBeenPopulated = false;
+
+  void refreshLibrary() {
+    if (libraryHasBeenPopulated) {
+      return;
+    } else {
+      updateLibrary();
+    }
+  }
+
   List<SongInfo> _songsInDevice = [];
   List<SongInfo> get songsInDevice => _songsInDevice;
-  void fetchSongsInDevice() async {
+  void _fetchSongsInDevice() async {
     _songsInDevice = await MusicRepository.fetchSongsInDevice();
     notifyListeners();
   }
 
   List<ArtistInfo> _artistsInDevice = [];
   List<ArtistInfo> get artistsInDevice => _artistsInDevice;
-  void fetchArtistsInDevice() async {
+  void _fetchArtistsInDevice() async {
     _artistsInDevice = await MusicRepository.fetchArtistsInDevice();
     notifyListeners();
   }
 
   List<AlbumInfo> _albumsInDevice = [];
   List<AlbumInfo> get albumsInDevice => _albumsInDevice;
-  void fetchAlbumsInDevice() async {
+  void _fetchAlbumsInDevice() async {
     _albumsInDevice = await MusicRepository.fetchAlbumsInDevice();
     notifyListeners();
   }
 
   List<GenreInfo> _genresInDevice = [];
   List<GenreInfo> get genresInDevice => _genresInDevice;
-  void fetchGenresInDevice() async {
+  void _fetchGenresInDevice() async {
     _genresInDevice = await MusicRepository.fetchGenresInDevice();
     notifyListeners();
   }
 
   List<Track> _searchResults;
   List<Track> get searchResults => _searchResults;
-  set searcResults(List<Track> results) {
+  set searchResults(List<Track> results) {
     _searchResults = results;
     notifyListeners();
   }
 
-  refreshLibrary() {}
+  updateLibrary() {
+    _fetchSongsInDevice();
+    _fetchArtistsInDevice();
+    _fetchAlbumsInDevice();
+    _fetchGenresInDevice();
+  }
 
   sortTracksAlphabetically() {}
 

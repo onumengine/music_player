@@ -11,7 +11,7 @@ class ArtistsScreenState extends State<ArtistsScreen> {
   @override
   void initState() {
     super.initState();
-    Provider.of<LibraryModel>(context, listen: false).fetchArtistsInDevice();
+    Provider.of<LibraryModel>(context, listen: false).refreshLibrary();
   }
 
   Widget build(BuildContext context) {
