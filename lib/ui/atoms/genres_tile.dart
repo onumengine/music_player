@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:music_player/util/strings.dart';
 
 class GenresTile extends StatelessWidget {
+  final String genreName;
+
+  GenresTile({this.genreName});
+
   Widget build(BuildContext context) {
     return GestureDetector(
       child: Stack(
@@ -21,7 +25,7 @@ class GenresTile extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(
-              'Hip-hop',
+              genreName,
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 20.0,
