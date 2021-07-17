@@ -20,7 +20,7 @@ class TracksScreenState extends State<TracksScreen> {
   TracksScreenState({this.stateThumbnail});
 
   Widget build(BuildContext context) {
-    return Consumer(builder: (context, model, child) {
+    return Consumer<LibraryModel>(builder: (context, model, child) {
       return CustomScrollView(
         slivers: <Widget>[
           SliverList(
