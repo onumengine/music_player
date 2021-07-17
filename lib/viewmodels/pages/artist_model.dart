@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_audio_query/flutter_audio_query.dart';
+import 'package:music_player/repository/music_repo.dart';
 
 class ArtistModel extends ChangeNotifier {
   String _artistName;
@@ -11,17 +12,21 @@ class ArtistModel extends ChangeNotifier {
 
   List<AlbumInfo> _albumsByArtist;
   List<AlbumInfo> get albumsByArtist => _albumsByArtist;
-  set albumsByArtist(List<AlbumInfo> albums) {
-    _albumsByArtist = albums;
+  void _getAlbumsByArtist(String artistName) async {
+    _albumsByArtist = await MusicRepository.getAlbumsByArtist(artistName);
     notifyListeners();
   }
 
   List<SongInfo> _songsByArtist;
   List<SongInfo> get songsByArtist => _songsByArtist;
-  set songsByArtist(List<SongInfo> songs) {
-    _songsByArtist = songs;
+  void _getSongsByArtist(String artistID) async {
+    _songsByArtist = await MusicRepository.getSongsByArtist(artistID);
     notifyListeners();
   }
 
-  void initializeModel() {}
+  void initializeModel(String artistName, String artistID) {
+    artistName = artistName;
+    _getAlbumsByArtist(artistName);
+    _getSongsByArtist(artistID);
+  }
 }
