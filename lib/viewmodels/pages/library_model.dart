@@ -6,13 +6,9 @@ import 'package:music_player/repository/music_repo.dart';
 class LibraryModel extends ChangeNotifier {
   List<SongInfo> _songsInDevice = [];
   List<SongInfo> get songsInDevice => _songsInDevice;
-  set songsInDevice(List<SongInfo> songs) {
-    _songsInDevice = songs;
-    notifyListeners();
-  }
-
   void _fetchSongsInDevice() async {
-    songsInDevice = await MusicRepository.fetchSongsInDevice();
+    _songsInDevice = await MusicRepository.fetchSongsInDevice();
+    notifyListeners();
   }
 
   List<ArtistInfo> _artistsInDevice = [];
