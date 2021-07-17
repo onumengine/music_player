@@ -5,6 +5,8 @@ import 'package:music_player/ui/screens/library/tracks_screen.dart';
 import 'package:music_player/ui/screens/library/albums_screen.dart';
 import 'package:music_player/ui/screens/library/artists_screen.dart';
 import 'package:music_player/ui/screens/library/genres_screen.dart';
+import 'package:music_player/viewmodels/pages/library_model.dart';
+import 'package:provider/provider.dart';
 
 class LibraryPage extends StatefulWidget {
   @override
@@ -12,6 +14,12 @@ class LibraryPage extends StatefulWidget {
 }
 
 class LibraryPageState extends State<LibraryPage> {
+  @override
+  void initState() {
+    super.initState();
+    Provider.of<LibraryModel>(context, listen: false).refreshLibrary();
+  }
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(

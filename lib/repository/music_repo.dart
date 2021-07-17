@@ -4,10 +4,6 @@ class MusicRepository {
   static Future<List<SongInfo>> fetchSongsInDevice() async {
     try {
       List<SongInfo> allSongsInDevice = await FlutterAudioQuery().getSongs();
-      print("ABOUT TO PRINT ALL SONGS");
-      print(allSongsInDevice);
-      print("ALL ${allSongsInDevice.length} SONGS PRINTED SUCCESSFULLY");
-      print("RETURNING SONGS TO THE CHANGE_NOTIFIER");
       return allSongsInDevice;
     } on Exception catch (e) {
       print("MUSIC FETCH ENDED WITH AN EXCEPTION: \n$e");
@@ -18,8 +14,6 @@ class MusicRepository {
     try {
       List<ArtistInfo> allArtistsInDevice =
           await FlutterAudioQuery().getArtists();
-      allArtistsInDevice.forEach(print);
-      print("ALL ARTISTS FETCHED SUCCESSFULLY");
       return allArtistsInDevice;
     } on Exception catch (e) {
       print("ARTIST FETCH ENDED WITH THIS EXCEPTION: \n$e");

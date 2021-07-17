@@ -8,12 +8,6 @@ class ArtistsScreen extends StatefulWidget {
 }
 
 class ArtistsScreenState extends State<ArtistsScreen> {
-  @override
-  void initState() {
-    super.initState();
-    Provider.of<LibraryModel>(context, listen: false).refreshLibrary();
-  }
-
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 50.0),

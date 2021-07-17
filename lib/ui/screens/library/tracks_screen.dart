@@ -19,15 +19,9 @@ class TracksScreenState extends State<TracksScreen> {
 
   TracksScreenState({this.stateThumbnail});
 
-  @override
-  void initState() {
-    super.initState();
-    Provider.of<LibraryModel>(context, listen: false).refreshLibrary();
-  }
-
   Widget build(BuildContext context) {
-    return Consumer<LibraryModel>(
-      builder: (context, model, child) => CustomScrollView(
+    return Consumer(builder: (context, model, child) {
+      return CustomScrollView(
         slivers: <Widget>[
           SliverList(
             delegate: SliverChildBuilderDelegate(
@@ -41,16 +35,24 @@ class TracksScreenState extends State<TracksScreen> {
             delegate: SliverChildBuilderDelegate(
               (BuildContext context, int index) {
                 var currentSong = model.songsInDevice.elementAt(index);
-                return TrackListTile(
-                  thumbnail: Icon(Icons.music_note_rounded),
-                  title: currentSong.title,
-                  subtitle: currentSong.artist,
-                  trailing: Text(currentSong.duration),
-                  onTap: () {
-                    Provider.of<NowPlayingModel>(context, listen: false)
-                        .play(currentSong.filePath);
-                  },
-                );
+                return (model.songsInDevice.length == 0)
+                    ? Container(
+                        height: 300,
+                        width: 300,
+                        child: Center(
+                          child: CircularProgressIndicator(),
+                        ),
+                      )
+                    : TrackListTile(
+                        thumbnail: Icon(Icons.music_note_rounded),
+                        title: currentSong.title,
+                        subtitle: currentSong.artist,
+                        trailing: Text(currentSong.duration),
+                        onTap: () {
+                          Provider.of<NowPlayingModel>(context, listen: false)
+                              .play(currentSong.filePath);
+                        },
+                      );
               },
               childCount: model.songsInDevice.length,
             ),
@@ -61,7 +63,7 @@ class TracksScreenState extends State<TracksScreen> {
             ]),
           ),
         ],
-      ),
-    );
+      );
+    });
   }
 }

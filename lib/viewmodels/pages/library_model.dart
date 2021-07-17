@@ -4,21 +4,15 @@ import 'package:music_player/models/track.dart';
 import 'package:music_player/repository/music_repo.dart';
 
 class LibraryModel extends ChangeNotifier {
-  bool libraryHasBeenPopulated = false;
-
-  void refreshLibrary() {
-    if (libraryHasBeenPopulated) {
-      return;
-    } else {
-      updateLibrary();
-    }
-  }
-
   List<SongInfo> _songsInDevice = [];
   List<SongInfo> get songsInDevice => _songsInDevice;
-  void _fetchSongsInDevice() async {
-    _songsInDevice = await MusicRepository.fetchSongsInDevice();
+  set songsInDevice(List<SongInfo> songs) {
+    _songsInDevice = songs;
     notifyListeners();
+  }
+
+  void _fetchSongsInDevice() async {
+    songsInDevice = await MusicRepository.fetchSongsInDevice();
   }
 
   List<ArtistInfo> _artistsInDevice = [];
@@ -49,11 +43,11 @@ class LibraryModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  updateLibrary() {
-    _fetchSongsInDevice();
-    _fetchArtistsInDevice();
-    _fetchAlbumsInDevice();
-    _fetchGenresInDevice();
+  Future<void> refreshLibrary() async {
+    await _fetchSongsInDevice();
+    await _fetchArtistsInDevice();
+    await _fetchAlbumsInDevice();
+    await _fetchGenresInDevice();
   }
 
   sortTracksAlphabetically() {}
