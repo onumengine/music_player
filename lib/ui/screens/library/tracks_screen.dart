@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_audio_query/flutter_audio_query.dart';
-import 'package:music_player/viewmodels/pages/library_model.dart';
 import 'package:music_player/ui/atoms/filler_tile.dart';
 import 'package:music_player/ui/atoms/shuffle_tile.dart';
 import 'package:music_player/ui/atoms/track_listtile.dart';
@@ -11,8 +10,11 @@ class TracksScreen extends StatelessWidget {
   final Widget thumbnail;
   final List<SongInfo> songs;
 
-  const TracksScreen(
-      {this.songs, this.thumbnail = const Icon(Icons.music_note_rounded)});
+  const TracksScreen({
+    @required this.songs,
+    this.thumbnail = const Icon(Icons.music_note_rounded),
+  });
+
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: <Widget>[

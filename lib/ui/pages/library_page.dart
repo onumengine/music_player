@@ -67,13 +67,19 @@ class LibraryPageState extends State<LibraryPage> {
         ),
         drawer: DrawerLayout(),
         body: SafeArea(
-          child: TabBarView(
-            children: <Widget>[
-              TracksScreen(),
-              ArtistsScreen(),
-              AlbumsScreen(),
-              GenresScreen(),
-            ],
+          child: Consumer<LibraryModel>(
+            builder: (context, model, child) => TabBarView(
+              children: <Widget>[
+                TracksScreen(
+                  songs: model.songsInDevice,
+                ),
+                ArtistsScreen(
+                  artists: model.artistsInDevice,
+                ),
+                AlbumsScreen(),
+                GenresScreen(),
+              ],
+            ),
           ),
         ),
         bottomSheet: Container(
