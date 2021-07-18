@@ -76,7 +76,9 @@ class LibraryPageState extends State<LibraryPage> {
                 ArtistsScreen(
                   artists: model.artistsInDevice,
                 ),
-                AlbumsScreen(),
+                AlbumsScreen(
+                  albums: model.albumsInDevice,
+                ),
                 GenresScreen(),
               ],
             ),
