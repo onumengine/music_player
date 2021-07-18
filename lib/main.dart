@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:music_player/viewmodels/pages/artist_model.dart';
 import 'package:music_player/viewmodels/pages/equalizer_model.dart';
 import 'package:music_player/viewmodels/pages/library_model.dart';
 import 'package:music_player/viewmodels/pages/now_playing_model.dart';
@@ -23,6 +24,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider<LibraryModel>.value(
           value: LibraryModel(),
+        ),
+        ChangeNotifierProvider<ArtistModel>.value(
+          value: ArtistModel(),
         )
       ],
       child: MaterialApp(
