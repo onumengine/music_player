@@ -8,17 +8,19 @@ import 'package:provider/provider.dart';
 class ArtistPage extends StatefulWidget {
   final String artistName, artistID;
 
-  ArtistPage({@required this.artistName, @required this.artistID});
+  ArtistPage({this.artistName, this.artistID});
 
   ArtistPageState createState() => ArtistPageState();
 }
 
 class ArtistPageState extends State<ArtistPage> {
+  ArtistModel model;
+
   @override
-  void initState() {
-    super.initState();
-    Provider.of<ArtistModel>(context, listen: false)
-        .initializeModel(widget.artistName, widget.artistID);
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    model = Provider.of<ArtistModel>(context)
+      ..initializeModel(widget.artistName, widget.artistID);
   }
 
   Widget build(BuildContext context) {
@@ -48,9 +50,13 @@ class ArtistPageState extends State<ArtistPage> {
             SliverFillRemaining(
               child: TabBarView(
                 children: <Widget>[
-                  AlbumsScreen(),
+                  AlbumsScreen(
+                    albums: model.albumsByArtist,
+                  ),
                   //Center(child: Text('No internet connection')),
-                  TracksScreen(),
+                  TracksScreen(
+                    songs: model.songsByArtist,
+                  ),
                 ],
               ),
             ),
