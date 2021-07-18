@@ -20,7 +20,13 @@ class RouteGenerator {
       case ROUTE_SETTINGS_PAGE:
         return MaterialPageRoute(builder: (context) => SettingsPage());
       case ROUTE_ARTIST_PAGE:
-        return MaterialPageRoute(builder: (context) => ArtistPage());
+        final args = settings.arguments as Map;
+        return MaterialPageRoute(
+          builder: (context) => ArtistPage(
+            artistID: args["artistID"],
+            artistName: args["artistName"],
+          ),
+        );
       case ROUTE_ALBUM_PAGE:
         return MaterialPageRoute(builder: (context) => AlbumPage());
       case ROUTE_NOW_PLAYING_PAGE:
