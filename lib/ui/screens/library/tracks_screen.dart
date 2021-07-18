@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_audio_query/flutter_audio_query.dart';
 import 'package:music_player/viewmodels/pages/library_model.dart';
 import 'package:music_player/ui/atoms/filler_tile.dart';
 import 'package:music_player/ui/atoms/shuffle_tile.dart';
@@ -8,62 +9,57 @@ import 'package:provider/provider.dart';
 
 class TracksScreen extends StatefulWidget {
   final Widget thumbnail;
+  final List<SongInfo> songs;
 
-  const TracksScreen({this.thumbnail = const Icon(Icons.music_note_rounded)});
-  TracksScreenState createState() =>
-      TracksScreenState(stateThumbnail: this.thumbnail);
+  const TracksScreen(
+      {this.songs, this.thumbnail = const Icon(Icons.music_note_rounded)});
+  TracksScreenState createState() => TracksScreenState();
 }
 
 class TracksScreenState extends State<TracksScreen> {
-  final Widget stateThumbnail;
-
-  TracksScreenState({this.stateThumbnail});
-
   Widget build(BuildContext context) {
-    return Consumer<LibraryModel>(builder: (context, model, child) {
-      return CustomScrollView(
-        slivers: <Widget>[
-          SliverList(
-            delegate: SliverChildBuilderDelegate(
-              (BuildContext context, int index) {
-                return ShuffleTile();
-              },
-              childCount: 1,
-            ),
+    return CustomScrollView(
+      slivers: <Widget>[
+        SliverList(
+          delegate: SliverChildBuilderDelegate(
+            (BuildContext context, int index) {
+              return ShuffleTile();
+            },
+            childCount: 1,
           ),
-          SliverList(
-            delegate: SliverChildBuilderDelegate(
-              (BuildContext context, int index) {
-                var currentSong = model.songsInDevice.elementAt(index);
-                return (model.songsInDevice.length == 0)
-                    ? Container(
-                        height: 300,
-                        width: 300,
-                        child: Center(
-                          child: CircularProgressIndicator(),
-                        ),
-                      )
-                    : TrackListTile(
-                        thumbnail: Icon(Icons.music_note_rounded),
-                        title: currentSong.title,
-                        subtitle: currentSong.artist,
-                        trailing: Text(currentSong.duration),
-                        onTap: () {
-                          Provider.of<NowPlayingModel>(context, listen: false)
-                              .play(currentSong.filePath);
-                        },
-                      );
-              },
-              childCount: model.songsInDevice.length,
-            ),
+        ),
+        SliverList(
+          delegate: SliverChildBuilderDelegate(
+            (BuildContext context, int index) {
+              var currentSong = widget.songs.elementAt(index);
+              return (widget.songs.length == 0)
+                  ? Container(
+                      height: 300,
+                      width: 300,
+                      child: Center(
+                        child: CircularProgressIndicator(),
+                      ),
+                    )
+                  : TrackListTile(
+                      thumbnail: Icon(Icons.music_note_rounded),
+                      title: currentSong.title,
+                      subtitle: currentSong.artist,
+                      trailing: Text(currentSong.duration),
+                      onTap: () {
+                        Provider.of<NowPlayingModel>(context, listen: false)
+                            .play(currentSong.filePath);
+                      },
+                    );
+            },
+            childCount: widget.songs.length,
           ),
-          SliverList(
-            delegate: SliverChildListDelegate([
-              FillerTile(),
-            ]),
-          ),
-        ],
-      );
-    });
+        ),
+        SliverList(
+          delegate: SliverChildListDelegate([
+            FillerTile(),
+          ]),
+        ),
+      ],
+    );
   }
 }
