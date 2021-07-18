@@ -24,9 +24,9 @@ class ArtistModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  void initializeModel(String artistName, String artistID) {
+  void initializeModel(String artistName, String artistID) async {
     artistName = artistName;
-    _getAlbumsByArtist(artistName);
-    _getSongsByArtist(artistID);
+    await _getAlbumsByArtist(artistName);
+    await _getSongsByArtist(artistID);
   }
 }

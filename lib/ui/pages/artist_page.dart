@@ -32,7 +32,7 @@ class ArtistPageState extends State<ArtistPage> {
             SliverAppBar(
               expandedHeight: 200.0,
               automaticallyImplyLeading: false,
-              title: Text('Pyro The Rapper'),
+              title: Text(widget.artistName),
               pinned: true,
               flexibleSpace: FlexibleSpaceBar(
                 background:
