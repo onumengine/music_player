@@ -1,23 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:music_player/viewmodels/pages/library_model.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_audio_query/flutter_audio_query.dart';
 import '../../atoms/genres_tile.dart';
 
-class GenresScreen extends StatefulWidget {
-  GenresScreenState createState() => GenresScreenState();
-}
+class GenresScreen extends StatelessWidget {
+  final List<GenreInfo> genres;
 
-class GenresScreenState extends State<GenresScreen> {
+  GenresScreen({@required this.genres});
+
   Widget build(BuildContext context) {
-    return Consumer<LibraryModel>(
-      builder: (context, model, child) => Padding(
-        padding: const EdgeInsets.only(bottom: 50.0),
-        child: ListView.builder(
-          addAutomaticKeepAlives: false,
-          itemCount: model.genresInDevice.length,
-          itemBuilder: (context, index) => GenresTile(
-            genreName: model.genresInDevice.elementAt(index).name,
-          ),
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 50.0),
+      child: ListView.builder(
+        addAutomaticKeepAlives: false,
+        itemCount: genres.length,
+        itemBuilder: (context, index) => GenresTile(
+          genreName: genres.elementAt(index).name,
         ),
       ),
     );
