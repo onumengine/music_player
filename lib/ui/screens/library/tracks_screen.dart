@@ -7,16 +7,12 @@ import 'package:music_player/ui/atoms/track_listtile.dart';
 import 'package:music_player/viewmodels/pages/now_playing_model.dart';
 import 'package:provider/provider.dart';
 
-class TracksScreen extends StatefulWidget {
+class TracksScreen extends StatelessWidget {
   final Widget thumbnail;
   final List<SongInfo> songs;
 
   const TracksScreen(
       {this.songs, this.thumbnail = const Icon(Icons.music_note_rounded)});
-  TracksScreenState createState() => TracksScreenState();
-}
-
-class TracksScreenState extends State<TracksScreen> {
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: <Widget>[
@@ -31,8 +27,8 @@ class TracksScreenState extends State<TracksScreen> {
         SliverList(
           delegate: SliverChildBuilderDelegate(
             (BuildContext context, int index) {
-              var currentSong = widget.songs.elementAt(index);
-              return (widget.songs.length == 0)
+              var currentSong = songs.elementAt(index);
+              return (songs.length == 0)
                   ? Container(
                       height: 300,
                       width: 300,
@@ -51,7 +47,7 @@ class TracksScreenState extends State<TracksScreen> {
                       },
                     );
             },
-            childCount: widget.songs.length,
+            childCount: songs.length,
           ),
         ),
         SliverList(
