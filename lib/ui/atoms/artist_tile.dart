@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:music_player/util/strings.dart';
 
 class ArtistTile extends StatelessWidget {
   ArtistTile({
     this.imagePath = 'lib/assets/images/3.png',
     this.artistName = "Unknown",
+    this.onTap,
   });
 
   final String imagePath, artistName;
+  VoidCallback onTap;
 
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -27,9 +28,7 @@ class ArtistTile extends StatelessWidget {
           ],
         ),
       ),
-      onTap: () {
-        Navigator.of(context).pushNamed(ROUTE_ARTIST_PAGE);
-      },
+      onTap: onTap,
     );
   }
 }
