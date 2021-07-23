@@ -17,13 +17,13 @@ class ArtistPageState extends State<ArtistPage> {
   ArtistModel model;
 
   @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    model = Provider.of<ArtistModel>(context)
-      ..initializeModel(widget.artistName, widget.artistID);
+  void initState() {
+    super.initState();
   }
 
   Widget build(BuildContext context) {
+    // model = Provider.of<ArtistModel>(context)
+    //   ..initializeModel(widget.artistName, widget.artistID);
     return DefaultTabController(
       length: 2,
       child: Scaffold(
@@ -32,7 +32,7 @@ class ArtistPageState extends State<ArtistPage> {
             SliverAppBar(
               expandedHeight: 200.0,
               automaticallyImplyLeading: false,
-              title: Text(widget.artistName),
+              title: Text("artistName"),
               pinned: true,
               flexibleSpace: FlexibleSpaceBar(
                 background:
@@ -51,11 +51,10 @@ class ArtistPageState extends State<ArtistPage> {
               child: TabBarView(
                 children: <Widget>[
                   AlbumsScreen(
-                    albums: model.albumsByArtist,
+                    albums: [],
                   ),
-                  //Center(child: Text('No internet connection')),
                   TracksScreen(
-                    songs: model.songsByArtist,
+                    songs: [],
                   ),
                 ],
               ),
@@ -68,5 +67,11 @@ class ArtistPageState extends State<ArtistPage> {
         ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    Provider.of<ArtistModel>(context).dispose();
+    super.dispose();
   }
 }
