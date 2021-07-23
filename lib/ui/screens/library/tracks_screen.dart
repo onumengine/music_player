@@ -30,7 +30,7 @@ class TracksScreen extends StatelessWidget {
           delegate: SliverChildBuilderDelegate(
             (BuildContext context, int index) {
               var currentSong = songs.elementAt(index);
-              return (songs.length == 0)
+              return (songs.length == 0 || songs == null)
                   ? Container(
                       height: 300,
                       width: 300,
@@ -50,6 +50,7 @@ class TracksScreen extends StatelessWidget {
                     );
             },
             childCount: songs.length,
+            addAutomaticKeepAlives: false,
           ),
         ),
         SliverList(
