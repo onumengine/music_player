@@ -9,6 +9,8 @@ import 'package:music_player/ui/pages/playlists_home_page.dart';
 import 'package:music_player/ui/pages/settings_page.dart';
 import 'package:music_player/ui/pages/artist_page.dart';
 import 'package:music_player/util/strings.dart';
+import 'package:music_player/viewmodels/pages/artist_model.dart';
+import 'package:provider/provider.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -22,9 +24,12 @@ class RouteGenerator {
       case ROUTE_ARTIST_PAGE:
         final args = settings.arguments as Map;
         return MaterialPageRoute(
-          builder: (context) => ArtistPage(
-            artistID: args["artistID"],
-            artistName: args["artistName"],
+          builder: (context) => ChangeNotifierProvider<ArtistModel>(
+            create: (context) => ArtistModel.withArtist(
+              artistID: args["artistID"],
+              artistName: args["artistName"],
+            ),
+            child: ArtistPage(),
           ),
         );
       case ROUTE_ALBUM_PAGE:
