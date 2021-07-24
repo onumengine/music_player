@@ -20,50 +20,56 @@ class ArtistPageState extends State<ArtistPage> {
   }
 
   Widget build(BuildContext context) {
-    return Consumer<ArtistModel>(
-      builder: (context, model, child) => DefaultTabController(
-        length: 2,
-        child: Scaffold(
-          body: CustomScrollView(
-            slivers: <Widget>[
-              SliverAppBar(
-                expandedHeight: 200.0,
-                automaticallyImplyLeading: false,
-                title: Text("artistName"),
-                pinned: true,
-                flexibleSpace: FlexibleSpaceBar(
-                  background:
-                      Image.asset('lib/assets/images/3.png', fit: BoxFit.fill),
+    return Consumer<ArtistModel>(builder: (context, model, child) {
+      if (model.hasBeenInitialized) {
+        return DefaultTabController(
+          length: 2,
+          child: Scaffold(
+            body: CustomScrollView(
+              slivers: <Widget>[
+                SliverAppBar(
+                  expandedHeight: 200.0,
+                  automaticallyImplyLeading: false,
+                  title: Text(model.artistName),
+                  pinned: true,
+                  flexibleSpace: FlexibleSpaceBar(
+                    background: Image.asset('lib/assets/images/3.png',
+                        fit: BoxFit.fill),
+                  ),
+                  bottom: TabBar(
+                    indicatorColor: Colors.white,
+                    tabs: <Tab>[
+                      Tab(text: 'ALBUMS'),
+                      //Tab(text: 'BIO'),
+                      Tab(text: 'TRACKS'),
+                    ],
+                  ),
                 ),
-                bottom: TabBar(
-                  indicatorColor: Colors.white,
-                  tabs: <Tab>[
-                    Tab(text: 'ALBUMS'),
-                    //Tab(text: 'BIO'),
-                    Tab(text: 'TRACKS'),
-                  ],
+                SliverFillRemaining(
+                  child: TabBarView(
+                    children: <Widget>[
+                      AlbumsScreen(
+                        albums: model.albumsByArtist,
+                      ),
+                      TracksScreen(
+                        songs: model.songsByArtist,
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-              SliverFillRemaining(
-                child: TabBarView(
-                  children: <Widget>[
-                    AlbumsScreen(
-                      albums: [],
-                    ),
-                    TracksScreen(
-                      songs: [],
-                    ),
-                  ],
-                ),
-              ),
-            ],
+              ],
+            ),
+            bottomSheet: Container(
+              height: 50.0,
+              child: NowPlayingTile(),
+            ),
           ),
-          bottomSheet: Container(
-            height: 50.0,
-            child: NowPlayingTile(),
-          ),
-        ),
-      ),
-    );
+        );
+      } else {
+        return Center(
+          child: CircularProgressIndicator(),
+        );
+      }
+    });
   }
 }

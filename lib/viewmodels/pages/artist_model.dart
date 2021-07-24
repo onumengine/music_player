@@ -42,17 +42,9 @@ class ArtistModel extends ChangeNotifier {
   void _initializeModel() async {
     await _getAlbumsByArtist(artistName);
     await _getSongsByArtist(artistID);
+    _hasBeenInitialized = true;
   }
 
-  // bool _hasBeenInitialized = false;
-  // bool get hasBeenInitialized => _hasBeenInitialized;
-  // set hasBeenInitialized(bool isInitialized) {
-  //   if (isInitialized == true) {
-  //     _hasBeenInitialized = isInitialized;
-  //   } else {
-  //     print(
-  //         "can assign only a value of true to ArtistModel.hasBeenInitialized");
-  //     return;
-  //   }
-  // }
+  bool _hasBeenInitialized = false;
+  bool get hasBeenInitialized => _hasBeenInitialized;
 }
