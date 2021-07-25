@@ -19,7 +19,12 @@ class AlbumsScreen extends StatelessWidget {
           albums.length,
           (index) => AlbumTile(
             onTap: () {
-              Navigator.of(context).pushNamed(ROUTE_ALBUM_PAGE);
+              Navigator.of(context).pushNamed(
+                ROUTE_ALBUM_PAGE,
+                arguments: {
+                  "album": albums.elementAt(index),
+                },
+              );
             },
             albumTitle: albums.elementAt(index).title,
             artist: albums.elementAt(index).artist,

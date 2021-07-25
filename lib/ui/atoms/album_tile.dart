@@ -4,11 +4,12 @@ class AlbumTile extends StatelessWidget {
   final GestureTapCallback onTap;
   final String imageUrl, albumTitle, artist;
 
-  AlbumTile(
-      {this.imageUrl = 'lib/assets/images/6.png',
-      this.albumTitle = 'My Ted Talk',
-      this.artist = 'Pyro The Rapper',
-      this.onTap});
+  AlbumTile({
+    this.imageUrl = 'lib/assets/images/6.png',
+    this.albumTitle = 'My Ted Talk',
+    this.artist = 'Pyro The Rapper',
+    this.onTap,
+  });
 
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -33,7 +34,8 @@ class AlbumTile extends StatelessWidget {
                       padding: const EdgeInsets.all(4.0),
                       child: Text(
                         this.albumTitle,
-                        style: TextStyle(fontWeight: FontWeight.w900, color: Colors.white),
+                        style: TextStyle(
+                            fontWeight: FontWeight.w900, color: Colors.white),
                       ),
                     ),
                     Text(

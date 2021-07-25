@@ -22,7 +22,7 @@ class RouteGenerator {
       case ROUTE_SETTINGS_PAGE:
         return MaterialPageRoute(builder: (context) => SettingsPage());
       case ROUTE_ARTIST_PAGE:
-        final args = settings.arguments as Map;
+        final Map args = settings.arguments as Map;
         return MaterialPageRoute(
           builder: (context) => ChangeNotifierProvider<ArtistModel>(
             create: (context) => ArtistModel.withArtist(
@@ -33,6 +33,7 @@ class RouteGenerator {
           ),
         );
       case ROUTE_ALBUM_PAGE:
+        final Map args = settings.arguments as Map;
         return MaterialPageRoute(builder: (context) => AlbumPage());
       case ROUTE_NOW_PLAYING_PAGE:
         return MaterialPageRoute(builder: (context) => NowPlayingPage());
