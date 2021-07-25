@@ -1,9 +1,9 @@
 import 'package:audioplayers/audioplayers.dart';
 
-class PlayerRepository {
+class NowPlayingRepository {
   AudioPlayer player;
 
-  PlayerRepository() {
+  NowPlayingRepository() {
     AudioPlayer.logEnabled = true;
     this.player = AudioPlayer();
     print("THE ID OF THIS PLAYER IS ${this.player.playerId}");
