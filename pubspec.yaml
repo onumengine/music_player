@@ -30,6 +30,7 @@ dependencies:
   permission_handler: 5.1.0+2
   provider: ^4.3.2
   shared_preferences: ^2.0.6
+  assets_audio_player: ^3.0.3+6
 
 dev_dependencies:
   flutter_test:
