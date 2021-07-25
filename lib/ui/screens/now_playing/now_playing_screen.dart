@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:music_player/util/strings.dart';
 import 'package:music_player/viewmodels/pages/now_playing_model.dart';
 import 'package:provider/provider.dart';
 
@@ -56,8 +57,8 @@ class _NowPlayingScreenState extends State<NowPlayingScreen> {
                     child: IconButton(
                       icon: Icon(Icons.equalizer_rounded),
                       onPressed: () {
-                        print('PRESSED ME');
-                        model.openEqualizerPage(context);
+                        Navigator.pushReplacementNamed(
+                            context, ROUTE_EQUALIZER_PAGE);
                       },
                     ),
                   ),
